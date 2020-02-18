@@ -1,18 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Domage : MonoBehaviour
+﻿public enum Damage 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    veryLow=1,
+    low=2,
+    medium=4,
+    strong=6,
+    veryStrong=10,
+    hyperStrong=20
 }

@@ -25,4 +25,15 @@ public class Heal : Consumable
         description = string.Format(description, level, value);
 
     }
+    
+    // Function permettant la recuperation des potions
+    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    {
+        //Permet de savoir si le gameobject est bien le joueur
+        if (collision.gameObject.tag == "Player")
+        {
+            //Détruit la potion
+            Destroy(gameObject);
+        }
+    }
 }

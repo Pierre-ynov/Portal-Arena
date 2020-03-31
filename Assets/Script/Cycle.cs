@@ -6,7 +6,7 @@ public class Cycle : MonoBehaviour
 {
     public Phase[] phases;
     public float timer;
-    private Chrono chrono;
+    public Chrono chrono;
     
     public Cycle()
     {

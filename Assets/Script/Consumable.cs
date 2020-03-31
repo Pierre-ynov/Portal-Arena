@@ -10,4 +10,5 @@ public abstract class Consumable : MonoBehaviour
     public int value;
     public GameObject consumable;
 
+    public abstract void Action();
 }

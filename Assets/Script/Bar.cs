@@ -21,11 +21,11 @@ public class Bar : MonoBehaviour
     {
         if (m > 0 && m + load > capacity)
             load = capacity;
-        else if (m < 0 && load - m < 0)
+        else if (m < 0 && load + m < 0) // ne passe normalement par là, car les dégats sont soustrait directement depuis les variables
             load = 0;
         else
             load += m;
-        if (load == 0)
+        if (load == 0) // ne passe normalement par là, car les dégats sont soustrait directement depuis les variables
             return false;
         return true;
     } 

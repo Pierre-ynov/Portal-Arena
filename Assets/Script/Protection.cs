@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Protection : Consumable
 {
-    public Protection(int level)
+    public int level;
+    public Protection()
     {
         consumable = GameObject.FindGameObjectWithTag("Bouclier" + level);
         typeValue = "Box";
@@ -23,6 +24,22 @@ public class Protection : Consumable
                 break;
         }
         description = string.Format(description, level, value);
+    }
 
+    // Function permettant la recuperation des protections
+    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    {
+        //Permet de savoir si le gameobject est bien le joueur
+        if (collision.gameObject.tag == "Player")
+        {
+            //Détruit la protection
+            Destroy(gameObject);
+        }
+    }
+
+    public override void Action()
+    {
+        counter -= 1;
+        this.GetComponentInParent<Player>().armor.ModifyLoad(value);
     }
 }

@@ -11,14 +11,18 @@ public abstract class Piece : MonoBehaviour
     public LayerMask blockingLayer;
     private BoxCollider2D boxCollider;         //The BoxCollider2D component attached to this object.
     private Rigidbody2D rb2D;                //The Rigidbody2D component attached to this object.
+    public RaycastHit2D hit;
+    private float Speed;
 
-    public Piece()
+    void Start()
     {
         //Get a component reference to this object's BoxCollider2D
         boxCollider = GetComponent<BoxCollider2D>();
 
         //Get a component reference to this object's Rigidbody2D
         rb2D = GetComponent<Rigidbody2D>();
+
+        Speed = 2f;
     }
 
     /// <summary>
@@ -33,7 +37,7 @@ public abstract class Piece : MonoBehaviour
         Vector3 start = transform.position;
 
         // Calculate end position based on the direction parameters passed in when calling Move.
-        Vector3 end =new Vector3(dirX*Time.deltaTime, dirY * Time.deltaTime, 0f);
+        Vector3 end =new Vector3(Speed*dirX*Time.deltaTime, Speed*dirY*Time.deltaTime, 0f);
 
         //Disable the boxCollider so that linecast doesn't hit this object's own collider.
         boxCollider.enabled = false;

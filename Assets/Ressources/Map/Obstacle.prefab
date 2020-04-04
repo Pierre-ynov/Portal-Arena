@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 536902926084402508}
   - component: {fileID: 536902926084402509}
   - component: {fileID: 536902926084402507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.62, y: 2.58}
+    oldSize: {x: 1.0234375, y: 1.0078125}
     newSize: {x: 2.49, y: 2.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

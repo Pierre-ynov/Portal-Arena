@@ -6,7 +6,8 @@ public class Attack : Capacite
 {
     private int typeAttack;
     public Sprite imgAttack { get; private set; }
-    public Attack(int type)
+    public GameObject attackGameobject;
+    public Attack(int type, GameObject attackGameobject)
     {
         typeAttack = type;
         switch (typeAttack)

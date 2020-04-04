@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7509829210586615671}
   - component: {fileID: 7509829210586615560}
-  - component: {fileID: 7509829210586615561}
+  - component: {fileID: 6291160461175466}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -71,18 +71,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7ba36db14f3d65e418e1c746d28b2c86, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae7e9f632c5677645ad5a76f6f4a8c24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.7, y: 1.08}
+  m_Size: {x: 0.845, y: 0.535}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7509829210586615561
+--- !u!114 &6291160461175466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,10 +91,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7509829210586615562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3e218591d4b7cd4b95ff993c6e2125d, type: 3}
+  m_Script: {fileID: 11500000, guid: 84dd7121ed00dd94baa7ee221e80eb5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dirX: 0
   dirY: 0
-  Speed: 10
+  Speed: 0
   parent: {fileID: 0}

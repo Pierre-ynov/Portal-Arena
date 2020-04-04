@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Protection : Consumable
 {
-    public int level;
-    public Protection()
+    public Protection(int level)
     {
         consumable = GameObject.FindGameObjectWithTag("Bouclier" + level);
         typeValue = "Box";

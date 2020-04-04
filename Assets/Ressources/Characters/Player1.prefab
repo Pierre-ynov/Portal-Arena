@@ -98,6 +98,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 2712287236134612094}
+  attackprefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
+    type: 3}
   Up: 122
   Down: 115
   Right: 100

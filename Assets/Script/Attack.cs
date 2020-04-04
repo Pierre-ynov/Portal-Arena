@@ -6,10 +6,13 @@ public class Attack : Capacite
 {
     private int typeAttack;
     public Sprite imgAttack { get; private set; }
-    public GameObject attackGameobject;
-    public Attack(int type, GameObject attackGameobject)
+    public GameObject attack;
+    private GameObject parent;
+    public Attack(int type, GameObject attackGameobject, GameObject playerParent)
     {
         typeAttack = type;
+        attack = attackGameobject;
+        parent = playerParent;
         switch (typeAttack)
         {
             case 1:
@@ -20,12 +23,12 @@ public class Attack : Capacite
     }
     public override void Action(int dirx,int diry)
     {
+        Vector3 position = parent.transform.position;
         switch (typeAttack)
         {
             case 1:
-                Fireball fireball = new GameObject("Fireball").GetComponent<Fireball>();
-                Vector3 position = fireball.transform.position;
-                fireball.transform.position = new Vector3(position.x +dirx,position.y+diry,position.z);
+                Fireball fireball = Instantiate(attack, position, Quaternion.identity).GetComponent<Fireball>();
+                fireball.transform.position = new Vector3(position.x +dirx*10,position.y+diry*10,position.z);
                 fireball.dirY = diry;
                 fireball.dirX = dirx;
                 fireball.LoadSprite();

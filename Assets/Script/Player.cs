@@ -44,7 +44,7 @@ public class Player : Piece
         countRevive = 0;
         dirX = 1;
         dirY = 0;
-        attack = new Slot<Attack>(new Attack(1,attackprefab));
+        attack = new Slot<Attack>(new Attack(1,attackprefab,player));
     }
 
     // Vérifie s'il peut revivre

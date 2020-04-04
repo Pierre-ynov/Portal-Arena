@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Heal : Consumable
 {
-    public Heal(int level)
+    void Start()
     {
         consumable = GameObject.FindGameObjectWithTag("Potion" + level);
         typeValue = "Box";
@@ -26,7 +26,7 @@ public class Heal : Consumable
 
     }
     // Function permettant la recuperation des potions
-    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         //Permet de savoir si le gameobject est bien le joueur
         if (collision.gameObject.tag == "Player")

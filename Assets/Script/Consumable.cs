@@ -9,6 +9,7 @@ public abstract class Consumable : MonoBehaviour
     public float counter;
     public int value;
     public GameObject consumable;
+    public int level;
 
     public abstract void Action();
 }

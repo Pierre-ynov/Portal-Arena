@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8030219804040629348}
   m_Layer: 0
   m_Name: Protection3
-  m_TagString: Untagged
+  m_TagString: Protection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,4 +148,4 @@ MonoBehaviour:
   counter: 0
   value: 0
   consumable: {fileID: 0}
-  level: 0
+  level: 3

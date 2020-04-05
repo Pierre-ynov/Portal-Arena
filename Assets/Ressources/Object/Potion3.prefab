@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4000844065501693898}
   m_Layer: 0
   m_Name: Potion3
-  m_TagString: Untagged
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +148,4 @@ MonoBehaviour:
   counter: 0
   value: 0
   consumable: {fileID: 0}
+  level: 3

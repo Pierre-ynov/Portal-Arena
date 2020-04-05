@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Piece
 {
@@ -33,18 +34,26 @@ public class Player : Piece
     //Permet d'attaquer
     public KeyCode baseAttack = KeyCode.E;
 
-    public Player(GameObject pl,string n,int i)
+    //Permet de quitter
+    public KeyCode quit = KeyCode.Tab;
+
+    void Start()
     {
-        player = pl;
-        id=i;
+        //Get a component reference to this object's BoxCollider2D
+        boxCollider = GetComponent<BoxCollider2D>();
+
+        //Get a component reference to this object's Rigidbody2D
+        rb2D = GetComponent<Rigidbody2D>();
+
+        Speed = 2f;
+
         health = new Bar(20);
         armor = new Bar(20);
         armor.ModifyLoad(-20);
-        namePiece = n;
         countRevive = 0;
         dirX = 1;
         dirY = 0;
-        attack = new Slot<Attack>(new Attack(1,attackprefab,player));
+        attack = new Slot<Attack>(new Attack(1, attackprefab, player));
     }
 
     // Vérifie s'il peut revivre
@@ -115,8 +124,19 @@ public class Player : Piece
         // Permet d'attaquer
         if (Input.GetKey(baseAttack))
         {
-            attack.slot.Action(dirX, dirY);
+            if (attack.isReady)
+            {
+                attack.slot.Action(dirX, dirY);
+                attack.generateCoolDown();
+            }
+            
         }
+
+        if (Input.GetKey(quit))
+        {
+            SceneManager.UnloadSceneAsync("SampleScene");
+        }
+
     }
 
 }

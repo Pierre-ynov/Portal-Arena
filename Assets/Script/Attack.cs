@@ -17,7 +17,7 @@ public class Attack : Capacite
         {
             case 1:
                 imgAttack = Resources.Load<Sprite>("FireBall"); //à modifier
-                timeCooldown = 3;
+                timeCooldown = 5;
                 break;
         }
     }
@@ -28,10 +28,12 @@ public class Attack : Capacite
         {
             case 1:
                 Fireball fireball = Instantiate(attack, position, Quaternion.identity).GetComponent<Fireball>();
-                fireball.transform.position = new Vector3(position.x +dirx*10,position.y+diry*10,position.z);
+                fireball.transform.position = new Vector3(position.x +dirx,position.y+diry,position.z);
                 fireball.dirY = diry;
                 fireball.dirX = dirx;
-                fireball.LoadSprite();
+                fireball.Speed = 5;
+                //fireball.LoadSprite();
+                //Debug.Break();
                 break;
         }
     }

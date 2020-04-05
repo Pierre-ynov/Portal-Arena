@@ -6,7 +6,7 @@ public class Protection : Consumable
 {
     void Start()
     {
-        consumable = GameObject.FindGameObjectWithTag("Bouclier" + level);
+        consumable = GameObject.FindGameObjectWithTag("Protection");
         typeValue = "Box";
         counter = 1;
         description = "Bouclier d'armure Lvl {0}: restaure {1} PA.";

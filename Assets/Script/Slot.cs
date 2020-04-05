@@ -3,8 +3,8 @@
 public class Slot<T> : MonoBehaviour
 {
     public T slot;
-    private bool isReady;
-    private float cooldown;
+    public bool isReady;
+    public float cooldown { get; private set; }
     private bool isEmpty;
 
     public Slot(T s)

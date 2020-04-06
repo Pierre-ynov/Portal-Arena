@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 233987620}
   - component: {fileID: 233987619}
   - component: {fileID: 233987618}
+  - component: {fileID: 233987621}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -288,6 +289,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &233987621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233987617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd3e80213d8f4d4eb8c72b3e9c6e7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &281443780
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: JOUEUR 2
+  m_Text: 
 --- !u!222 &281443783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -420,7 +433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0b29a7169aae11848a33709ddac5c9b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f4a8f5fac2153242b7408d6dd226423, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -589,7 +602,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Appuyer sur une touche pour retourner au menu
+  m_Text: Appuyer sur "ESPACE" retourner au menu
 --- !u!222 &1524929141
 CanvasRenderer:
   m_ObjectHideFlags: 0

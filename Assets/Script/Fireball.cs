@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fireball : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class Fireball : MonoBehaviour
                 {
                     Destroy(collision.gameObject);
                     //Ajouter la scène de victoire du parent de la Fireball
+                    SceneManager.LoadScene("Fin");
                 }
         }
         //Détruit l'entité

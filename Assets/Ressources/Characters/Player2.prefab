@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6706125799882838807}
   - component: {fileID: 6706125799882838806}
   - component: {fileID: 6706125799882838811}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -100,12 +100,13 @@ MonoBehaviour:
   player: {fileID: 6706125799882838801}
   attackprefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
     type: 3}
-  Up: 122
-  Down: 115
-  Right: 100
-  Left: 113
+  Up: 111
+  Down: 108
+  Right: 109
+  Left: 107
   animator: {fileID: 6706125799882838806}
-  baseAttack: 101
+  baseAttack: 112
+  quit: 9
 --- !u!95 &6706125799882838806
 Animator:
   serializedVersion: 3

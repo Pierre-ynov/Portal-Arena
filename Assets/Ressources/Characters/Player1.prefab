@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2712287236134612088}
   - component: {fileID: 2712287236134612089}
   - component: {fileID: 2712287236134612084}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -106,6 +106,7 @@ MonoBehaviour:
   Left: 113
   animator: {fileID: 2712287236134612089}
   baseAttack: 101
+  quit: 9
 --- !u!95 &2712287236134612089
 Animator:
   serializedVersion: 3

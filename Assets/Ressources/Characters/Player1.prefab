@@ -106,7 +106,7 @@ MonoBehaviour:
   Left: 113
   animator: {fileID: 2712287236134612089}
   baseAttack: 101
-  quit: 9
+  quit: 27
 --- !u!95 &2712287236134612089
 Animator:
   serializedVersion: 3

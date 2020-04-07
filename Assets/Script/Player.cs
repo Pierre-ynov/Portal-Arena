@@ -35,7 +35,7 @@ public class Player : Piece
     public KeyCode baseAttack = KeyCode.E;
 
     //Permet de quitter
-    public KeyCode quit = KeyCode.Tab;
+    public KeyCode quit = KeyCode.Escape;
 
     void Start()
     {
@@ -134,7 +134,7 @@ public class Player : Piece
 
         if (Input.GetKey(quit))
         {
-            SceneManager.UnloadSceneAsync("SampleScene");
+            Application.Quit();
         }
 
     }

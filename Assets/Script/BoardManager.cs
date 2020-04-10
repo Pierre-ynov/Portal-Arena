@@ -20,6 +20,8 @@ public class BoardManager : MonoBehaviour
     public GameObject[] players;
     public List<Vector3> playersPositions = new List<Vector3>();
 
+    private Player[] uiplayer;
+
     void InitialiseList()
     {
         gridPositions.Clear();

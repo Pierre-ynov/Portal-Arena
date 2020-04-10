@@ -6,7 +6,7 @@ public class Heal : Consumable
 {
     void Start()
     {
-        consumable = GameObject.FindGameObjectWithTag("Potion" + level);
+        consumable = GameObject.FindGameObjectWithTag("Potion");
         typeValue = "Box";
         counter = 1;
         description = "Potion de soin Lvl {0}: restaure {1} PV.";
@@ -31,13 +31,19 @@ public class Heal : Consumable
         //Permet de savoir si le gameobject est bien le joueur
         if (collision.gameObject.tag == "Player")
         {
+            Action(collision.gameObject.GetComponent<Player>());
             //Détruit la potion
             Destroy(gameObject);
         }
     }
-    public override void Action()
+    public void Action(Player p)
     {
         counter -= 1;
-        this.GetComponentInParent<Player>().health.ModifyLoad(value);
+        p.health.ModifyLoad(value);
+    }
+
+    public override void Action()
+    {
+
     }
 }

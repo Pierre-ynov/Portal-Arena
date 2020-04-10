@@ -31,14 +31,20 @@ public class Protection : Consumable
         //Permet de savoir si le gameobject est bien le joueur
         if (collision.gameObject.tag == "Player")
         {
+            Action(collision.gameObject.GetComponent<Player>());
             //Détruit la protection
             Destroy(gameObject);
         }
     }
 
-    public override void Action()
+    public void Action(Player p)
     {
         counter -= 1;
-        this.GetComponentInParent<Player>().armor.ModifyLoad(value);
+        p.armor.ModifyLoad(value);
+    }
+
+    public override void Action()
+    {
+
     }
 }

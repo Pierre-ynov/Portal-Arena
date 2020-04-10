@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : Piece
 {
     public GameObject player;
-    private int countRevive;
+    public int countRevive;
     public Slot<Attack> attack;
     public Slot<Power> power;
     public Slot<Consumable> objet;

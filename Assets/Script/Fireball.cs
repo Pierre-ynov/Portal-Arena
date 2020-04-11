@@ -10,6 +10,10 @@ public class Fireball : MonoBehaviour
     public float Speed;
     public GameObject parent;
     private int damage;
+    public Sprite fireballRight;
+    public Sprite fireballLeft;
+    public Sprite fireballUp;
+    public Sprite fireballDown;
     public Fireball()
     {
         damage = (int)Damage.strong;
@@ -42,19 +46,19 @@ public class Fireball : MonoBehaviour
 
     public void LoadSprite()
     {
-        Sprite newSprite= Resources.Load<Sprite>("Sprite/FireballRight");
+        Sprite newSprite = fireballRight;
         
         if (dirY == 1)
         {
-            newSprite = Resources.Load<Sprite>("Sprite/FireballUp");
+            newSprite = fireballUp;
         }
         else if (dirX == -1)
         {
-            newSprite = Resources.Load<Sprite>("Sprite/FireballLeft");
+            newSprite = fireballLeft;
         }
         else if (dirY == -1)
         {
-            newSprite = Resources.Load<Sprite>("Sprite/FireballDown");
+            newSprite = fireballDown;
         }
 
         this.GetComponent<SpriteRenderer>().sprite = newSprite;

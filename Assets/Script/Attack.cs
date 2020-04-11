@@ -28,11 +28,11 @@ public class Attack : Capacite
         {
             case 1:
                 Fireball fireball = Instantiate(attack, position, Quaternion.identity).GetComponent<Fireball>();
-                fireball.transform.position = new Vector3(position.x +dirx,position.y+diry,position.z);
+                fireball.transform.position = new Vector3(position.x +dirx*1.1f ,position.y+diry*1.1f, position.z);
                 fireball.dirY = diry;
                 fireball.dirX = dirx;
                 fireball.Speed = 5;
-                //fireball.LoadSprite();
+                fireball.LoadSprite();
                 //Debug.Break();
                 break;
         }

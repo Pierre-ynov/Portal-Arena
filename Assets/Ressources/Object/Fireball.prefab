@@ -100,6 +100,10 @@ MonoBehaviour:
   dirY: 0
   Speed: 0
   parent: {fileID: 0}
+  fireballRight: {fileID: 21300000, guid: ae7e9f632c5677645ad5a76f6f4a8c24, type: 3}
+  fireballLeft: {fileID: 21300000, guid: 387e07d03870e2e4e8d8c50c0f523da7, type: 3}
+  fireballUp: {fileID: 21300000, guid: 71dfce411a5bb4043ab84beace4a9fa7, type: 3}
+  fireballDown: {fileID: 21300000, guid: 9ed51392ea71a144bab7beddcafa35a4, type: 3}
 --- !u!61 &3805063549861513375
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.845, y: 0.535}
+  m_Size: {x: 0.7, y: 0.35}
   m_EdgeRadius: 0
 --- !u!50 &2412822870225684770
 Rigidbody2D:

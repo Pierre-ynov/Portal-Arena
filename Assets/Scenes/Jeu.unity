@@ -294,6 +294,16 @@ MonoBehaviour:
   - {x: 24, y: 2, z: 0}
   - {x: 24, y: 11, z: 0}
   - {x: 23, y: 11, z: 0}
+  - {x: 7, y: 2, z: 0}
+  - {x: 8, y: 2, z: 0}
+  - {x: 9, y: 2, z: 0}
+  - {x: 1, y: 13, z: 0}
+  - {x: 19, y: 4, z: 0}
+  - {x: 18, y: 3, z: 0}
+  - {x: 19, y: 1, z: 0}
+  - {x: 20, y: 1, z: 0}
+  - {x: 13, y: 12, z: 0}
+  - {x: 13, y: 11, z: 0}
   objectPositions:
   - {x: 3, y: 3, z: 0}
   - {x: 7, y: 1, z: 0}
@@ -314,8 +324,8 @@ MonoBehaviour:
   - {fileID: 2712287236134612094, guid: 69435c8dd24a44c40b69aa142c5edd8c, type: 3}
   - {fileID: 6706125799882838801, guid: 9a57348115ff6704fb49882d7c98cacb, type: 3}
   playersPositions:
-  - {x: 9, y: 9, z: 0}
-  - {x: 14, y: 9, z: 0}
+  - {x: 3, y: 7, z: 0}
+  - {x: 19, y: 7, z: 0}
 --- !u!114 &879699526
 MonoBehaviour:
   m_ObjectHideFlags: 0

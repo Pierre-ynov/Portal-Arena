@@ -42,21 +42,21 @@ public class Fireball : MonoBehaviour
 
     public void LoadSprite()
     {
-        Sprite newSprite= Resources.Load<Sprite>("Sprite/FireballRight.png");
+        Sprite newSprite= Resources.Load<Sprite>("Sprite/FireballRight");
         
         if (dirY == 1)
         {
-            newSprite = Resources.Load<Sprite>("Sprite/FireballUp.png");
+            newSprite = Resources.Load<Sprite>("Sprite/FireballUp");
         }
         else if (dirX == -1)
         {
-            newSprite = Resources.Load<Sprite>("Sprite/FireballLeft.png");
+            newSprite = Resources.Load<Sprite>("Sprite/FireballLeft");
         }
         else if (dirY == -1)
         {
-            newSprite = Resources.Load<Sprite>("Sprite/FireballDown.png");
+            newSprite = Resources.Load<Sprite>("Sprite/FireballDown");
         }
 
-        GetComponent<SpriteRenderer>().sprite = newSprite;
+        this.GetComponent<SpriteRenderer>().sprite = newSprite;
     }
 }

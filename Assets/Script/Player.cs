@@ -122,14 +122,14 @@ public class Player : Piece
         }
 
         // Permet d'attaquer
-        if (Input.GetKey(baseAttack))
+        // JR 15/11/2020 Modification pour ajouter possibilité d'empécher les inputs clavier durant le préchargement partie
+        if (Input.GetKey(baseAttack) && (GameManager.IsInputEnabled == true))
         {
             if (attack.isReady)
             {
                 attack.slot.Action(dirX, dirY);
                 attack.generateCoolDown();
             }
-            
         }
 
         if (Input.GetKey(quit))

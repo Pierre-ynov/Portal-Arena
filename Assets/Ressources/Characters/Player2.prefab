@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6706125799882838807}
   - component: {fileID: 6706125799882838806}
   - component: {fileID: 6706125799882838811}
+  - component: {fileID: 6185097358338726271}
   m_Layer: 8
   m_Name: Player2
   m_TagString: Player
@@ -98,6 +99,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 6706125799882838801}
+  countRevive: 0
   attackprefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
     type: 3}
   Up: 111
@@ -176,3 +178,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6185097358338726271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706125799882838801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04908af97b03034aa67b8d95c98bc38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

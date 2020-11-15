@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
         boardScript.SetupScene();
     }
 
+    // JR 15/11/2020 Ajout variable pour activer ou désactiver les inputs de entrée clavier
+    public static bool IsInputEnabled = true;
+
     // Update is called once per frame
     void Update()
     {

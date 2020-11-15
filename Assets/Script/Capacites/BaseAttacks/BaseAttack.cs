@@ -8,7 +8,7 @@ public class BaseAttack : Capacite
     public Sprite imgAttack { get; private set; }
     public GameObject attack;
     private GameObject parent;
-    public Attack(int type, GameObject attackGameobject, GameObject playerParent)
+    public BaseAttack(int type, GameObject attackGameobject, GameObject playerParent)
     {
         typeAttack = type;
         attack = attackGameobject;

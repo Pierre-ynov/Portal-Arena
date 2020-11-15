@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : Capacite
+public class BaseAttack : Capacite
 {
     private int typeAttack;
     public Sprite imgAttack { get; private set; }

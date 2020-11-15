@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Power : Capacite
+public class Alteration : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,9 +14,5 @@ public class Power : Capacite
     void Update()
     {
         
-    }
-    public override void Action(int dirx, int diry)
-    {
-     
     }
 }

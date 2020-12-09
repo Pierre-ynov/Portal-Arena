@@ -175,7 +175,7 @@ public class UIBack : MonoBehaviour
             TimeAttackSpecialPlayer2.text = "";
         }
 
-        if (!Player2.specialAttack.EmptySlot())
+        if (!Player2.objet.EmptySlot())
         {
             ObjectPlayer2.sprite = Player2.objet.slot.consumableSprite;
             DuralityObjectsPlayer2.text = Player2.objet.slot.ShowCounterString();

@@ -15,6 +15,11 @@ public class SpecialAttack : Capacite
     {
         
     }
+
+    public SpecialAttack()
+    {
+        imgAttack = null;
+    }
     public override void Action(int dirx, int diry)
     {
      

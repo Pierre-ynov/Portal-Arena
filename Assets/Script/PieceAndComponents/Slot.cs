@@ -24,6 +24,10 @@ public class Slot<T> : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Donne l'information si le slot est vide.
+    /// </summary>
+    /// <returns></returns>
     public bool EmptySlot()
     {
         if (slot as Consumable != null && (slot as Consumable).counter <= 0)

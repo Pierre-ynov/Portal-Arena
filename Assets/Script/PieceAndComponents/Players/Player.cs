@@ -10,6 +10,7 @@ public class Player : Piece
     public Slot<BaseAttack> baseAttack;
     public Slot<SpecialAttack> specialAttack;
     public Slot<Consumable> objet;
+    public Sprite profilePlayerImage;
     private int dirX;
     private int dirY;
     public GameObject attackprefab;

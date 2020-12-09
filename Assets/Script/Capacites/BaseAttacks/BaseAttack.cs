@@ -5,7 +5,6 @@ using UnityEngine;
 public class BaseAttack : Capacite
 {
     private int typeAttack;
-    public Sprite imgAttack { get; private set; }
     public GameObject attack;
     private GameObject parent;
     public BaseAttack(int type, GameObject attackGameobject, GameObject playerParent)

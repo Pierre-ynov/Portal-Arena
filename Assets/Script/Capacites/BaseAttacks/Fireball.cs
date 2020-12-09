@@ -39,6 +39,10 @@ public class Fireball : MonoBehaviour
                     //Ajouter la scène de victoire du parent de la Fireball
                     SceneManager.LoadScene("Fin");
                 }
+                else
+                {
+                    enemy.transform.position = enemy.Respawn();
+                }
         }
         //Détruit l'entité
         Destroy(gameObject);

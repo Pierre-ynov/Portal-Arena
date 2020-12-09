@@ -50,7 +50,7 @@ public class Player : Piece
         health = new Bar(20);
         armor = new Bar(20);
         armor.ModifyLoad(-20);
-        countRevive = 0;
+        countRevive = 1;
         dirX = 1;
         dirY = 0;
         baseAttack = new Slot<BaseAttack>(new BaseAttack(1, attackprefab, player));
@@ -64,6 +64,27 @@ public class Player : Piece
             return false;
         return true;
     }
+
+    // Faire revivre le joueur
+    public Vector3 Respawn()
+    {
+        //TODO: Réaliser le contenu de la fonction nommée Spawn et appelée ici
+        //TODO: Modifier les barres de vie et d'armure par leurs valeurs de départ
+        List<Vector3> playersPositions = new List<Vector3>();
+        playersPositions.Add(new Vector3(5, 9, 0));
+        playersPositions.Add(new Vector3(21, 9, 0));
+        playersPositions.Add(new Vector3(7, 3, 0));
+        playersPositions.Add(new Vector3(7, 12, 0));
+
+        int i = Random.Range(0, 4);
+        Vector3 newSpawnpoint = playersPositions[i];
+        Debug.Log(newSpawnpoint + "spawnPoint Respawn method");
+        return newSpawnpoint;        
+    }
+
+
+
+
 
     // Update is called once per frame
     void Update()

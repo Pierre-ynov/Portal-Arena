@@ -68,13 +68,13 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.08}
+    oldSize: {x: 3.84, y: 2.16}
     newSize: {x: 1.92, y: 1.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -100,15 +100,16 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 6706125799882838801}
   countRevive: 0
+  profilePlayerImage: {fileID: 0}
   attackprefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
     type: 3}
-  Up: 111
-  Down: 108
-  Right: 109
-  Left: 107
+  UpKey: 122
+  DownKey: 115
+  RightKey: 100
+  LeftKey: 113
   animator: {fileID: 6706125799882838806}
-  baseAttack: 112
-  quit: 27
+  baseAttackKey: 101
+  quitKey: 27
 --- !u!95 &6706125799882838806
 Animator:
   serializedVersion: 3

@@ -9,20 +9,20 @@ public class BoardManager : MonoBehaviour
     public int rows = 15;
     public int columns = 25;
 
-    public GameObject[] outerWallTiles;
+    /*public GameObject[] outerWallTiles;
     public GameObject[] floorTiles;
-    public GameObject[] obstacleTiles;
+    public GameObject[] obstacleTiles;*/
     public GameObject[] objectTiles;
     private Transform boardHolder;
-    private List<Vector3> gridPositions = new List<Vector3>();
-    public List<Vector3> obstaclePositions = new List<Vector3>();
+    /*private List<Vector3> gridPositions = new List<Vector3>();
+    public List<Vector3> obstaclePositions = new List<Vector3>();*/
     public List<Vector3> objectPositions = new List<Vector3>();
     public GameObject[] players;
     public List<Vector3> playersPositions = new List<Vector3>();
 
     private Player[] uiplayer;
 
-    void InitialiseList()
+    /*void InitialiseList()
     {
         gridPositions.Clear();
         for (int x = 1; x < columns - 1; x++)
@@ -32,16 +32,16 @@ public class BoardManager : MonoBehaviour
                 gridPositions.Add(new Vector3(x, y, 0f));
             }
         }
-    }
+    }*/
 
     void BoardSetup()
     {
-        boardHolder = new GameObject("Board").transform;
+        //boardHolder = new GameObject("Board").transform;
 
         GameObject instance = null;
         GameObject toInstantiate = null;
 
-        for (int x = -1; x < columns + 1; x++)
+        /*for (int x = -1; x < columns + 1; x++)
         {
             for (int y = -1; y < rows + 1; y++)
             {
@@ -65,7 +65,7 @@ public class BoardManager : MonoBehaviour
             instance = Instantiate(toInstantiate, item, Quaternion.identity) as GameObject;
 
             instance.transform.SetParent(boardHolder);
-        }
+        }*/
 
         // Partie permettant placement des objets
         foreach (Vector3 item in objectPositions)
@@ -75,7 +75,7 @@ public class BoardManager : MonoBehaviour
 
             instance = Instantiate(toInstantiate, item, Quaternion.identity) as GameObject;
 
-            instance.transform.SetParent(boardHolder);
+            //instance.transform.SetParent(boardHolder);
         }
 
         if (players.Length != 0 && playersPositions.Count != 0)
@@ -92,7 +92,7 @@ public class BoardManager : MonoBehaviour
     public void SetupScene()
     {
         BoardSetup();
-        InitialiseList();
+        //InitialiseList();
     }
 
 }

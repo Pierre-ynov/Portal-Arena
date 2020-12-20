@@ -242,31 +242,31 @@ MonoBehaviour:
     types d'armes avec un nombre d'utilisation (armes \xE0 distance, armes de corps
     \xE0 corps, armes \xE0 explosion,...).\r\n > Les gadgets : Diff\xE9rentes gadgets
     offrant une sorte de pouvoir avec une dur\xE9e d'utilisation (boucliers d'invuln\xE9rabilit\xE9,
-    gantelets t\xE9l\xE9portation, paume laser, mines fixe explosives,...). \r\n
-    > Les consommables : Contient diff\xE9rents niveaux de soin ou de protection.\r\nL'objet
+    gantelets t\xE9l\xE9portation, paume laser, mines fixe explosives,...). \r\n>
+    Les consommables : Contient diff\xE9rents niveaux de soin ou de protection.\r\nL'objet
     poss\xE9d\xE9 par le joueur sera mis dans son slot d'objet pr\xE9sent dans l'UI
     du jeu.\r\n\r\nModification du terrain\r\nDes sols de terrain simple peuvent
     \xEAtre modifi\xE9s suite \xE0 un \xE9v\xE9nement ou \xE0 des attaques de cr\xE9atures
     (Boss, minions), en ajoutant un statut ou un obstacle sur le sol. Il redevient
     normal apr\xE8s la fin de la phase.\r\n\r\nObstacle\r\nUn obstacle est une partie
     du d\xE9cor pos\xE9e sur un sol du terrain, \xE9tant indestructible et affranchissable
-    par tous.\r\n\r\nMinions/Boss\r\nIl existe plusieurs types de cr\xE9atures :\r\n
-    > Les minions: Cr\xE9ature faible, invoqu\xE9 par un \xE9v\xE9nement ou un Boss,
+    par tous.\r\n\r\nMinions/Boss\r\nIl existe plusieurs types de cr\xE9atures :\r\n>
+    Les minions: Cr\xE9ature faible, invoqu\xE9 par un \xE9v\xE9nement ou un Boss,
     pouvant avoir diff\xE9rents types d'IA (suivre un pattern d'attaque, attaquer
-    le joueur le plus proche de leur position d'invocation, attaque \xE0 vue\u2026)\r\n
-    > Les Boss: Cr\xE9ature poss\xE9dant une barre de vie, ainsi que des capacit\xE9s
+    le joueur le plus proche de leur position d'invocation, attaque \xE0 vue\u2026)\r\n>
+    Les Boss: Cr\xE9ature poss\xE9dant une barre de vie, ainsi que des capacit\xE9s
     (capacit\xE9s d'attaques, de d\xE9fense, d'invocation, de soutien\u2026)\r\n\nM\xE9canismes
     des boss\r\nLes boss pourront se d\xE9placer soit verticalement et horizontalement,
     soit en t\xE9l\xE9portation d'un point A \xE0 un point B.\r\nIls poss\xE8dent
     diff\xE9rentes attaques :\r\n > Attaque au corps \xE0 corps, avec une port\xE9e
-    de 2 cases maximum.\r\n > Attaque \xE0 distance, avec une port\xE9e variante.\r\n
-    > Attaque ultime, qui doit apporter une grosse difficult\xE9 aux joueurs ( soit
+    de 2 cases maximum.\r\n > Attaque \xE0 distance, avec une port\xE9e variante.\r\n>
+    Attaque ultime, qui doit apporter une grosse difficult\xE9 aux joueurs ( soit
     infliger de gros d\xE9g\xE2ts, soit appliquer un effet sur tous le terrain, soit
     lancer des attaques multiples\u2026) \r\n\r\nAm\xE9lioration du personnage\r\nEn
     mode \"Coop\", les joueurs peuvent apporter des am\xE9liorations sur leurs personnages
     apr\xE8s avoir triompher du Boss.\r\nLes diff\xE9rentes am\xE9liorations sont
-    :\r\n > Augmenter sa capacit\xE9 de vie.\r\n > Augmenter sa capacit\xE9 d'armure.\r\n
-    > Diminuer le temps de rechargement de l'attaque de base ou de l'attaque sp\xE9ciale."
+    :\r\n > Augmenter sa capacit\xE9 de vie.\r\n > Augmenter sa capacit\xE9 d'armure.\r\n>
+    Diminuer le temps de rechargement de l'attaque de base ou de l'attaque sp\xE9ciale."
 --- !u!222 &95296876
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -706,7 +706,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 323.6, y: -194}
-  m_SizeDelta: {x: 94.5, y: 30}
+  m_SizeDelta: {x: 95.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &854739380
 MonoBehaviour:

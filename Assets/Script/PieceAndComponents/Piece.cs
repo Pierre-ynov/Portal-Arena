@@ -49,17 +49,14 @@ public abstract class Piece : MonoBehaviour
             
     }
 
-    // Déplace une pièce vers une position parmi une liste de vecteurs
-    public void Spawn(GameObject pieceToSpawn, List<Vector3> spawnPositions)
+    // Déplace une pièce vers une position aleátoirement parmi une liste de vecteurs
+    public void RandomSpawn(GameObject gameObject, List<Vector3> spawnPositions)
     {
-        if (pieceToSpawn.tag == "Player")
-        {
-            int i = Random.Range(0, spawnPositions.Count);
-            Vector3 newSpawnpoint = spawnPositions[i];
-            pieceToSpawn.transform.position = newSpawnpoint;
+        int i = Random.Range(0, spawnPositions.Count);
+        Vector3 newSpawnpoint = spawnPositions[i];
+        gameObject.transform.position = newSpawnpoint;
 
-            Debug.Log(newSpawnpoint + "spawnPoint Respawn method");
-        }
+        Debug.Log(newSpawnpoint + "spawnPoint Respawn method");
     }
 
 

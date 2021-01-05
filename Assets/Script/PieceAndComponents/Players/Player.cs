@@ -56,32 +56,34 @@ public class Player : Piece
         baseAttack = new Slot<BaseAttack>(new BaseAttack(1, attackprefab, player));
     }
 
-    // Vérifie s'il peut revivre, fait revivre le joueur le cas échéant
-    public bool CanRevive(Player playerToRevive)
+    // Vérifie s'il peut revivre
+    public bool CanRevive()
     {
         countRevive -= 1;
         if (countRevive < 0)
             return false;
         else
         {
-            List<Vector3> playersPositions = new List<Vector3>();
-            playersPositions.Add(new Vector3(5, 9, 0));
-            playersPositions.Add(new Vector3(11, 9, 0));
-            playersPositions.Add(new Vector3(7, 3, 0));
-            playersPositions.Add(new Vector3(7, 12, 0));
-
-            Spawn(playerToRevive.gameObject, playersPositions);
-
-            playerToRevive.health.ModifyLoad(20);
-            playerToRevive.armor.ModifyLoad(-20);
-
+            Respawn(); 
         }
 
         return true;
     }
 
- 
+    // Fait revivre le joueur
+    public void Respawn()
+    {
+        List<Vector3> playersPositions = new List<Vector3>();
+        playersPositions.Add(new Vector3(5, 9, 0));
+        playersPositions.Add(new Vector3(12, 9, 0));
+        playersPositions.Add(new Vector3(7, 3, 0));
+        playersPositions.Add(new Vector3(7, 12, 0));
 
+        RandomSpawn(player.gameObject, playersPositions);
+
+        health.ModifyLoad(20);
+        armor.ModifyLoad(-20);
+    }
 
 
 

@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5503301}
-  m_AnchoredPosition: {x: -42.9, y: -723.19995}
-  m_SizeDelta: {x: 583.6, y: 1727.4}
+  m_AnchoredPosition: {x: -42.9, y: -767}
+  m_SizeDelta: {x: 583.6, y: 1815.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &95296875
 MonoBehaviour:
@@ -265,8 +265,8 @@ MonoBehaviour:
     lancer des attaques multiples\u2026) \r\n\r\nAm\xE9lioration du personnage\r\nEn
     mode \"Coop\", les joueurs peuvent apporter des am\xE9liorations sur leurs personnages
     apr\xE8s avoir triompher du Boss.\r\nLes diff\xE9rentes am\xE9liorations sont
-    :\r\n > Augmenter sa capacit\xE9 de vie.\r\n > Augmenter sa capacit\xE9 d'armure.\r\n>
-    Diminuer le temps de rechargement de l'attaque de base ou de l'attaque sp\xE9ciale."
+    :\r\n > Augmenter sa capacit\xE9 de vie.\r\n > Augmenter sa capacit\xE9 d'armure.\r\n
+    > Diminuer le temps de rechargement de l'attaque de base ou de l'attaque sp\xE9ciale."
 --- !u!222 &95296876
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -356,8 +356,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 975374806}
   m_HandleRect: {fileID: 975374805}
   m_Direction: 2
-  m_Value: 0.9999995
-  m_Size: 0.17924698
+  m_Value: 0.9999008
+  m_Size: 0.17064206
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f29d181e248b62b42a7e7850c1ffe914, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b54d07f0296aec4aa3bacc3a341ee68, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

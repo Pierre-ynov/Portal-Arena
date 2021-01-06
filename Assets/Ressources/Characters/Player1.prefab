@@ -74,7 +74,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.08}
+    oldSize: {x: 3.84, y: 2.16}
     newSize: {x: 1.92, y: 1.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -100,15 +100,16 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 2712287236134612094}
   countRevive: 0
+  profilePlayerImage: {fileID: 0}
   attackprefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
     type: 3}
-  Up: 122
-  Down: 115
-  Right: 100
-  Left: 113
+  UpKey: 122
+  DownKey: 115
+  RightKey: 100
+  LeftKey: 113
   animator: {fileID: 2712287236134612089}
-  baseAttack: 101
-  quit: 27
+  baseAttackKey: 101
+  quitKey: 27
 --- !u!95 &2712287236134612089
 Animator:
   serializedVersion: 3

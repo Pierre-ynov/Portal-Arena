@@ -4,16 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player : Piece
-{ 
+{
     public GameObject player;
     public int countRevive;
-    public Slot<BaseAttack> baseAttack;
-    public Slot<SpecialAttack> specialAttack;
+    public Slot<Capacite> baseAttack;
+    public Slot<Capacite> specialAttack;
     public Slot<Consumable> objet;
     public Sprite profilePlayerImage;
-    private int dirX;
-    private int dirY;
-    public GameObject attackprefab;
+    protected int dirX;
+    protected int dirY;
 
     //Variables gérant les touches de deplacement
 
@@ -38,25 +37,6 @@ public class Player : Piece
     //Permet de quitter
     public KeyCode quitKey = KeyCode.Escape;
 
-    void Start()
-    {
-        //Get a component reference to this object's BoxCollider2D
-        boxCollider = GetComponent<BoxCollider2D>();
-
-        //Get a component reference to this object's Rigidbody2D
-        rb2D = GetComponent<Rigidbody2D>();
-
-        Speed = 2f;
-
-        health = new Bar(20);
-        armor = new Bar(20);
-        armor.ModifyLoad(-20);
-        countRevive = 1;
-        dirX = 1;
-        dirY = 0;
-        baseAttack = new Slot<BaseAttack>(new BaseAttack(1, attackprefab, player));
-    }
-
     // Vérifie s'il peut revivre
     public bool CanRevive()
     {
@@ -65,7 +45,7 @@ public class Player : Piece
             return false;
         else
         {
-            Respawn(); 
+            Respawn();
         }
 
         return true;
@@ -86,13 +66,32 @@ public class Player : Piece
         armor.ModifyLoad(-20);
     }
 
+    /// <summary>
+    /// Effectue les configurations de base du Player
+    /// </summary>
+    protected void ConfigurationPlayer()
+    {
+        //Get a component reference to this object's BoxCollider2D
+        boxCollider = GetComponent<BoxCollider2D>();
 
+        //Get a component reference to this object's Rigidbody2D
+        rb2D = GetComponent<Rigidbody2D>();
+
+        Speed = 2f;
+
+        health = new Bar(20);
+        armor = new Bar(20);
+        armor.ModifyLoad(-20);
+        countRevive = 2;
+        dirX = 1;
+        dirY = 0;
+    }
 
 
     // Update is called once per frame
     void Update()
     {
-  
+
         //Permet de faire avancer le joueur
         if (Input.GetKey(UpKey))
         {

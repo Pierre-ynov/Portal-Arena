@@ -51,7 +51,7 @@ public class Player : Piece
         health = new Bar(20);
         armor = new Bar(20);
         armor.ModifyLoad(-20);
-        countRevive = 0;
+        countRevive = 1;
         dirX = 1;
         dirY = 0;
         baseAttack = new Slot<BaseAttack>(new BaseAttack(1, attackprefab, player));
@@ -63,8 +63,31 @@ public class Player : Piece
         countRevive -= 1;
         if (countRevive < 0)
             return false;
+        else
+        {
+            Respawn(); 
+        }
+
         return true;
     }
+
+    // Fait revivre le joueur
+    public void Respawn()
+    {
+        List<Vector3> playersPositions = new List<Vector3>();
+        playersPositions.Add(new Vector3(5, 9, 0));
+        playersPositions.Add(new Vector3(12, 9, 0));
+        playersPositions.Add(new Vector3(7, 3, 0));
+        playersPositions.Add(new Vector3(7, 12, 0));
+
+        RandomSpawn(player.gameObject, playersPositions);
+
+        health.ModifyLoad(20);
+        armor.ModifyLoad(-20);
+    }
+
+
+
 
     // Update is called once per frame
     void Update()

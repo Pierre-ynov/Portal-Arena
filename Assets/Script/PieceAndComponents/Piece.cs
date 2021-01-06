@@ -49,6 +49,18 @@ public abstract class Piece : MonoBehaviour
             
     }
 
+    // Déplace une pièce vers une position aleátoirement parmi une liste de vecteurs
+    public void RandomSpawn(GameObject gameObject, List<Vector3> spawnPositions)
+    {
+        int i = Random.Range(0, spawnPositions.Count);
+        Vector3 newSpawnpoint = spawnPositions[i];
+        gameObject.transform.position = newSpawnpoint;
+
+        Debug.Log(newSpawnpoint + "spawnPoint Respawn method");
+    }
+
+
+
     /// <summary>
     /// Affecte une blessure au pion
     /// </summary>

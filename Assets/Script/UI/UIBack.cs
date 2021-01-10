@@ -77,7 +77,7 @@ public class UIBack : MonoBehaviour
     {
         LifePlayer1.text =string.Format("L I F E        :   {0}/{1}", Player1.health.load, Player1.health.capacity);
         ArmorPlayer1.text = string.Format("A R M O R  :  {0}/{1}", Player1.armor.load, Player1.armor.capacity);
-        RespawnPointPlayer2.text = "x" + Player2.countRevive;
+        RespawnPointPlayer1.text = "x" + Player1.countRevive;
 
         LifePlayer2.text = string.Format("L I F E        :   {0}/{1}", Player2.health.load, Player2.health.capacity);
         ArmorPlayer2.text = string.Format("A R M O R  :  {0}/{1}", Player2.armor.load, Player2.armor.capacity);

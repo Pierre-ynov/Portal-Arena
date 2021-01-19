@@ -23,20 +23,33 @@ public class Heal : Consumable
                 break;
         }
         description = string.Format(description, level, value);
-
     }
+
+    public Heal(string descriptionObjet, float counterObjet, int valueObjet)
+    {
+        description = descriptionObjet;
+        counter = counterObjet;
+        value = valueObjet;
+    }
+
+
     // Function permettant la recuperation des potions
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Permet de savoir si le gameobject est bien le joueur
         if (collision.gameObject.tag == "Player")
         {
-            Action(collision.gameObject.GetComponent<Player>());
+            //Assigne la potion au slot objet du joueur
+            Player player = collision.gameObject.GetComponent<Player>();
+            player.objet.slot = new Heal(description, counter, value);
+            Debug.Log("Description potion : " + player.objet.slot.description);
+            Debug.Log("Type de slot : " + player.objet.slot.GetType());
+
             //Détruit la potion
             Destroy(gameObject);
         }
     }
-    public void Action(Player p)
+    public override void Action(Player p)
     {
         counter -= 1;
         p.health.ModifyLoad(value);

@@ -24,6 +24,8 @@ public abstract class Consumable : MonoBehaviour
 
     public abstract void Action();
 
+    public abstract void Action(Player p);
+
     // Affiche la durabilité ou le temps de l'objet pour l'UI
     public string ShowCounterString()
     {

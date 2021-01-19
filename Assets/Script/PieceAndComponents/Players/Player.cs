@@ -35,6 +35,9 @@ public class Player : Piece
     //Permet d'attaquer
     public KeyCode baseAttackKey = KeyCode.E;
 
+    //Permet d'utiliser un objet
+    public KeyCode objetKey = KeyCode.A;
+
     //Permet de quitter
     public KeyCode quitKey = KeyCode.Escape;
 
@@ -51,10 +54,12 @@ public class Player : Piece
         health = new Bar(20);
         armor = new Bar(20);
         armor.ModifyLoad(-20);
+        health.ModifyLoad(-10);
         countRevive = 1;
         dirX = 1;
         dirY = 0;
         baseAttack = new Slot<BaseAttack>(new BaseAttack(1, attackprefab, player));
+        objet = new Slot<Consumable>(new EmptyConsumable(null, 0, 0));
     }
 
     // Vérifie s'il peut revivre
@@ -154,6 +159,23 @@ public class Player : Piece
                 baseAttack.slot.Action(dirX, dirY);
                 baseAttack.generateCoolDown();
             }
+        }
+
+        // Permet d'utiliser un objet
+        if (Input.GetKey(objetKey) && (GameManager.IsInputEnabled == true))
+        {
+            if(!(objet.slot is EmptyConsumable))
+            {
+                objet.slot.Action(this);
+
+                if (objet.slot.counter <= 0)
+                {
+                    objet.slot = new EmptyConsumable(null, 0, 0);
+                }
+            }
+
+
+
         }
 
         if (Input.GetKey(quitKey))

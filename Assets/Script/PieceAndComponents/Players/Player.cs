@@ -17,25 +17,25 @@ public class Player : Piece
     //Variables gérant les touches de deplacement
 
     //Monter
-    public KeyCode UpKey = KeyCode.Z;
+    public KeyCode UpKey;
 
     //Descendre
-    public KeyCode DownKey = KeyCode.S;
+    public KeyCode DownKey;
 
     //Aller a droite
-    public KeyCode RightKey = KeyCode.D;
+    public KeyCode RightKey;
 
     //Aller a gauche
-    public KeyCode LeftKey = KeyCode.Q;
+    public KeyCode LeftKey;
 
     //Variable gérant l'animation controller
     public Animator animator;
 
     //Permet d'attaquer
-    public KeyCode baseAttackKey = KeyCode.E;
+    public KeyCode baseAttackKey;
 
     //Permet de quitter
-    public KeyCode quitKey = KeyCode.Escape;
+    public KeyCode quitKey;
 
     // Vérifie s'il peut revivre
     public bool CanRevive()

@@ -29,7 +29,8 @@ public abstract class Consumable : MonoBehaviour
     // Affiche la durabilité ou le temps de l'objet pour l'UI
     public string ShowCounterString()
     {
-        switch (typeValue)
+        //switch (typeValue)
+        switch("Box")
         {
             case "Box":
                 return string.Format("{0}", counter);

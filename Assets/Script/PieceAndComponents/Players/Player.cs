@@ -80,14 +80,14 @@ public class Player : Piece
     public void Respawn()
     {
         List<Vector3> playersPositions = new List<Vector3>();
-        playersPositions.Add(new Vector3(5, 9, 0));
-        playersPositions.Add(new Vector3(12, 9, 0));
-        playersPositions.Add(new Vector3(7, 3, 0));
-        playersPositions.Add(new Vector3(7, 12, 0));
+        playersPositions.Add(new Vector3(-6, 0, 0));
+        playersPositions.Add(new Vector3(-6, 17, 0));
+        playersPositions.Add(new Vector3(30, 0, 0));
+        playersPositions.Add(new Vector3(30, 17, 0));
 
         RandomSpawn(player.gameObject, playersPositions);
 
-        health.ModifyLoad(20);
+        health.ModifyLoad(-10);
         armor.ModifyLoad(-20);
     }
 

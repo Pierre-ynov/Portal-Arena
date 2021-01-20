@@ -63,7 +63,7 @@ public class UIBack : MonoBehaviour
         if (Player1 != null && Player2 != null)
         {
             RefreshInfoPlayers();
-            //RefreshSlotPlayers()
+            RefreshSlotPlayers();
         }
         //RefreshUICycle()
     }
@@ -110,7 +110,7 @@ public class UIBack : MonoBehaviour
             TimeAttackBasePlayer1.text = "";
         }
 
-        if (!Player1.specialAttack.EmptySlot())
+        /*if (!Player1.specialAttack.EmptySlot())
         {
             if (!Player1.objet.isReady)
             {
@@ -125,9 +125,9 @@ public class UIBack : MonoBehaviour
         {
             AttackSpecialPlayer1.sprite = null;
             TimeAttackSpecialPlayer1.text = "";
-        }
+        }*/
 
-        if (!Player1.specialAttack.EmptySlot())
+        if (!Player1.objet.EmptySlot() || !(Player1.objet.slot is EmptyConsumable))
         {
             ObjectPlayer1.sprite = Player1.objet.slot.consumableSprite;
             DuralityObjectsPlayer1.text = Player1.objet.slot.ShowCounterString();
@@ -158,7 +158,7 @@ public class UIBack : MonoBehaviour
             TimeAttackBasePlayer2.text = "";
         }
 
-        if (!Player2.specialAttack.EmptySlot())
+/*        if (!Player2.specialAttack.EmptySlot())
         {
             if (!Player2.objet.isReady)
             {
@@ -173,9 +173,9 @@ public class UIBack : MonoBehaviour
         {
             AttackSpecialPlayer2.sprite = null;
             TimeAttackSpecialPlayer2.text = "";
-        }
+        }*/
 
-        if (!Player2.objet.EmptySlot())
+        if (!Player2.objet.EmptySlot() || !(Player2.objet.slot is EmptyConsumable))
         {
             ObjectPlayer2.sprite = Player2.objet.slot.consumableSprite;
             DuralityObjectsPlayer2.text = Player2.objet.slot.ShowCounterString();

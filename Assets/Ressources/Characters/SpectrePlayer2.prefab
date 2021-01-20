@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 2275537564749980461}
   - component: {fileID: 6706125799882838806}
   m_Layer: 8
-  m_Name: Player2
-  m_TagString: Player
+  m_Name: SpectrePlayer2
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

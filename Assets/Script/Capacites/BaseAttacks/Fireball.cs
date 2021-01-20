@@ -29,7 +29,7 @@ public class Fireball : MonoBehaviour
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
         //Permet de savoir si le gameobject est bien le joueur
-        if (collision.gameObject.tag == "Player" && collision.gameObject != parent)
+        if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") && collision.gameObject != parent)
         {
             Player enemy = collision.gameObject.GetComponent<Player>();
             if (enemy.Hurt(damage))

@@ -39,11 +39,11 @@ public class Heal : Consumable
         //Permet de savoir si le gameobject est bien le joueur
         if (collision.gameObject.tag == "Player")
         {
-            //Assigne la potion au slot objet du joueur
+            //Crée une instance de la potion dans le slot objet du joueur, puis détruit la potion sur l'arène
             Player player = collision.gameObject.GetComponent<Player>();
             player.objet.slot = new Heal(description, counter, value);
-            Debug.Log("Description potion : " + player.objet.slot.description);
-            Debug.Log("Type de slot : " + player.objet.slot.GetType());
+            player.objet.slot.consumableSprite = consumableSprite;
+            player.objet.slot.typeValue = typeValue;
 
             //Détruit la potion
             Destroy(gameObject);
@@ -53,10 +53,5 @@ public class Heal : Consumable
     {
         counter -= 1;
         p.health.ModifyLoad(value);
-    }
-
-    public override void Action()
-    {
-
     }
 }

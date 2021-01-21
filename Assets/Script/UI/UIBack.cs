@@ -52,9 +52,8 @@ public class UIBack : MonoBehaviour
 
     void Start()
     {
-        Player1 = GameObject.Find("Player1(Clone)").GetComponent<Player>() ;
+        Player1 = GameObject.Find("Player1(Clone)").GetComponent<Player>();
         Player2 = GameObject.Find("Player2(Clone)").GetComponent<Player>();
-        //InitializeUIPlayer(Player1.GetComponent<Player>(), Player2.GetComponent<Player>());
     }
 
     void Update()
@@ -68,6 +67,16 @@ public class UIBack : MonoBehaviour
         //RefreshUICycle()
     }
 
+    // Modifie la transparence de l'image passée en argument, une image sans transparence devient complètement transparente et vice-versa
+    Image ChangeImageTransparency(Image image)
+    {
+        Color tempTransparencyColor = image.color;
+        if (tempTransparencyColor.a == 0f) { tempTransparencyColor.a = 1f; }
+        else { tempTransparencyColor.a = 0f; }
+        image.color = tempTransparencyColor;
+        return image;
+    }
+
     /// <summary>
     /// Rafraichisement de l'UI sur les informations des joueurs lors d'une partie
     /// </summary>
@@ -77,7 +86,7 @@ public class UIBack : MonoBehaviour
     {
         LifePlayer1.text =string.Format("L I F E        :   {0}/{1}", Player1.health.load, Player1.health.capacity);
         ArmorPlayer1.text = string.Format("A R M O R  :  {0}/{1}", Player1.armor.load, Player1.armor.capacity);
-        RespawnPointPlayer2.text = "x" + Player2.countRevive;
+        RespawnPointPlayer1.text = "x" + Player1.countRevive;
 
         LifePlayer2.text = string.Format("L I F E        :   {0}/{1}", Player2.health.load, Player2.health.capacity);
         ArmorPlayer2.text = string.Format("A R M O R  :  {0}/{1}", Player2.armor.load, Player2.armor.capacity);
@@ -127,15 +136,26 @@ public class UIBack : MonoBehaviour
             TimeAttackSpecialPlayer1.text = "";
         }*/
 
-        if (!Player1.objet.EmptySlot() || !(Player1.objet.slot is EmptyConsumable))
+        // Change le sprite de l'objet dans le slot ainsi que sa transparence, si le slot n'est pas vide
+        if (!(Player1.objet.slot is EmptyConsumable))
         {
-            ObjectPlayer1.sprite = Player1.objet.slot.consumableSprite;
+            // Verrouille le sprite et sa transparence une fois qu'il est égal au sprite du slot joueur
+            if (ObjectPlayer1.sprite != Player1.objet.slot.consumableSprite)
+            {
+                ObjectPlayer1.sprite = Player1.objet.slot.consumableSprite;
+                ObjectPlayer1 = ChangeImageTransparency(ObjectPlayer1);
+            }
             DuralityObjectsPlayer1.text = Player1.objet.slot.ShowCounterString();
             InfoObjectPlayer1.text = Player1.objet.slot.description;
         }
         else
         {
-            ObjectPlayer1.sprite = null;
+            // Verrouille le sprite et sa transparence une fois qu'il est assigné à null
+            if (ObjectPlayer1.sprite != null)
+            {
+                ObjectPlayer1.sprite = null;
+                ObjectPlayer1 = ChangeImageTransparency(ObjectPlayer1);
+            }
             DuralityObjectsPlayer1.text = "";
             InfoObjectPlayer1.text = "";
         }
@@ -174,16 +194,27 @@ public class UIBack : MonoBehaviour
             AttackSpecialPlayer2.sprite = null;
             TimeAttackSpecialPlayer2.text = "";
         }*/
-
-        if (!Player2.objet.EmptySlot() || !(Player2.objet.slot is EmptyConsumable))
+        
+        // Change le sprite de l'objet dans le slot, ainsi que sa transparence, si le slot n'est pas vide
+        if (!(Player2.objet.slot is EmptyConsumable))
         {
-            ObjectPlayer2.sprite = Player2.objet.slot.consumableSprite;
+            // Verrouille le sprite et sa transparence une fois qu'il est égal au sprite du slot joueur
+            if (ObjectPlayer2.sprite != Player2.objet.slot.consumableSprite)
+            {
+                ObjectPlayer2.sprite = Player2.objet.slot.consumableSprite;
+                ObjectPlayer2 = ChangeImageTransparency(ObjectPlayer2);
+            }
             DuralityObjectsPlayer2.text = Player2.objet.slot.ShowCounterString();
             InfoObjectPlayer2.text = Player2.objet.slot.description;
         }
         else
         {
-            ObjectPlayer2.sprite = null;
+            // Verrouille le sprite et sa transparence une fois qu'il est assigné à null
+            if (ObjectPlayer2.sprite != null)
+            {
+                ObjectPlayer2.sprite = null;
+                ObjectPlayer2 = ChangeImageTransparency(ObjectPlayer2);
+            }
             DuralityObjectsPlayer2.text = "";
             InfoObjectPlayer2.text = "";
         }

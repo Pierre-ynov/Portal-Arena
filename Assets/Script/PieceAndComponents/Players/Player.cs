@@ -49,12 +49,12 @@ public class Player : Piece
         //Get a component reference to this object's Rigidbody2D
         rb2D = GetComponent<Rigidbody2D>();
 
-        Speed = 2f;
+        Speed = 7f;
 
         health = new Bar(20);
         armor = new Bar(20);
+        health.ModifyLoad(0);
         armor.ModifyLoad(-20);
-        health.ModifyLoad(-10);
         countRevive = 1;
         dirX = 1;
         dirY = 0;
@@ -80,19 +80,16 @@ public class Player : Piece
     public void Respawn()
     {
         List<Vector3> playersPositions = new List<Vector3>();
-        playersPositions.Add(new Vector3(-6, 0, 0));
+        playersPositions.Add(new Vector3(-6, -4, 0));
         playersPositions.Add(new Vector3(-6, 17, 0));
-        playersPositions.Add(new Vector3(30, 0, 0));
+        playersPositions.Add(new Vector3(30, -4, 0));
         playersPositions.Add(new Vector3(30, 17, 0));
 
         RandomSpawn(player.gameObject, playersPositions);
 
-        health.ModifyLoad(-10);
+        health.ModifyLoad(0);
         armor.ModifyLoad(-20);
     }
-
-
-
 
     // Update is called once per frame
     void Update()
@@ -161,21 +158,19 @@ public class Player : Piece
             }
         }
 
-        // Permet d'utiliser un objet
+        // Permet d'utiliser un objet après le préchargement partie, si le slot objet n'est pas vide
         if (Input.GetKey(objetKey) && (GameManager.IsInputEnabled == true))
         {
             if(!(objet.slot is EmptyConsumable))
             {
                 objet.slot.Action(this);
 
+                // Vide le slot lorsque l'objet est complètement consommé
                 if (objet.slot.counter <= 0)
                 {
                     objet.slot = new EmptyConsumable(null, 0, 0);
                 }
             }
-
-
-
         }
 
         if (Input.GetKey(quitKey))

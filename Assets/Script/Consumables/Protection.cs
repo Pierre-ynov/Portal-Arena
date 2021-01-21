@@ -38,11 +38,11 @@ public class Protection : Consumable
         //Permet de savoir si le gameobject est bien le joueur
         if (collision.gameObject.tag == "Player")
         {
-            //Assigne la protection au slot objet du joueur
+            //Crée une instance de la protection dans le slot objet du joueur, puis détruit la potion sur l'arène
             Player player = collision.gameObject.GetComponent<Player>();
             player.objet.slot = new Protection(description, counter, value);
-            Debug.Log("Description potion " + player.objet.slot.description);
-            Debug.Log("Type de slot " + player.objet.slot.GetType());
+            player.objet.slot.consumableSprite = consumableSprite;
+            player.objet.slot.typeValue = typeValue;
 
             //Détruit la protection
             Destroy(gameObject);
@@ -53,10 +53,5 @@ public class Protection : Consumable
     {
         counter -= 1;
         p.armor.ModifyLoad(value);
-    }
-
-    public override void Action()
-    {
-
     }
 }

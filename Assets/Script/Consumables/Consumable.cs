@@ -22,15 +22,12 @@ public abstract class Consumable : MonoBehaviour
     // niveau du consommable
     public int level;
 
-    public abstract void Action();
-
     public abstract void Action(Player p);
 
     // Affiche la durabilité ou le temps de l'objet pour l'UI
     public string ShowCounterString()
     {
-        //switch (typeValue)
-        switch("Box")
+        switch (typeValue)
         {
             case "Box":
                 return string.Format("{0}", counter);

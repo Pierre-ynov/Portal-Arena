@@ -18,11 +18,6 @@ public class EmptyConsumable : Consumable
         value = valueObjet;
     }
 
-    public override void Action()
-    {
-
-    }
-
     public override void Action(Player p)
     {
 

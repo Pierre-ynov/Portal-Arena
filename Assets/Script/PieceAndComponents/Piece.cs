@@ -55,8 +55,6 @@ public abstract class Piece : MonoBehaviour
         int i = Random.Range(0, spawnPositions.Count);
         Vector3 newSpawnpoint = spawnPositions[i];
         gameObject.transform.position = newSpawnpoint;
-
-        Debug.Log(newSpawnpoint + "spawnPoint Respawn method");
     }
 
 

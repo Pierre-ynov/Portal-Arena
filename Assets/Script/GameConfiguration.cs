@@ -61,7 +61,7 @@ namespace Assets.Script.Configuration
 
         //Quitter le jeu
         public KeyCode QuitKey;
-        public void Start()
+        void Awake()
         {
             Player1_DownKey = KeyCode.S;
             Player1_LeftKey = KeyCode.Q;

@@ -52,8 +52,8 @@ public class UIBack : MonoBehaviour
 
     void Start()
     {
-        Player1 = GameObject.Find("Player1(Clone)").GetComponent<Player>() ;
-        Player2 = GameObject.Find("Player2(Clone)").GetComponent<Player>();
+        Player1 = GameObject.FindWithTag("Player1").GetComponent<Player>();
+        Player2 = GameObject.FindWithTag("Player2").GetComponent<Player>();
         //InitializeUIPlayer(Player1.GetComponent<Player>(), Player2.GetComponent<Player>());
     }
 

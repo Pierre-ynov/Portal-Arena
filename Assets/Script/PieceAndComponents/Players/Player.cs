@@ -41,9 +41,6 @@ public class Player : Piece
 
     //Permet d'attaquer
     public KeyCode? baseAttackKey;
-
-    //Permet de quitter
-    public KeyCode quitKey;
     #endregion
     #endregion
 
@@ -112,7 +109,6 @@ public class Player : Piece
         LeftKey = conf.GetKeyCodePlayerAction(gameObject.tag, "Left");
         RightKey = conf.GetKeyCodePlayerAction(gameObject.tag, "Right");
         baseAttackKey = conf.GetKeyCodePlayerAction(gameObject.tag, "AttackBase");
-        quitKey = conf.QuitKey;
     }
 
     #endregion
@@ -183,12 +179,6 @@ public class Player : Piece
                 baseAttack.generateCoolDown();
             }
         }
-
-        if (Input.GetKey(quitKey))
-        {
-            Application.Quit();
-        }
-
     }
 
 }

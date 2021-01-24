@@ -44,6 +44,7 @@ public class Player : Piece
     #endregion
     #endregion
 
+
     // Vérifie s'il peut revivre
     public bool CanRevive()
     {

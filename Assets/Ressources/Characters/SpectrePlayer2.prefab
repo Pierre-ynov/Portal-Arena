@@ -161,14 +161,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 6706125799882838801}
-  countRevive: 0
+  countRevive: 2
   profilePlayerImage: {fileID: 0}
-  UpKey: 122
-  DownKey: 115
-  RightKey: 100
-  LeftKey: 113
+  UpKey: 111
+  DownKey: 108
+  RightKey: 109
+  LeftKey: 107
   animator: {fileID: 6706125799882838806}
-  baseAttackKey: 101
+  baseAttackKey: 112
   quitKey: 27
   attackBasePrefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
     type: 3}

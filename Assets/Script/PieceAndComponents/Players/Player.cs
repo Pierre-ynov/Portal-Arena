@@ -177,7 +177,7 @@ public class Player : Piece
             if (baseAttack.isReady)
             {
                 baseAttack.slot.Action(dirX, dirY);
-                baseAttack.generateCoolDown();
+                baseAttack.GenerateCoolDown();
             }
         }
     }

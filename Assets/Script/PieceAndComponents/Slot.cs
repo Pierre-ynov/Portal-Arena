@@ -2,20 +2,53 @@
 
 public class Slot<T> : MonoBehaviour
 {
-    public T slot;
-    public bool isReady;
-    public float cooldown { get; private set; }
-    private bool isEmpty;
 
+    /// <summary>
+    /// Contient la classe fournit lors de l'appel du constructeur Slot<T>()
+    /// </summary>
+    public T slot
+    {
+        get
+        {
+            return slot;
+        }
+        set{
+            slot = value;
+            cooldown = Time.deltaTime;
+            isEmpty = slot as Consumable != null && (slot as Consumable).counter <= 0;
+            isReady = !isEmpty;
+        }
+
+    }
+    /// <summary>
+    /// Définit si le slot est prêt à être utilisé
+    /// </summary>
+    public bool isReady;
+
+    /// <summary>
+    /// Définit le cooldown du slot
+    /// </summary>
+    public float cooldown { get; private set; }
+
+    /// <summary>
+    /// Définit si le slot est vide
+    /// </summary>
+    public bool isEmpty { get; private set; }
+
+    /// <summary>
+    /// Constructeur
+    /// </summary>
+    /// <param name="s"></param>
     public Slot(T s)
     {
-        isReady=true;
         slot = s;
-        cooldown = Time.deltaTime;
-        isEmpty = false;
     }
 
-    public void generateCoolDown()
+
+    /// <summary>
+    /// Génère un temps d'attente
+    /// </summary>
+    public void GenerateCoolDown()
     {
         if(slot as Capacite != null)
         {

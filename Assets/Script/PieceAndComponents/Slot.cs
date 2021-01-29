@@ -10,16 +10,19 @@ public class Slot<T> : MonoBehaviour
     {
         get
         {
-            return slot;
+            return _slot;
         }
         set{
-            slot = value;
+            _slot = value;
             cooldown = Time.deltaTime;
             isEmpty = slot as Consumable != null && (slot as Consumable).counter <= 0;
             isReady = !isEmpty;
         }
 
     }
+
+    private T _slot;
+
     /// <summary>
     /// Définit si le slot est prêt à être utilisé
     /// </summary>

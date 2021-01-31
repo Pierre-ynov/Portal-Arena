@@ -67,8 +67,13 @@ public class UIBack : MonoBehaviour
         //RefreshUICycle()
     }
 
-    // Modifie la transparence de l'image passée en argument, une image sans transparence devient complètement transparente et vice-versa
-    Image ChangeImageTransparency(Image image)
+    /// <summary>
+    /// Modifie la transparence de l'image passée en argument
+    /// une image sans transparence devient complètement transparente et vice-versa
+    /// </summary>
+    /// <param name="image"></param>
+    /// <returns></returns>
+    private Image ChangeImageTransparency(Image image)
     {
         Color tempTransparencyColor = image.color;
         if (tempTransparencyColor.a == 0f) { tempTransparencyColor.a = 1f; }

@@ -185,7 +185,7 @@ public class Player : Piece
         }
 
         // Permet d'utiliser un objet après le préchargement partie, si le slot objet n'est pas vide
-        if (Input.GetKey(objetKey.Value) && (GameManager.IsInputEnabled == true))
+        if (Input.GetKeyDown(objetKey.Value) && (GameManager.IsInputEnabled == true))
         {
             if(!(objet.slot is EmptyConsumable))
             {

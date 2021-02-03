@@ -41,9 +41,11 @@ public class Player : Piece
 
     //Permet d'attaquer
     public KeyCode? baseAttackKey;
-    #endregion
-    #endregion
 
+    //Permet d'utiliser un objet
+    public KeyCode? objetKey;
+    #endregion
+    #endregion
 
     // Vérifie s'il peut revivre
     public bool CanRevive()
@@ -63,14 +65,14 @@ public class Player : Piece
     public void Respawn()
     {
         List<Vector3> playersPositions = new List<Vector3>();
-        playersPositions.Add(new Vector3(5, 9, 0));
-        playersPositions.Add(new Vector3(12, 9, 0));
-        playersPositions.Add(new Vector3(7, 3, 0));
-        playersPositions.Add(new Vector3(7, 12, 0));
+        playersPositions.Add(new Vector3(-6, -4, 0));
+        playersPositions.Add(new Vector3(-6, 17, 0));
+        playersPositions.Add(new Vector3(30, -4, 0));
+        playersPositions.Add(new Vector3(30, 17, 0));
 
         RandomSpawn(player.gameObject, playersPositions);
 
-        health.ModifyLoad(20);
+        health.ModifyLoad(0);
         armor.ModifyLoad(-20);
     }
 
@@ -110,6 +112,7 @@ public class Player : Piece
         LeftKey = conf.GetKeyCodePlayerAction(gameObject.tag, "Left");
         RightKey = conf.GetKeyCodePlayerAction(gameObject.tag, "Right");
         baseAttackKey = conf.GetKeyCodePlayerAction(gameObject.tag, "AttackBase");
+        objetKey = conf.GetKeyCodePlayerAction(gameObject.tag, "UseObject");
     }
 
     #endregion
@@ -178,6 +181,21 @@ public class Player : Piece
             {
                 baseAttack.slot.Action(dirX, dirY);
                 baseAttack.GenerateCoolDown();
+            }
+        }
+
+        // Permet d'utiliser un objet après le préchargement partie, si le slot objet n'est pas vide
+        if (Input.GetKeyDown(objetKey.Value) && (GameManager.IsInputEnabled == true))
+        {
+            if(!(objet.slot is EmptyConsumable))
+            {
+                objet.slot.Action(this);
+
+                // Vide le slot lorsque l'objet est complètement consommé
+                if (objet.slot.counter <= 0)
+                {
+                    objet.slot = new EmptyConsumable(null, 0, 0);
+                }
             }
         }
     }

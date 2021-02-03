@@ -12,5 +12,6 @@ public class SpectrePlayer : Player
     {
         ConfigurationPlayer();
         baseAttack = new Slot<Capacite>(new FireballAttack(attackBasePrefab, player));
+        objet = new Slot<Consumable>(new EmptyConsumable(null, 0, 0));
     }
 }

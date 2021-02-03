@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Potion
   - Protection
+  - Player1
+  - Player2
+  - configuration
   layers:
   - Default
   - TransparentFX

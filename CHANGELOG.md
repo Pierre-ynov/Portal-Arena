@@ -4,6 +4,34 @@ Toutes les modifications notables apportées à ce projet seront documentées da
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 et ce projet s'inscrit dans [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2] - 2021-01-06
+### Ajouté
+- Map :
+  - Ajout de plusieurs zone de respawn pour les joueurs
+- Scene
+  - Ajout d'un background pour la scene de jeu
+  - Ajout de la scene de codex
+  - Ajout de la scene de configuration
+- UI (scene de jeu) :
+  - Ajout d'un background pour les joueurs
+- Joueurs :
+  - Ajout de la fonctionnalité de respawn
+
+### Modification
+- UI :
+  - Réorganisation des composants
+- Map :
+  - Refonte graphique de la map :
+    - Réagencement de la map
+    - Nouvelle structure pour le terrain
+    - Nouveau design des obstacles
+    - Nouveau design avec changement de la taille des limites du terrain
+    - Nouveau design des terrains
+
+### Correction de bug
+- UI :
+  - Correction de la synchronisation entre UI back-end et UI front-end
+
 ## [0.1] - 2020-11-25
 ### Ajouté
 - Personnages :
@@ -33,7 +61,7 @@ et ce projet s'inscrit dans [Semantic Versioning](https://semver.org/spec/v2.0.0
 - UI :
   - Affichage du nom du personnage
   - Affichage de la barre de vie
-  - Modelisation et affichage des points de réaparrition
+  - Modelisation et affichage des points de réapparition
   - Affichage d'un chronometre (non fonctionnel)
   - Affichage de la barre d'armure
   - Affichage d'indication :

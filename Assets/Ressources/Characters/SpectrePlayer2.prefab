@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 6706125799882838810}
   - component: {fileID: 6706125799882838805}
   - component: {fileID: 6706125799882838804}
-  - component: {fileID: 6706125799882838807}
-  - component: {fileID: 6706125799882838806}
   - component: {fileID: 6706125799882838811}
   - component: {fileID: 6185097358338726271}
+  - component: {fileID: 2275537564749980461}
+  - component: {fileID: 6706125799882838806}
   m_Layer: 8
-  m_Name: Player2
-  m_TagString: Player
+  m_Name: SpectrePlayer2
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,52 +83,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6706125799882838807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6706125799882838801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6a57d14c38f1cd49a55e0e7816a151d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockingLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  player: {fileID: 6706125799882838801}
-  countRevive: 0
-  profilePlayerImage: {fileID: 0}
-  attackprefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
-    type: 3}
-  UpKey: 122
-  DownKey: 115
-  RightKey: 100
-  LeftKey: 113
-  animator: {fileID: 6706125799882838806}
-  baseAttackKey: 101
-  quitKey: 27
---- !u!95 &6706125799882838806
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6706125799882838801}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 83579e6165d38ed4cad977a6c69e91ec, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &6706125799882838811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -191,3 +145,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04908af97b03034aa67b8d95c98bc38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2275537564749980461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706125799882838801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544c8b8cb7e2d314081004be79108af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockingLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  player: {fileID: 6706125799882838801}
+  countRevive: 2
+  profilePlayerImage: {fileID: 0}
+  UpKey: 111
+  DownKey: 108
+  RightKey: 109
+  LeftKey: 107
+  animator: {fileID: 6706125799882838806}
+  baseAttackKey: 112
+  quitKey: 27
+  attackBasePrefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
+    type: 3}
+--- !u!95 &6706125799882838806
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706125799882838801}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83579e6165d38ed4cad977a6c69e91ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

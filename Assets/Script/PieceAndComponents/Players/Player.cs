@@ -2,60 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.Script.Configuration;
 
 public class Player : Piece
-{ 
+{
+    #region Variables
+    /// <summary>
+    /// GameObject du joueur
+    /// </summary>
     public GameObject player;
+
     public int countRevive;
-    public Slot<BaseAttack> baseAttack;
-    public Slot<SpecialAttack> specialAttack;
+    public Slot<Capacite> baseAttack;
+    public Slot<Capacite> specialAttack;
     public Slot<Consumable> objet;
     public Sprite profilePlayerImage;
-    private int dirX;
-    private int dirY;
-    public GameObject attackprefab;
+    protected int dirX;
+    protected int dirY;
 
-    //Variables gérant les touches de deplacement
-
-    //Monter
-    public KeyCode UpKey = KeyCode.Z;
-
-    //Descendre
-    public KeyCode DownKey = KeyCode.S;
-
-    //Aller a droite
-    public KeyCode RightKey = KeyCode.D;
-
-    //Aller a gauche
-    public KeyCode LeftKey = KeyCode.Q;
 
     //Variable gérant l'animation controller
     public Animator animator;
 
+    #region Player keys
+    //Variables gérant les touches de deplacement
+
+    //Monter
+    public KeyCode? UpKey;
+
+    //Descendre
+    public KeyCode? DownKey;
+
+    //Aller a droite
+    public KeyCode? RightKey;
+
+    //Aller a gauche
+    public KeyCode? LeftKey;
+
     //Permet d'attaquer
-    public KeyCode baseAttackKey = KeyCode.E;
+    public KeyCode? baseAttackKey;
 
-    //Permet de quitter
-    public KeyCode quitKey = KeyCode.Escape;
-
-    void Start()
-    {
-        //Get a component reference to this object's BoxCollider2D
-        boxCollider = GetComponent<BoxCollider2D>();
-
-        //Get a component reference to this object's Rigidbody2D
-        rb2D = GetComponent<Rigidbody2D>();
-
-        Speed = 2f;
-
-        health = new Bar(20);
-        armor = new Bar(20);
-        armor.ModifyLoad(-20);
-        countRevive = 0;
-        dirX = 1;
-        dirY = 0;
-        baseAttack = new Slot<BaseAttack>(new BaseAttack(1, attackprefab, player));
-    }
+    //Permet d'utiliser un objet
+    public KeyCode? objetKey;
+    #endregion
+    #endregion
 
     // Vérifie s'il peut revivre
     public bool CanRevive()
@@ -63,15 +53,76 @@ public class Player : Piece
         countRevive -= 1;
         if (countRevive < 0)
             return false;
+        else
+        {
+            Respawn();
+        }
+
         return true;
     }
+
+    // Fait revivre le joueur
+    public void Respawn()
+    {
+        List<Vector3> playersPositions = new List<Vector3>();
+        playersPositions.Add(new Vector3(-6, -4, 0));
+        playersPositions.Add(new Vector3(-6, 17, 0));
+        playersPositions.Add(new Vector3(30, -4, 0));
+        playersPositions.Add(new Vector3(30, 17, 0));
+
+        RandomSpawn(player.gameObject, playersPositions);
+
+        health.ModifyLoad(0);
+        armor.ModifyLoad(-20);
+    }
+
+    #region Configuration
+
+    /// <summary>
+    /// Effectue les configurations de base du Player
+    /// </summary>
+    protected void ConfigurationPlayer()
+    {
+        //Get a component reference to this object's BoxCollider2D
+        boxCollider = GetComponent<BoxCollider2D>();
+
+        //Get a component reference to this object's Rigidbody2D
+        rb2D = GetComponent<Rigidbody2D>();
+
+        Speed = 3.5f;
+
+        health = new Bar(20);
+        armor = new Bar(20);
+        armor.ModifyLoad(-20);
+        countRevive = 2;
+        dirX = 1;
+        dirY = 0;
+
+        KeyConfiguration();
+    }
+
+    /// <summary>
+    /// Configure les touches du personnage
+    /// </summary>
+    protected void KeyConfiguration()
+    {
+        GameConfiguration conf = GameObject.FindWithTag("configuration").GetComponent<GameConfiguration>();
+        UpKey = conf.GetKeyCodePlayerAction(gameObject.tag, "Up");
+        DownKey = conf.GetKeyCodePlayerAction(gameObject.tag, "Down");
+        LeftKey = conf.GetKeyCodePlayerAction(gameObject.tag, "Left");
+        RightKey = conf.GetKeyCodePlayerAction(gameObject.tag, "Right");
+        baseAttackKey = conf.GetKeyCodePlayerAction(gameObject.tag, "AttackBase");
+        objetKey = conf.GetKeyCodePlayerAction(gameObject.tag, "UseObject");
+    }
+
+    #endregion
 
     // Update is called once per frame
     void Update()
     {
-  
+
         //Permet de faire avancer le joueur
-        if (Input.GetKey(UpKey))
+        if (UpKey!=null && Input.GetKey(UpKey.Value))
         {
             dirX = 0;
             dirY = 1;
@@ -84,7 +135,7 @@ public class Player : Piece
         }
 
         //Permet de faire reculer le joueur
-        if (Input.GetKey(DownKey))
+        if ( DownKey!= null && Input.GetKey(DownKey.Value))
         {
             dirX = 0;
             dirY = -1;
@@ -97,7 +148,7 @@ public class Player : Piece
         }
 
         // Permet de faire aller a gauche le joueur
-        if (Input.GetKey(LeftKey))
+        if (LeftKey != null && Input.GetKey(LeftKey.Value))
         {
             dirX = -1;
             dirY = 0;
@@ -110,7 +161,7 @@ public class Player : Piece
         }
 
         // Permet de faire aller a droite le joueur
-        if (Input.GetKey(RightKey))
+        if (RightKey!= null && Input.GetKey(RightKey.Value))
         {
             dirX = 1;
             dirY = 0;
@@ -124,20 +175,29 @@ public class Player : Piece
 
         // Permet d'attaquer
         // JR 15/11/2020 Modification pour ajouter possibilité d'empécher les inputs clavier durant le préchargement partie
-        if (Input.GetKey(baseAttackKey) && (GameManager.IsInputEnabled == true))
+        if (baseAttackKey!= null && Input.GetKey(baseAttackKey.Value) && (GameManager.IsInputEnabled == true))
         {
             if (baseAttack.isReady)
             {
                 baseAttack.slot.Action(dirX, dirY);
-                baseAttack.generateCoolDown();
+                baseAttack.GenerateCoolDown();
             }
         }
 
-        if (Input.GetKey(quitKey))
+        // Permet d'utiliser un objet après le préchargement partie, si le slot objet n'est pas vide
+        if (Input.GetKeyDown(objetKey.Value) && (GameManager.IsInputEnabled == true))
         {
-            Application.Quit();
-        }
+            if(!(objet.slot is EmptyConsumable))
+            {
+                objet.slot.Action(this);
 
+                // Vide le slot lorsque l'objet est complètement consommé
+                if (objet.slot.counter <= 0)
+                {
+                    objet.slot = new EmptyConsumable(null, 0, 0);
+                }
+            }
+        }
     }
 
 }

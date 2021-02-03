@@ -172,7 +172,7 @@ public class Player : Piece
 
         // Permet d'attaquer
         // JR 15/11/2020 Modification pour ajouter possibilité d'empécher les inputs clavier durant le préchargement partie
-        if (baseAttackKey!= null && Input.GetKey(baseAttackKey.Value) && (GameManager.IsInputEnabled == true))
+        if (baseAttackKey!= null && Input.GetKeyDown(baseAttackKey.Value) && (GameManager.IsInputEnabled == true))
         {
             if (baseAttack.isReady)
             {

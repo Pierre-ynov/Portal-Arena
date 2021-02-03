@@ -14,6 +14,16 @@ public class Begin : MonoBehaviour
             SceneManager.LoadScene("Jeu");
         }
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Configuration");
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            SceneManager.LoadScene("Codex");
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();

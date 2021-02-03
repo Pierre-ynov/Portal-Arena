@@ -52,8 +52,9 @@ public class UIBack : MonoBehaviour
 
     void Start()
     {
-        Player1 = GameObject.Find("Player1(Clone)").GetComponent<Player>();
-        Player2 = GameObject.Find("Player2(Clone)").GetComponent<Player>();
+        Player1 = GameObject.FindWithTag("Player1").GetComponent<Player>();
+        Player2 = GameObject.FindWithTag("Player2").GetComponent<Player>();
+        //InitializeUIPlayer(Player1.GetComponent<Player>(), Player2.GetComponent<Player>());
     }
 
     void Update()
@@ -109,7 +110,7 @@ public class UIBack : MonoBehaviour
         //Player 1
         if (!Player1.baseAttack.EmptySlot())
         {
-            if (!Player1.objet.isReady)
+            if (!Player1.baseAttack.isReady)
             {
                 TimeAttackBasePlayer1.text = Player1.baseAttack.cooldown + "s";
             }
@@ -147,8 +148,11 @@ public class UIBack : MonoBehaviour
             // Verrouille le sprite et sa transparence une fois qu'il est égal au sprite du slot joueur
             if (ObjectPlayer1.sprite != Player1.objet.slot.consumableSprite)
             {
+                if (ObjectPlayer1.sprite == null)
+                {
+                    ObjectPlayer1 = ChangeImageTransparency(ObjectPlayer1);
+                }
                 ObjectPlayer1.sprite = Player1.objet.slot.consumableSprite;
-                ObjectPlayer1 = ChangeImageTransparency(ObjectPlayer1);
             }
             DuralityObjectsPlayer1.text = Player1.objet.slot.ShowCounterString();
             InfoObjectPlayer1.text = Player1.objet.slot.description;
@@ -168,7 +172,7 @@ public class UIBack : MonoBehaviour
         //Player2
         if (!Player2.baseAttack.EmptySlot())
         {
-            if (!Player2.objet.isReady)
+            if (!Player2.baseAttack.isReady)
             {
                 TimeAttackBasePlayer2.text = Player2.baseAttack.cooldown + "s";
             }
@@ -206,8 +210,11 @@ public class UIBack : MonoBehaviour
             // Verrouille le sprite et sa transparence une fois qu'il est égal au sprite du slot joueur
             if (ObjectPlayer2.sprite != Player2.objet.slot.consumableSprite)
             {
+                if (ObjectPlayer2.sprite == null)
+                {
+                    ObjectPlayer2 = ChangeImageTransparency(ObjectPlayer2);
+                }
                 ObjectPlayer2.sprite = Player2.objet.slot.consumableSprite;
-                ObjectPlayer2 = ChangeImageTransparency(ObjectPlayer2);
             }
             DuralityObjectsPlayer2.text = Player2.objet.slot.ShowCounterString();
             InfoObjectPlayer2.text = Player2.objet.slot.description;

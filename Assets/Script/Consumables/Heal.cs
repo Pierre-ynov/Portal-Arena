@@ -37,7 +37,7 @@ public class Heal : Consumable
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Permet de savoir si le gameobject est bien le joueur
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2")
         {
             //Crée une instance de la potion dans le slot objet du joueur, puis détruit la potion sur l'arène
             Player player = collision.gameObject.GetComponent<Player>();

@@ -36,7 +36,7 @@ public class Protection : Consumable
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
         //Permet de savoir si le gameobject est bien le joueur
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2")
         {
             //Crée une instance de la protection dans le slot objet du joueur, puis détruit la potion sur l'arène
             Player player = collision.gameObject.GetComponent<Player>();

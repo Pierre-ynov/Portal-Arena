@@ -33,12 +33,14 @@ public class Fireball : MonoBehaviour
         {
             Player enemy = collision.gameObject.GetComponent<Player>();
             if (enemy.Hurt(damage))
+            {
                 if (!enemy.CanRevive())
                 {
                     Destroy(collision.gameObject);
                     //Ajouter la scène de victoire du parent de la Fireball
                     SceneManager.LoadScene("Fin");
                 }
+            }
         }
         //Détruit l'entité
         Destroy(gameObject);

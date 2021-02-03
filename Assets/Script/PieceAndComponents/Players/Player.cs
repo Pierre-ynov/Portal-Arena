@@ -44,9 +44,6 @@ public class Player : Piece
 
     //Permet d'utiliser un objet
     public KeyCode? objetKey;
-
-    //Permet de quitter
-    public KeyCode quitKey = KeyCode.Escape;
     #endregion
     #endregion
 
@@ -200,11 +197,6 @@ public class Player : Piece
                     objet.slot = new EmptyConsumable(null, 0, 0);
                 }
             }
-        }
-
-        if (Input.GetKey(quitKey))
-        {
-            Application.Quit();
         }
     }
 

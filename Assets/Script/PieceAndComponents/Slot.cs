@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Slot<T> : MonoBehaviour
 {
@@ -47,6 +49,11 @@ public class Slot<T> : MonoBehaviour
         slot = s;
     }
 
+    public IEnumerator CoolDown()
+    {
+        yield return new WaitForSeconds((slot as Capacite).timeCooldown);
+        isReady = true;
+    }
 
     /// <summary>
     /// Génère un temps d'attente
@@ -55,8 +62,8 @@ public class Slot<T> : MonoBehaviour
     {
         if(slot as Capacite != null)
         {
-            cooldown = Time.deltaTime + (slot as Capacite).timeCooldown;
             isReady = false;
+            StartCoroutine(CoolDown());
         }
     }
 

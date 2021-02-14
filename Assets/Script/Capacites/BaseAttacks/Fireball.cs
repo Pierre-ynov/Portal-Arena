@@ -41,15 +41,18 @@ public class Fireball : MonoBehaviour
                     SceneManager.LoadScene("Fin");
                 }
             }
+            //Détruit l'entité
+            Destroy(gameObject);
         }
-        //Détruit l'entité
-        Destroy(gameObject);
+        else if (collision.gameObject.tag == "Obstacle")
+            //Détruit l'entité
+            Destroy(gameObject);
     }
 
     public void LoadSprite()
     {
         Sprite newSprite = fireballRight;
-        
+
         if (dirY == 1)
         {
             newSprite = fireballUp;

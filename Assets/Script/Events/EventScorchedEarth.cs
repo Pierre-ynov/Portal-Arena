@@ -7,41 +7,38 @@ public class EventScorchedEarth : EventModificationMap
 {
 
     public Tilemap map;
-    public Tilemap mapDestroy;
-    private float timeCooldown = 50f;
+    public Tilemap[] mapDestroy;
+    private float timeCooldown;
     private bool isFinish = false;
+    private int n;
+    private GameObject g;
 
     void Start()
     {
-        map.gameObject.SetActive(true);
-        mapDestroy.gameObject.SetActive(false);
+        timeCooldown = 30f;
+        for (int x = 0; x < mapDestroy.Length; x++)
+        {
+            mapDestroy[x].gameObject.SetActive(false);
+        } 
     }
 
-    public IEnumerator CoolDown()
+    public IEnumerator CoolDown(GameObject g)
     {
-        map.gameObject.SetActive(false);
-        mapDestroy.gameObject.SetActive(true);
-        yield return new WaitForSecondsRealtime((timeCooldown));
+        g.SetActive(true);
+        yield return new WaitForSeconds(timeCooldown);
         isFinish = true;
     }
 
-    void StartCoolDown()
+    public override void LauchEvent()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        n = Random.Range(1, mapDestroy.Length);
+        g = mapDestroy[n].gameObject;
+        StartCoroutine(CoolDown(g));
+
+        if (isFinish == true)
         {
-            StartCoroutine(CoolDown());
-            if (isFinish == true)
-            {
-                map.gameObject.SetActive(true);
-                mapDestroy.gameObject.SetActive(false);
-            } 
+            g.SetActive(false);
+            isFinish = false;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        StartCoolDown();
-    }
-
 }

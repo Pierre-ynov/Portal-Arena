@@ -90,12 +90,12 @@ public class UIBack : MonoBehaviour
     /// <param name="Player2"></param>
     public void RefreshInfoPlayers()
     {
-        LifePlayer1.text =string.Format("L I F E        :   {0}/{1}", Player1.health.load, Player1.health.capacity);
-        ArmorPlayer1.text = string.Format("A R M O R  :  {0}/{1}", Player1.armor.load, Player1.armor.capacity);
+        LifePlayer1.text =string.Format("PV  :  {0}/{1}", Player1.health.load, Player1.health.capacity);
+        ArmorPlayer1.text = string.Format("PA  :  {0}/{1}", Player1.armor.load, Player1.armor.capacity);
         RespawnPointPlayer1.text = "x" + Player1.countRevive;
 
-        LifePlayer2.text = string.Format("L I F E        :   {0}/{1}", Player2.health.load, Player2.health.capacity);
-        ArmorPlayer2.text = string.Format("A R M O R  :  {0}/{1}", Player2.armor.load, Player2.armor.capacity);
+        LifePlayer2.text = string.Format("PV  :  {0}/{1}", Player2.health.load, Player2.health.capacity);
+        ArmorPlayer2.text = string.Format("PA  :  {0}/{1}", Player2.armor.load, Player2.armor.capacity);
         RespawnPointPlayer2.text = "x" + Player2.countRevive;
     }
 
@@ -125,9 +125,9 @@ public class UIBack : MonoBehaviour
             TimeAttackBasePlayer1.text = "";
         }
 
-        /*if (!Player1.specialAttack.EmptySlot())
+        if (!Player1.specialAttack.EmptySlot())
         {
-            if (!Player1.objet.isReady)
+            if (!Player1.specialAttack.isReady)
             {
                 TimeAttackSpecialPlayer1.text = Player1.specialAttack.cooldown + "s";
             }
@@ -140,7 +140,7 @@ public class UIBack : MonoBehaviour
         {
             AttackSpecialPlayer1.sprite = null;
             TimeAttackSpecialPlayer1.text = "";
-        }*/
+        }
 
         // Change le sprite de l'objet dans le slot ainsi que sa transparence, si le slot n'est pas vide
         if (!(Player1.objet.slot is EmptyConsumable))
@@ -154,7 +154,7 @@ public class UIBack : MonoBehaviour
                 }
                 ObjectPlayer1.sprite = Player1.objet.slot.consumableSprite;
             }
-            DuralityObjectsPlayer1.text = Player1.objet.slot.ShowCounterString();
+            //DuralityObjectsPlayer1.text = Player1.objet.slot.ShowCounterString();
             InfoObjectPlayer1.text = Player1.objet.slot.description;
         }
         else
@@ -187,9 +187,9 @@ public class UIBack : MonoBehaviour
             TimeAttackBasePlayer2.text = "";
         }
 
-/*        if (!Player2.specialAttack.EmptySlot())
+        if (!Player2.specialAttack.EmptySlot())
         {
-            if (!Player2.objet.isReady)
+            if (!Player2.specialAttack.isReady)
             {
                 TimeAttackSpecialPlayer2.text = Player2.specialAttack.cooldown + "s";
             }
@@ -202,7 +202,7 @@ public class UIBack : MonoBehaviour
         {
             AttackSpecialPlayer2.sprite = null;
             TimeAttackSpecialPlayer2.text = "";
-        }*/
+        }
         
         // Change le sprite de l'objet dans le slot, ainsi que sa transparence, si le slot n'est pas vide
         if (!(Player2.objet.slot is EmptyConsumable))
@@ -216,7 +216,7 @@ public class UIBack : MonoBehaviour
                 }
                 ObjectPlayer2.sprite = Player2.objet.slot.consumableSprite;
             }
-            DuralityObjectsPlayer2.text = Player2.objet.slot.ShowCounterString();
+            //DuralityObjectsPlayer2.text = Player2.objet.slot.ShowCounterString();
             InfoObjectPlayer2.text = Player2.objet.slot.description;
         }
         else

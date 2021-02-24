@@ -33,6 +33,7 @@ namespace Assets.Script.Capacites.BaseAttacks
         {
             Vector3 position = parent.transform.position;
             Fireball fireball = Instantiate(attack, position, Quaternion.identity).GetComponent<Fireball>();
+            fireball.parent = parent;
             fireball.transform.position = new Vector3(position.x + dirx * 1.1f, position.y + diry * 1.1f, position.z);
             fireball.dirY = diry;
             fireball.dirX = dirx;

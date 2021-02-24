@@ -163,14 +163,10 @@ MonoBehaviour:
   player: {fileID: 2712287236134612094}
   countRevive: 0
   profilePlayerImage: {fileID: 0}
-  UpKey: 122
-  DownKey: 115
-  RightKey: 100
-  LeftKey: 113
   animator: {fileID: 2712287236134612089}
-  baseAttackKey: 101
-  quitKey: 27
   attackBasePrefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
+    type: 3}
+  specialAttackPrefab: {fileID: 557685357088412397, guid: b0ee869909066994d912380318e7061b,
     type: 3}
 --- !u!95 &2712287236134612089
 Animator:

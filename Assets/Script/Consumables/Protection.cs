@@ -25,13 +25,6 @@ public class Protection : Consumable
         description = string.Format(description, level, value);
     }
 
-    public Protection(string descriptionObjet, float counterObjet,  int valueObjet)
-    {
-        description = descriptionObjet;
-        counter = counterObjet;
-        value = valueObjet;
-    }
-
     // Function permettant la recuperation des protections
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
@@ -40,10 +33,7 @@ public class Protection : Consumable
         {
             //Crée une instance de la protection dans le slot objet du joueur, puis détruit la potion sur l'arène
             Player player = collision.gameObject.GetComponent<Player>();
-            player.objet.slot = new Protection(description, counter, value);
-            player.objet.slot.consumableSprite = consumableSprite;
-            player.objet.slot.typeValue = typeValue;
-
+            player.objet.slot = this;
             //Détruit la protection
             Destroy(gameObject);
         }

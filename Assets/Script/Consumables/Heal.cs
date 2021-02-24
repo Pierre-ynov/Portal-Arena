@@ -25,14 +25,6 @@ public class Heal : Consumable
         description = string.Format(description, level, value);
     }
 
-    public Heal(string descriptionObjet, float counterObjet, int valueObjet)
-    {
-        description = descriptionObjet;
-        counter = counterObjet;
-        value = valueObjet;
-    }
-
-
     // Function permettant la recuperation des potions
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -41,10 +33,7 @@ public class Heal : Consumable
         {
             //Crée une instance de la potion dans le slot objet du joueur, puis détruit la potion sur l'arène
             Player player = collision.gameObject.GetComponent<Player>();
-            player.objet.slot = new Heal(description, counter, value);
-            player.objet.slot.consumableSprite = consumableSprite;
-            player.objet.slot.typeValue = typeValue;
-
+            player.objet.slot = this;
             //Détruit la potion
             Destroy(gameObject);
         }

@@ -2752,6 +2752,7 @@ GameObject:
   - component: {fileID: 712455052}
   - component: {fileID: 712455055}
   - component: {fileID: 712455054}
+  - component: {fileID: 712455056}
   m_Layer: 0
   m_Name: TerrainDestroy3
   m_TagString: Untagged
@@ -3636,6 +3637,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &712455056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712455050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0463b543f9310dd4d83fd1ad2b45f149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &848075812
 GameObject:
   m_ObjectHideFlags: 0
@@ -9165,6 +9178,7 @@ GameObject:
   - component: {fileID: 1173824427}
   - component: {fileID: 1173824430}
   - component: {fileID: 1173824429}
+  - component: {fileID: 1173824431}
   m_Layer: 0
   m_Name: TerrainDestroy2
   m_TagString: Untagged
@@ -10116,6 +10130,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1173824431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173824425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0463b543f9310dd4d83fd1ad2b45f149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1278373123
 GameObject:
   m_ObjectHideFlags: 0
@@ -10781,6 +10807,7 @@ GameObject:
   - component: {fileID: 2045437064}
   - component: {fileID: 2045437066}
   - component: {fileID: 2045437067}
+  - component: {fileID: 2045437068}
   m_Layer: 0
   m_Name: TerrainDestroy
   m_TagString: Untagged
@@ -11602,6 +11629,18 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &2045437068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045437062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0463b543f9310dd4d83fd1ad2b45f149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2053530296
 PrefabInstance:
   m_ObjectHideFlags: 0

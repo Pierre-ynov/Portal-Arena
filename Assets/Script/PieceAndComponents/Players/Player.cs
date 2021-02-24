@@ -53,6 +53,7 @@ public class Player : Piece
     // Vérifie s'il peut revivre
     public bool CanRevive()
     {
+        SoundManagerScript2.soundInstance.Audio.PlayOneShot(SoundManagerScript2.soundInstance.Death);
         countRevive -= 1;
         if (countRevive < 0)
             return false;
@@ -67,6 +68,7 @@ public class Player : Piece
     // Fait revivre le joueur
     public void Respawn()
     {
+        SoundManagerScript.soundInstance.Audio.PlayOneShot(SoundManagerScript.soundInstance.Respawn);
         List<Vector3> playersPositions = new List<Vector3>();
         playersPositions.Add(new Vector3(-6, -4, 0));
         playersPositions.Add(new Vector3(-6, 17, 0));

@@ -90,12 +90,12 @@ public class UIBack : MonoBehaviour
     /// <param name="Player2"></param>
     public void RefreshInfoPlayers()
     {
-        LifePlayer1.text =string.Format("L I F E        :   {0}/{1}", Player1.health.load, Player1.health.capacity);
-        ArmorPlayer1.text = string.Format("A R M O R  :  {0}/{1}", Player1.armor.load, Player1.armor.capacity);
+        LifePlayer1.text =string.Format("PV  :  {0}/{1}", Player1.health.load, Player1.health.capacity);
+        ArmorPlayer1.text = string.Format("PA  :  {0}/{1}", Player1.armor.load, Player1.armor.capacity);
         RespawnPointPlayer1.text = "x" + Player1.countRevive;
 
-        LifePlayer2.text = string.Format("L I F E        :   {0}/{1}", Player2.health.load, Player2.health.capacity);
-        ArmorPlayer2.text = string.Format("A R M O R  :  {0}/{1}", Player2.armor.load, Player2.armor.capacity);
+        LifePlayer2.text = string.Format("PV  :  {0}/{1}", Player2.health.load, Player2.health.capacity);
+        ArmorPlayer2.text = string.Format("PA  :  {0}/{1}", Player2.armor.load, Player2.armor.capacity);
         RespawnPointPlayer2.text = "x" + Player2.countRevive;
     }
 
@@ -154,7 +154,7 @@ public class UIBack : MonoBehaviour
                 }
                 ObjectPlayer1.sprite = Player1.objet.slot.consumableSprite;
             }
-            DuralityObjectsPlayer1.text = Player1.objet.slot.ShowCounterString();
+            //DuralityObjectsPlayer1.text = Player1.objet.slot.ShowCounterString();
             InfoObjectPlayer1.text = Player1.objet.slot.description;
         }
         else
@@ -216,7 +216,7 @@ public class UIBack : MonoBehaviour
                 }
                 ObjectPlayer2.sprite = Player2.objet.slot.consumableSprite;
             }
-            DuralityObjectsPlayer2.text = Player2.objet.slot.ShowCounterString();
+            //DuralityObjectsPlayer2.text = Player2.objet.slot.ShowCounterString();
             InfoObjectPlayer2.text = Player2.objet.slot.description;
         }
         else

@@ -125,9 +125,9 @@ public class UIBack : MonoBehaviour
             TimeAttackBasePlayer1.text = "";
         }
 
-        /*if (!Player1.specialAttack.EmptySlot())
+        if (!Player1.specialAttack.EmptySlot())
         {
-            if (!Player1.objet.isReady)
+            if (!Player1.specialAttack.isReady)
             {
                 TimeAttackSpecialPlayer1.text = Player1.specialAttack.cooldown + "s";
             }
@@ -140,7 +140,7 @@ public class UIBack : MonoBehaviour
         {
             AttackSpecialPlayer1.sprite = null;
             TimeAttackSpecialPlayer1.text = "";
-        }*/
+        }
 
         // Change le sprite de l'objet dans le slot ainsi que sa transparence, si le slot n'est pas vide
         if (!(Player1.objet.slot is EmptyConsumable))
@@ -187,9 +187,9 @@ public class UIBack : MonoBehaviour
             TimeAttackBasePlayer2.text = "";
         }
 
-/*        if (!Player2.specialAttack.EmptySlot())
+        if (!Player2.specialAttack.EmptySlot())
         {
-            if (!Player2.objet.isReady)
+            if (!Player2.specialAttack.isReady)
             {
                 TimeAttackSpecialPlayer2.text = Player2.specialAttack.cooldown + "s";
             }
@@ -202,7 +202,7 @@ public class UIBack : MonoBehaviour
         {
             AttackSpecialPlayer2.sprite = null;
             TimeAttackSpecialPlayer2.text = "";
-        }*/
+        }
         
         // Change le sprite de l'objet dans le slot, ainsi que sa transparence, si le slot n'est pas vide
         if (!(Player2.objet.slot is EmptyConsumable))

@@ -26,15 +26,11 @@ public class FireWavesAttack : Capacite
     public override void Action(int dirx, int diry)
     {
         Vector3 position = parent.transform.position;
-        for (int x = -1; x < 2; x += 2)
-            for (int y = -1; y < 2; y += 2)
-                CreateFireWaves(position, x, y);
-        //Fireball fireball = Instantiate(attack, position, Quaternion.identity).GetComponent<Fireball>();
-        //fireball.transform.position = new Vector3(position.x + dirx * 1.1f, position.y + diry * 1.1f, position.z);
-        //fireball.dirY = diry;
-        //fireball.dirX = dirx;
-        //fireball.Speed = 5;
-        //fireball.LoadSprite();
+        for (int i = -1; i < 2; i += 2)
+        {
+            CreateFireWaves(position, i, 0);
+            CreateFireWaves(position, 0, i);
+        }
     }
 
     private void CreateFireWaves(Vector3 position, int x, int y)
@@ -43,12 +39,7 @@ public class FireWavesAttack : Capacite
         {
             position = new Vector3(position.x + x * 1f, position.y + y * 1f, position.z);
             FireWave firewave = Instantiate(attack, position, Quaternion.identity).GetComponent<FireWave>();
-            StartCoroutine(GenerateTime(1));
+            firewave.parent = parent;
         }
-    }
-
-    protected IEnumerator GenerateTime(int time)
-    {
-        yield return new WaitForSeconds(time);
     }
 }

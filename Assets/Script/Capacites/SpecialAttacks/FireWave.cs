@@ -13,7 +13,8 @@ public class FireWave : MonoBehaviour
     void Start()
     {
         hasTouchedEnemy = false;
-        StartCoroutine(GenerateTimeAttack(1));
+        damage = (int)Damage.low + /*en attente de l'effet brulure*/(int)Damage.low;
+        StartCoroutine(GenerateTimeAttack(1));    
     }
 
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
@@ -33,8 +34,11 @@ public class FireWave : MonoBehaviour
                 }
             }
             hasTouchedEnemy = true;
-        }else if(collision.gameObject.tag == "Obstacle")
+        }
+        else if (collision.gameObject.tag == "Obstacle")
+        {
             Destroy(gameObject);
+        }
     }
 
     protected IEnumerator GenerateTimeAttack(int time)

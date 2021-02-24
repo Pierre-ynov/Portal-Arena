@@ -77,7 +77,7 @@ namespace Assets.Script.Configuration
             Player2_UpKey = KeyCode.O;
             Player2_RightKey = KeyCode.M;
             Player2_BaseAttackKey = KeyCode.P;
-            Player2_SpecialAttackKey = KeyCode.Caret;
+            Player2_SpecialAttackKey = KeyCode.J;
             Player2_UseObjectKey = KeyCode.N;
 
             QuitKey = KeyCode.Escape;

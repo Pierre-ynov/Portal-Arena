@@ -14,9 +14,9 @@ public class Fireball : MonoBehaviour
     public Sprite fireballLeft;
     public Sprite fireballUp;
     public Sprite fireballDown;
-    public Fireball()
+    void Start()
     {
-        damage = (int)Damage.strong;
+        damage = (int)Damage.low;
     }
 
 

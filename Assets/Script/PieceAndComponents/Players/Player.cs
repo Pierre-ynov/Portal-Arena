@@ -75,7 +75,7 @@ public class Player : Piece
 
         RandomSpawn(player.gameObject, playersPositions);
 
-        health.ModifyLoad(0);
+        health.ModifyLoad(20);
         armor.ModifyLoad(-20);
     }
 

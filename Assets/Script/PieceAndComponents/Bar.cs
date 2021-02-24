@@ -25,7 +25,7 @@ public class Bar : MonoBehaviour
             load = 0;
         else
             load += m;
-        if (load == 0) // ne passe normalement par là, car les dégats sont soustrait directement depuis les variables
+        if (load == 0) // ne passe normalement pas par là, car les dégats sont soustrait directement depuis les variables
             return false;
         return true;
     } 

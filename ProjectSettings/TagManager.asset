@@ -9,6 +9,9 @@ TagManager:
   - Player1
   - Player2
   - configuration
+  - EventSystem
+  - Winner
+  - Loser
   layers:
   - Default
   - TransparentFX

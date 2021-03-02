@@ -11,6 +11,7 @@ public class Player : Piece
     /// GameObject du joueur
     /// </summary>
     public GameObject player;
+    public Game game;
 
     public int countRevive;
     public Slot<Capacite> baseAttack;
@@ -48,17 +49,19 @@ public class Player : Piece
     #endregion
 
     // Vérifie s'il peut revivre
-    public bool CanRevive()
+    public void CanRevive()
     {
         countRevive -= 1;
         if (countRevive < 0)
-            return false;
+        {
+            Debug.Log("Player Winner Health" + health.load);
+            game = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<Game>();
+            game.LoadVictoryScene(this);
+        }  
         else
         {
             Respawn();
         }
-
-        return true;
     }
 
     // Fait revivre le joueur
@@ -94,7 +97,7 @@ public class Player : Piece
         health = new Bar(20);
         armor = new Bar(20);
         armor.ModifyLoad(-20);
-        countRevive = 2;
+        countRevive = 0;
         dirX = 1;
         dirY = 0;
 
@@ -116,6 +119,12 @@ public class Player : Piece
     }
 
     #endregion
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()

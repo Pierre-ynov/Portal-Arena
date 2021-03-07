@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Assets.Script.Configuration;
 using Assets.Script.Capacites.BaseAttacks;
+
 
 public class Player : Piece
 {
@@ -84,17 +84,19 @@ public class Player : Piece
     #endregion
 
     // Vérifie s'il peut revivre
-    public bool CanRevive()
+    public void CanRevive()
     {
+        SoundManagerScript2.soundInstance.Audio.PlayOneShot(SoundManagerScript2.soundInstance.Death);
         countRevive -= 1;
         if (countRevive < 0)
-            return false;
+        {
+            Game game = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<Game>();
+            game.LoadVictoryScene(this);
+        }  
         else
         {
             Respawn();
         }
-
-        return true;
     }
 
     /// <summary>
@@ -127,6 +129,7 @@ public class Player : Piece
     // Fait revivre le joueur
     public void Respawn()
     {
+        SoundManagerScript.soundInstance.Audio.PlayOneShot(SoundManagerScript.soundInstance.Respawn);
         List<Vector3> playersPositions = new List<Vector3>();
         playersPositions.Add(new Vector3(-6, -4, 0));
         playersPositions.Add(new Vector3(-6, 17, 0));

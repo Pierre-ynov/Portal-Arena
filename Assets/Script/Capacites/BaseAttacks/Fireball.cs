@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Fireball : MonoBehaviour
 {
@@ -34,15 +33,8 @@ public class Fireball : MonoBehaviour
             Player enemy = collision.gameObject.GetComponent<Player>();
             if (enemy.Hurt(damage))
             {
-                if (!enemy.CanRevive())
-                {
-                    Destroy(collision.gameObject);
-                    //Ajouter la scène de victoire du parent de la Fireball
-                    SceneManager.LoadScene("Fin");
-                }
+                enemy.CanRevive();
             }
-            //Détruit l'entité
-            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Obstacle")
             //Détruit l'entité

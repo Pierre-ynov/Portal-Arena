@@ -66,6 +66,7 @@ public abstract class Piece : MonoBehaviour
     /// <returns>si le pion est mort ou non</returns>
     public bool Hurt(int damage)
     {
+        SoundManagerScript4.soundInstance.Audio.PlayOneShot(SoundManagerScript4.soundInstance.Hurt);
         int oldArmorLoad = armor.load;
         if (armor.load != 0 && armor.ModifyLoad(-damage))
             return false;

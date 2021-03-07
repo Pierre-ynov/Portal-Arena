@@ -7,15 +7,11 @@ public class FireWavesAttack : Capacite
     // Contient le gameObject qui sera créer par son attaque
     public GameObject attack;
 
-    // Contient le GameObject Piece qui est son parent
-    private GameObject parent;
-
-    public FireWavesAttack(GameObject attackGameObject, GameObject pieceParent)
+    void Start()
     {
-        attack = attackGameObject;
-        parent = pieceParent;
         imgAttack = Resources.Load<Sprite>("icon_firewaves"); //à modifier
-        timeCooldown = 20;
+        timeCooldown = 15;
+        isReady = true;
     }
 
     /// <summary>

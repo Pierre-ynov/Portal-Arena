@@ -108,11 +108,11 @@ public class UIBack : MonoBehaviour
     public void RefreshSlotPlayers()
     {
         //Player 1
-        if (!Player1.baseAttack.EmptySlot())
+        if (!(Player1.baseAttackSlot == null))
         {
-            if (!Player1.baseAttack.isReady)
+            if (!Player1.baseAttackSlot.isReady)
             {
-                TimeAttackBasePlayer1.text = Player1.baseAttack.cooldown + "s";
+                TimeAttackBasePlayer1.text = Player1.baseAttackSlot.endCooldown + "s";
             }
             else
             {
@@ -125,11 +125,11 @@ public class UIBack : MonoBehaviour
             TimeAttackBasePlayer1.text = "";
         }
 
-        if (!Player1.specialAttack.EmptySlot())
+        if (!(Player1.specialAttackSlot == null))
         {
-            if (!Player1.specialAttack.isReady)
+            if (!Player1.specialAttackSlot.isReady)
             {
-                TimeAttackSpecialPlayer1.text = Player1.specialAttack.cooldown + "s";
+                TimeAttackSpecialPlayer1.text = Player1.specialAttackSlot.endCooldown + "s";
             }
             else
             {
@@ -143,19 +143,19 @@ public class UIBack : MonoBehaviour
         }
 
         // Change le sprite de l'objet dans le slot ainsi que sa transparence, si le slot n'est pas vide
-        if (!(Player1.objet.slot is EmptyConsumable))
+        if ( !Player1.isEmptyObjectSlot && !(Player1.objectSlot is EmptyConsumable))
         {
             // Verrouille le sprite et sa transparence une fois qu'il est égal au sprite du slot joueur
-            if (ObjectPlayer1.sprite != Player1.objet.slot.consumableSprite)
+            if (ObjectPlayer1.sprite != Player1.objectSlot.consumableSprite)
             {
                 if (ObjectPlayer1.sprite == null)
                 {
                     ObjectPlayer1 = ChangeImageTransparency(ObjectPlayer1);
                 }
-                ObjectPlayer1.sprite = Player1.objet.slot.consumableSprite;
+                ObjectPlayer1.sprite = Player1.objectSlot.consumableSprite;
             }
             //DuralityObjectsPlayer1.text = Player1.objet.slot.ShowCounterString();
-            InfoObjectPlayer1.text = Player1.objet.slot.description;
+            InfoObjectPlayer1.text = Player1.objectSlot.description;
         }
         else
         {
@@ -170,11 +170,11 @@ public class UIBack : MonoBehaviour
         }
 
         //Player2
-        if (!Player2.baseAttack.EmptySlot())
+        if (!(Player2.baseAttackSlot == null))
         {
-            if (!Player2.baseAttack.isReady)
+            if (!Player2.baseAttackSlot.isReady)
             {
-                TimeAttackBasePlayer2.text = Player2.baseAttack.cooldown + "s";
+                TimeAttackBasePlayer2.text = Player2.baseAttackSlot.endCooldown + "s";
             }
             else
             {
@@ -187,11 +187,11 @@ public class UIBack : MonoBehaviour
             TimeAttackBasePlayer2.text = "";
         }
 
-        if (!Player2.specialAttack.EmptySlot())
+        if (!(Player2.specialAttackSlot == null))
         {
-            if (!Player2.specialAttack.isReady)
+            if (!Player2.specialAttackSlot.isReady)
             {
-                TimeAttackSpecialPlayer2.text = Player2.specialAttack.cooldown + "s";
+                TimeAttackSpecialPlayer2.text = Player2.specialAttackSlot.endCooldown + "s";
             }
             else
             {
@@ -205,19 +205,19 @@ public class UIBack : MonoBehaviour
         }
         
         // Change le sprite de l'objet dans le slot, ainsi que sa transparence, si le slot n'est pas vide
-        if (!(Player2.objet.slot is EmptyConsumable))
+        if (!Player2.isEmptyObjectSlot && !(Player2.objectSlot is EmptyConsumable))
         {
             // Verrouille le sprite et sa transparence une fois qu'il est égal au sprite du slot joueur
-            if (ObjectPlayer2.sprite != Player2.objet.slot.consumableSprite)
+            if (ObjectPlayer2.sprite != Player2.objectSlot.consumableSprite)
             {
                 if (ObjectPlayer2.sprite == null)
                 {
                     ObjectPlayer2 = ChangeImageTransparency(ObjectPlayer2);
                 }
-                ObjectPlayer2.sprite = Player2.objet.slot.consumableSprite;
+                ObjectPlayer2.sprite = Player2.objectSlot.consumableSprite;
             }
             //DuralityObjectsPlayer2.text = Player2.objet.slot.ShowCounterString();
-            InfoObjectPlayer2.text = Player2.objet.slot.description;
+            InfoObjectPlayer2.text = Player2.objectSlot.description;
         }
         else
         {
@@ -238,15 +238,15 @@ public class UIBack : MonoBehaviour
         NameCharacterPlayer1.text = Player1.namePiece;
         ImageCharacterPlayer1.sprite = Player1.profilePlayerImage;
 
-        AttackBasePlayer1.sprite = Player1.baseAttack.slot.imgAttack;
-        AttackSpecialPlayer1.sprite = Player1.specialAttack.slot.imgAttack;
+        AttackBasePlayer1.sprite = Player1.baseAttackSlot.imgAttack;
+        AttackSpecialPlayer1.sprite = Player1.specialAttackSlot.imgAttack;
 
         //Player 2
         NameCharacterPlayer2.text = Player2.namePiece;
         ImageCharacterPlayer2.sprite = Player2.profilePlayerImage;
 
-        AttackBasePlayer2.sprite = Player2.baseAttack.slot.imgAttack;
-        AttackSpecialPlayer2.sprite = Player2.specialAttack.slot.imgAttack;
+        AttackBasePlayer2.sprite = Player2.baseAttackSlot.imgAttack;
+        AttackSpecialPlayer2.sprite = Player2.specialAttackSlot.imgAttack;
     }
 
     private void RefreshUICycle()

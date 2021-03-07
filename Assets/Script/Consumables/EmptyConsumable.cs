@@ -6,16 +6,20 @@ public class EmptyConsumable : Consumable
 {
     void Start()
     {
+        InitializeEmptyConsumable();
+    }
+
+    public EmptyConsumable()
+    {
+        InitializeEmptyConsumable(); 
+    }
+
+    private void InitializeEmptyConsumable()
+    {
         description = null;
         counter = 0;
         value = 0;
-    }
-
-    public EmptyConsumable(string descriptionObjet, float counterObjet, int valueObjet)
-    {
-        description = descriptionObjet;
-        counter = counterObjet;
-        value = valueObjet;
+        isReady = false;
     }
 
     public override void Action(Player p)

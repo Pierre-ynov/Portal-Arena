@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Script.Configuration;
+using Assets.Script.Capacites.BaseAttacks;
 
 
 public class Player : Piece
@@ -12,13 +13,45 @@ public class Player : Piece
     /// </summary>
     public GameObject player;
 
+    /// <summary>
+    /// Contient le nombre de réapparition du joueur
+    /// </summary>
     public int countRevive;
-    public Slot<Capacite> baseAttack;
-    public Slot<Capacite> specialAttack;
-    public Slot<Consumable> objet;
+
+    /// <summary>
+    /// Contient le slot de l'attaque de base
+    /// </summary>
+    public Capacite baseAttackSlot;
+
+    /// <summary>
+    /// Contient le slot de l'attaque spéciale
+    /// </summary>
+    public Capacite specialAttackSlot;
+
+    /// <summary>
+    /// Contient le slot de l'objet 
+    /// </summary>
+    public Consumable objectSlot;
+
+    /// <summary>
+    /// Contient l'image de profil du joueur
+    /// </summary>
     public Sprite profilePlayerImage;
+
+    /// <summary>
+    /// Contient la direction en X du joueur
+    /// </summary>
     protected int dirX;
+
+    /// <summary>
+    /// Contient la direction en Y du joueur
+    /// </summary>
     protected int dirY;
+
+    /// <summary>
+    /// Définit si le slot de l'objet est vide
+    /// </summary>
+    public bool isEmptyObjectSlot { get; private set; }
 
 
     //Variable gérant l'animation controller
@@ -66,6 +99,33 @@ public class Player : Piece
         }
     }
 
+    /// <summary>
+    /// Met à jour le slot objet
+    /// </summary>
+    /// <returns></returns>
+    public void UpdateObjectSlot(Consumable newValue)
+    {
+        if (!(newValue is EmptyConsumable))
+        {
+            isEmptyObjectSlot = false;
+        }
+        objectSlot = newValue;
+    }
+
+    /// <summary>
+    /// Donne l'information si le slot est vide.
+    /// </summary>
+    /// <returns></returns>
+    public void UpdateEmptyObjectSlot()
+    {
+        if (objectSlot == null || objectSlot.counter <= 0)
+        {
+            UpdateObjectSlot(new EmptyConsumable());
+            isEmptyObjectSlot = true;
+        }
+    }
+
+
     // Fait revivre le joueur
     public void Respawn()
     {
@@ -83,6 +143,24 @@ public class Player : Piece
     }
 
     #region Configuration
+    /// <summary>
+    /// Génère et associe les gameObjects d'attaques aux slots du joueur 
+    /// </summary>
+    /// <typeparam name="T">nom du script pour l'attaque de base</typeparam>
+    /// <typeparam name="U">nom du script pour l'attaque spéciale</typeparam>
+    /// <param name="attackBasePrefab">Contient le prefab de l'attaque de base</param>
+    /// <param name="specialAttackPrefab">Contient le prefab de l'attaque spéciale</param>
+    protected void InitializePlayerCapacities<T, U>(GameObject attackBasePrefab, GameObject specialAttackPrefab)
+        where T : Capacite
+        where U : Capacite
+    {
+        GameObject attackBase = Instantiate(attackBasePrefab, new Vector3(), Quaternion.identity) as GameObject;
+        baseAttackSlot = attackBase.GetComponent<T>();
+        baseAttackSlot.parent = player;
+        GameObject specialAttack = Instantiate(specialAttackPrefab, new Vector3(), Quaternion.identity) as GameObject;
+        specialAttackSlot = specialAttack.GetComponent<U>();
+        specialAttackSlot.parent = player;
+    }
 
     /// <summary>
     /// Effectue les configurations de base du Player
@@ -184,35 +262,30 @@ public class Player : Piece
         // JR 15/11/2020 Modification pour ajouter possibilité d'empécher les inputs clavier durant le préchargement partie
         if (baseAttackKey != null && Input.GetKeyDown(baseAttackKey.Value) && (GameManager.IsInputEnabled == true))
         {
-            if (baseAttack.isReady)
+            if (baseAttackSlot.isReady)
             {
-                baseAttack.slot.Action(dirX, dirY);
-                baseAttack.GenerateCoolDown();
+                baseAttackSlot.Action(dirX, dirY);
+                baseAttackSlot.GenerateCoolDown();
             }
         }
 
         // Permet d'attaquer avec l'attaque spéciale
         if (specialAttackKey != null && Input.GetKeyDown(specialAttackKey.Value) && (GameManager.IsInputEnabled == true))
         {
-            if (specialAttack.isReady)
+            if (specialAttackSlot.isReady)
             {
-                specialAttack.slot.Action(dirX, dirY);
-                specialAttack.GenerateCoolDown();
+                specialAttackSlot.Action(dirX, dirY);
+                specialAttackSlot.GenerateCoolDown();
             }
         }
 
         // Permet d'utiliser un objet après le préchargement partie, si le slot objet n'est pas vide
         if (Input.GetKeyDown(objetKey.Value) && (GameManager.IsInputEnabled == true))
         {
-            if (!(objet.slot is EmptyConsumable))
+            if (!isEmptyObjectSlot && objectSlot.isReady)
             {
-                objet.slot.Action(this);
-
-                // Vide le slot lorsque l'objet est complètement consommé
-                if (objet.slot.counter <= 0)
-                {
-                    objet.slot = new EmptyConsumable(null, 0, 0);
-                }
+                objectSlot.Action(this);
+                UpdateEmptyObjectSlot();
             }
         }
     }

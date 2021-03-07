@@ -12,21 +12,19 @@ public class End : MonoBehaviour
     public Player winner;
     public Player loser;
 
-    public void Start()
+    void Start()
     {
         winner = GameObject.FindGameObjectWithTag("Winner").GetComponent<Player>();
         loser = GameObject.FindGameObjectWithTag("Loser").GetComponent<Player>();
-        WinnerLeaderboard = GameObject.Find("WinnerLeaderboard").GetComponent<Text>();
-        LoserLeaderboard = GameObject.Find("LoserLeaderboard").GetComponent<Text>();
 
         if ((winner != null) && (loser != null))
         {
-            AffichageLeaderboard(winner, loser);
+            ShowLeaderboard();
         }
     }
 
     // Update is called once per frame
-    public void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -34,17 +32,17 @@ public class End : MonoBehaviour
         }
     }
 
-    public void AffichageLeaderboard(Player winner, Player loser)
+    public void ShowLeaderboard()
     {
         if (winner.name.Contains("Player1"))
         {
-            winner.name = "Player1";
-            loser.name = "Player2";
+            winner.name = "Joueur 1";
+            loser.name = "Joueur 2";
         }
         else
         {
-            winner.name = "Player2";
-            loser.name = "Player1";
+            winner.name = "Joueur 2";
+            loser.name = "Joueur 1";
         }
 
         WinnerLeaderboard.text = string.Format("Vainqueur\n{0}\nSanté : {1}\nArmure : {2}\nCountRevive : {3}", winner.name, winner.health.load, winner.armor.load, winner.countRevive);

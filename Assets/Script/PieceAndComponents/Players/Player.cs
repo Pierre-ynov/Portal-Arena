@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Script.Configuration;
 
+
 public class Player : Piece
 {
     #region Variables
@@ -10,7 +11,6 @@ public class Player : Piece
     /// GameObject du joueur
     /// </summary>
     public GameObject player;
-    public Game game;
 
     public int countRevive;
     public Slot<Capacite> baseAttack;
@@ -57,8 +57,7 @@ public class Player : Piece
         countRevive -= 1;
         if (countRevive < 0)
         {
-            Debug.Log("Player Winner Health" + health.load);
-            game = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<Game>();
+            Game game = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<Game>();
             game.LoadVictoryScene(this);
         }  
         else

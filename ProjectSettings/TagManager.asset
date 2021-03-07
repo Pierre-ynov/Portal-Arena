@@ -12,6 +12,7 @@ TagManager:
   - EventSystem
   - Winner
   - Loser
+  - Obstacle
   layers:
   - Default
   - TransparentFX

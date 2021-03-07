@@ -121,7 +121,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 2f4c6cea08bd5844dad6931604c4260e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -163,14 +163,10 @@ MonoBehaviour:
   player: {fileID: 6706125799882838801}
   countRevive: 2
   profilePlayerImage: {fileID: 0}
-  UpKey: 111
-  DownKey: 108
-  RightKey: 109
-  LeftKey: 107
   animator: {fileID: 6706125799882838806}
-  baseAttackKey: 112
-  quitKey: 27
   attackBasePrefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
+    type: 3}
+  specialAttackPrefab: {fileID: 557685357088412397, guid: b0ee869909066994d912380318e7061b,
     type: 3}
 --- !u!95 &6706125799882838806
 Animator:

@@ -39,8 +39,11 @@ public class Player : Piece
     //Aller a gauche
     public KeyCode? LeftKey;
 
-    //Permet d'attaquer
+    //Permet d'utiliser l'attaque de base
     public KeyCode? baseAttackKey;
+
+    //Permet d'utiliser l'attaque spéciale
+    public KeyCode? specialAttackKey;
 
     //Permet d'utiliser un objet
     public KeyCode? objetKey;
@@ -50,6 +53,7 @@ public class Player : Piece
     // Vérifie s'il peut revivre
     public void CanRevive()
     {
+        SoundManagerScript2.soundInstance.Audio.PlayOneShot(SoundManagerScript2.soundInstance.Death);
         countRevive -= 1;
         if (countRevive < 0)
         {
@@ -66,6 +70,7 @@ public class Player : Piece
     // Fait revivre le joueur
     public void Respawn()
     {
+        SoundManagerScript.soundInstance.Audio.PlayOneShot(SoundManagerScript.soundInstance.Respawn);
         List<Vector3> playersPositions = new List<Vector3>();
         playersPositions.Add(new Vector3(-6, -4, 0));
         playersPositions.Add(new Vector3(-6, 17, 0));
@@ -114,6 +119,7 @@ public class Player : Piece
         LeftKey = conf.GetKeyCodePlayerAction(gameObject.tag, "Left");
         RightKey = conf.GetKeyCodePlayerAction(gameObject.tag, "Right");
         baseAttackKey = conf.GetKeyCodePlayerAction(gameObject.tag, "AttackBase");
+        specialAttackKey = conf.GetKeyCodePlayerAction(gameObject.tag, "SpecialAttack");
         objetKey = conf.GetKeyCodePlayerAction(gameObject.tag, "UseObject");
     }
 
@@ -124,7 +130,7 @@ public class Player : Piece
     {
 
         //Permet de faire avancer le joueur
-        if (UpKey!=null && Input.GetKey(UpKey.Value))
+        if (UpKey != null && Input.GetKey(UpKey.Value))
         {
             dirX = 0;
             dirY = 1;
@@ -137,7 +143,7 @@ public class Player : Piece
         }
 
         //Permet de faire reculer le joueur
-        if ( DownKey!= null && Input.GetKey(DownKey.Value))
+        if (DownKey != null && Input.GetKey(DownKey.Value))
         {
             dirX = 0;
             dirY = -1;
@@ -163,7 +169,7 @@ public class Player : Piece
         }
 
         // Permet de faire aller a droite le joueur
-        if (RightKey!= null && Input.GetKey(RightKey.Value))
+        if (RightKey != null && Input.GetKey(RightKey.Value))
         {
             dirX = 1;
             dirY = 0;
@@ -177,7 +183,7 @@ public class Player : Piece
 
         // Permet d'attaquer
         // JR 15/11/2020 Modification pour ajouter possibilité d'empécher les inputs clavier durant le préchargement partie
-        if (baseAttackKey!= null && Input.GetKeyDown(baseAttackKey.Value) && (GameManager.IsInputEnabled == true))
+        if (baseAttackKey != null && Input.GetKeyDown(baseAttackKey.Value) && (GameManager.IsInputEnabled == true))
         {
             if (baseAttack.isReady)
             {
@@ -186,10 +192,20 @@ public class Player : Piece
             }
         }
 
+        // Permet d'attaquer avec l'attaque spéciale
+        if (specialAttackKey != null && Input.GetKeyDown(specialAttackKey.Value) && (GameManager.IsInputEnabled == true))
+        {
+            if (specialAttack.isReady)
+            {
+                specialAttack.slot.Action(dirX, dirY);
+                specialAttack.GenerateCoolDown();
+            }
+        }
+
         // Permet d'utiliser un objet après le préchargement partie, si le slot objet n'est pas vide
         if (Input.GetKeyDown(objetKey.Value) && (GameManager.IsInputEnabled == true))
         {
-            if(!(objet.slot is EmptyConsumable))
+            if (!(objet.slot is EmptyConsumable))
             {
                 objet.slot.Action(this);
 

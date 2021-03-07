@@ -31,8 +31,10 @@ namespace Assets.Script.Capacites.BaseAttacks
         /// <param name="diry"></param>
         public override void Action(int dirx, int diry)
         {
+            SoundManagerScript3.soundInstance.Audio.PlayOneShot(SoundManagerScript3.soundInstance.Fire);
             Vector3 position = parent.transform.position;
             Fireball fireball = Instantiate(attack, position, Quaternion.identity).GetComponent<Fireball>();
+            fireball.parent = parent;
             fireball.transform.position = new Vector3(position.x + dirx * 1.1f, position.y + diry * 1.1f, position.z);
             fireball.dirY = diry;
             fireball.dirX = dirx;

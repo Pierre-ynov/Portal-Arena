@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Fireball : MonoBehaviour
 {
-    private Game game;
     public float dirX;
     public float dirY;
     public float Speed;

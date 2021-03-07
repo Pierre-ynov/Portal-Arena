@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Assets.Script.Configuration;
 
 public class Player : Piece
@@ -75,7 +74,7 @@ public class Player : Piece
 
         RandomSpawn(player.gameObject, playersPositions);
 
-        health.ModifyLoad(0);
+        health.ModifyLoad(20);
         armor.ModifyLoad(-20);
     }
 
@@ -97,7 +96,7 @@ public class Player : Piece
         health = new Bar(20);
         armor = new Bar(20);
         armor.ModifyLoad(-20);
-        countRevive = 0;
+        countRevive = 2;
         dirX = 1;
         dirY = 0;
 
@@ -119,12 +118,6 @@ public class Player : Piece
     }
 
     #endregion
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

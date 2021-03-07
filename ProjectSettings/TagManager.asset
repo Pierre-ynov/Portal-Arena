@@ -9,7 +9,10 @@ TagManager:
   - Player1
   - Player2
   - configuration
+  - Winner
+  - Loser
   - Obstacle
+  - SceneManager
   layers:
   - Default
   - TransparentFX

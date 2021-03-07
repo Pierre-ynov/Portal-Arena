@@ -5,12 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public BoardManager boardScript;
+
     // Start is called before the first frame update
     void Awake()
     {
         boardScript = GetComponent<BoardManager>();
         InitGame();
-        
     }
     void InitGame()
     {
@@ -23,6 +23,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

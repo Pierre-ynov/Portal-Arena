@@ -30,11 +30,7 @@ public class HurtScorchedEarth : MonoBehaviour
 
         if (player.Hurt(damage))
         {
-            if (!player.CanRevive())
-            {
-                    Destroy(gameObject);
-                    SceneManager.LoadScene("Fin");
-            }
+            player.CanRevive();
         }
     }
 }

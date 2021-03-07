@@ -140,6 +140,24 @@ public class Player : Piece
     }
 
     #region Configuration
+    /// <summary>
+    /// Génère et associe les gameObjects d'attaques aux slots du joueur 
+    /// </summary>
+    /// <typeparam name="T">nom du script pour l'attaque de base</typeparam>
+    /// <typeparam name="U">nom du script pour l'attaque spéciale</typeparam>
+    /// <param name="attackBasePrefab">Contient le prefab de l'attaque de base</param>
+    /// <param name="specialAttackPrefab">Contient le prefab de l'attaque spéciale</param>
+    protected void InitializePlayerCapacities<T, U>(GameObject attackBasePrefab, GameObject specialAttackPrefab)
+        where T : Capacite
+        where U : Capacite
+    {
+        GameObject attackBase = Instantiate(attackBasePrefab, new Vector3(), Quaternion.identity) as GameObject;
+        baseAttackSlot = attackBase.GetComponent<T>();
+        baseAttackSlot.parent = player;
+        GameObject specialAttack = Instantiate(specialAttackPrefab, new Vector3(), Quaternion.identity) as GameObject;
+        specialAttackSlot = specialAttack.GetComponent<U>();
+        specialAttackSlot.parent = player;
+    }
 
     /// <summary>
     /// Effectue les configurations de base du Player
@@ -162,18 +180,6 @@ public class Player : Piece
         dirY = 0;
 
         KeyConfiguration();
-    }
-
-    protected void InitializePlayerCapacities<T, U>(GameObject attackBasePrefab, GameObject specialAttackPrefab)
-        where T : Capacite
-        where U : Capacite
-    {
-        GameObject attackBase = Instantiate(attackBasePrefab, new Vector3(), Quaternion.identity) as GameObject;
-        baseAttackSlot = attackBase.GetComponent<T>();
-        baseAttackSlot.parent = player;
-        GameObject specialAttack = Instantiate(specialAttackPrefab, new Vector3(), Quaternion.identity) as GameObject;
-        specialAttackSlot = specialAttack.GetComponent<U>();
-        specialAttackSlot.parent = player;
     }
 
     /// <summary>

@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Consumable : MonoBehaviour
+public abstract class Consumable : Slot
 {
     // Type de consommable 
     public string typeValue;
 
+    // Contient la description du consommable
     public string description;
+
+    // Contient le sprite du consommable
     public Sprite consumableSprite;
 
     // Durabilité ou temps d'utilisation
@@ -21,6 +24,7 @@ public abstract class Consumable : MonoBehaviour
 
     // niveau du consommable
     public int level;
+
 
     public abstract void Action(Player p);
 
@@ -39,4 +43,6 @@ public abstract class Consumable : MonoBehaviour
                 return "";
         }
     }
+
+    
 }

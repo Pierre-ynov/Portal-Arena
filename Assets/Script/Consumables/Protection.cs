@@ -23,6 +23,7 @@ public class Protection : Consumable
                 break;
         }
         description = string.Format(description, level, value);
+        isReady = true;
     }
 
     // Function permettant la recuperation des protections
@@ -33,7 +34,7 @@ public class Protection : Consumable
         {
             //Crée une instance de la protection dans le slot objet du joueur, puis détruit la potion sur l'arène
             Player player = collision.gameObject.GetComponent<Player>();
-            player.objet.slot = this;
+            player.UpdateObjectSlot(this);
             //Détruit la protection
             Destroy(gameObject);
         }

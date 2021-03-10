@@ -30,6 +30,10 @@ public class End : MonoBehaviour
         {
             SceneManager.LoadScene("Début");
         }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void ShowLeaderboard()

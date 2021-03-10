@@ -49,12 +49,17 @@ public class UIBack : MonoBehaviour
     //Gameobject cycle
     private Cycle cycle;
 
+    //Gameobject chrono
+    private Chrono chrono;
+
 
     void Start()
     {
         Player1 = GameObject.FindWithTag("Player1").GetComponent<Player>();
         Player2 = GameObject.FindWithTag("Player2").GetComponent<Player>();
-        //InitializeUIPlayer(Player1.GetComponent<Player>(), Player2.GetComponent<Player>());
+        cycle = GameObject.FindWithTag("cycle").GetComponent<Cycle>();
+        chrono = GameObject.FindWithTag("chrono").GetComponent<Chrono>();
+        //InitializeUIPlayer();
     }
 
     void Update()
@@ -65,7 +70,7 @@ public class UIBack : MonoBehaviour
             RefreshInfoPlayers();
             RefreshSlotPlayers();
         }
-        //RefreshUICycle()
+        RefreshUICycle();
     }
 
     /// <summary>
@@ -251,7 +256,7 @@ public class UIBack : MonoBehaviour
 
     private void RefreshUICycle()
     {
-        PhaseText.text = string.Format("{0}", cycle.phaseName);
-        TimeText.text = string.Format("{0}", cycle.timer);
+        PhaseText.text = string.Format("{0}", cycle.phaseCurrentName.ToUpper());
+        TimeText.text = string.Format("TEMPS : {0}", chrono.getShowRestTime(cycle.timer));
     }
 }

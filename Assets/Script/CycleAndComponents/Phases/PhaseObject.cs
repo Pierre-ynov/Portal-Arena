@@ -6,11 +6,11 @@ public class PhaseObject : Phase
 {
     public PhaseObject()
     {
-        name = "Phase d'apparition d'objet";
+        phaseName = "Phase d'apparition d'objet";
         time = 20;
     }
     public override void action()
     {
-        
+        GenerateCoolDown(time);
     }
 }

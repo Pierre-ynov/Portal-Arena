@@ -23,13 +23,7 @@ public class Protection : Consumable
                 break;
         }
         description = string.Format(description, level, value);
-    }
-
-    public Protection(string descriptionObjet, float counterObjet,  int valueObjet)
-    {
-        description = descriptionObjet;
-        counter = counterObjet;
-        value = valueObjet;
+        isReady = true;
     }
 
     // Function permettant la recuperation des protections
@@ -40,10 +34,7 @@ public class Protection : Consumable
         {
             //Crée une instance de la protection dans le slot objet du joueur, puis détruit la potion sur l'arène
             Player player = collision.gameObject.GetComponent<Player>();
-            player.objet.slot = new Protection(description, counter, value);
-            player.objet.slot.consumableSprite = consumableSprite;
-            player.objet.slot.typeValue = typeValue;
-
+            player.UpdateObjectSlot(this);
             //Détruit la protection
             Destroy(gameObject);
         }

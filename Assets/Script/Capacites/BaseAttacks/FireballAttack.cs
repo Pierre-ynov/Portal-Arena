@@ -13,15 +13,11 @@ namespace Assets.Script.Capacites.BaseAttacks
         // Contient le gameObject qui sera créer par son attaque
         public GameObject attack;
 
-        // Contient le GameObject Piece qui est son parent
-        private GameObject parent;
-
-        public FireballAttack(GameObject attackGameObject, GameObject pieceParent)
+        void Start()
         {
-            attack = attackGameObject;
-            parent = pieceParent;
             imgAttack = Resources.Load<Sprite>("FireBall"); //à modifier
-            timeCooldown = 5;
+            timeCooldown = 3;
+            isReady = true;
         }
 
         /// <summary>

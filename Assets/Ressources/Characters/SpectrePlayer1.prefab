@@ -162,11 +162,14 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 2712287236134612094}
   countRevive: 0
+  baseAttackSlot: {fileID: 0}
+  specialAttackSlot: {fileID: 0}
+  objectSlot: {fileID: 0}
   profilePlayerImage: {fileID: 0}
   animator: {fileID: 2712287236134612089}
-  attackBasePrefab: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980,
+  attackBasePrefab: {fileID: 5304179279059613226, guid: f15431ef01860274689edae277907dbb,
     type: 3}
-  specialAttackPrefab: {fileID: 557685357088412397, guid: b0ee869909066994d912380318e7061b,
+  specialAttackPrefab: {fileID: 7510103795330393518, guid: 5285528f4940c9b42af7baaf99c9c41d,
     type: 3}
 --- !u!95 &2712287236134612089
 Animator:

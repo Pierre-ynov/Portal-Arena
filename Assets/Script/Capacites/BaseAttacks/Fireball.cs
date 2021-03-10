@@ -35,6 +35,7 @@ public class Fireball : MonoBehaviour
             {
                 enemy.CanRevive();
             }
+            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Obstacle")
             //Détruit l'entité

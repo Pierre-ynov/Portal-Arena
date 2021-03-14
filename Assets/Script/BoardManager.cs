@@ -68,15 +68,15 @@ public class BoardManager : MonoBehaviour
         }*/
 
         // Partie permettant placement des objets
-        foreach (Vector3 item in objectPositions)
-        {
-            // Remplace le sol par les sprites d'objet
-            toInstantiate = objectTiles[Random.Range(0, objectTiles.Length)];
+        //foreach (Vector3 item in objectPositions)
+        //{
+        //    // Remplace le sol par les sprites d'objet
+        //    toInstantiate = objectTiles[Random.Range(0, objectTiles.Length)];
 
-            instance = Instantiate(toInstantiate, item, Quaternion.identity) as GameObject;
+        //    instance = Instantiate(toInstantiate, item, Quaternion.identity) as GameObject;
 
-            //instance.transform.SetParent(boardHolder);
-        }
+        //    //instance.transform.SetParent(boardHolder);
+        //}
 
         if (players.Length != 0 && playersPositions.Count != 0)
         {

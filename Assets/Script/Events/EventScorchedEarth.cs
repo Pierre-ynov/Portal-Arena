@@ -9,13 +9,12 @@ public class EventScorchedEarth : EventModificationMap
     public Tilemap map;
     public Tilemap[] mapDestroy;
     private float timeCooldown;
-    private bool isFinish = false;
     private int n;
     private GameObject g;
 
     void Start()
     {
-        timeCooldown = 30f;
+        timeCooldown = 29.5f;
         for (int x = 0; x < mapDestroy.Length; x++)
         {
             mapDestroy[x].gameObject.SetActive(false);
@@ -26,7 +25,7 @@ public class EventScorchedEarth : EventModificationMap
     {
         g.SetActive(true);
         yield return new WaitForSeconds(timeCooldown);
-        isFinish = true;
+        g.SetActive(false);
     }
 
     public override void LauchEvent()
@@ -34,11 +33,5 @@ public class EventScorchedEarth : EventModificationMap
         n = Random.Range(1, mapDestroy.Length);
         g = mapDestroy[n].gameObject;
         StartCoroutine(CoolDown(g));
-
-        if (isFinish == true)
-        {
-            g.SetActive(false);
-            isFinish = false;
-        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Random;
+// using UnityEngine.Random;
 
 public class BoardManager : MonoBehaviour
 {
@@ -17,7 +17,9 @@ public class BoardManager : MonoBehaviour
     /*private List<Vector3> gridPositions = new List<Vector3>();
     public List<Vector3> obstaclePositions = new List<Vector3>();*/
     public List<Vector3> objectPositions = new List<Vector3>();
-    public GameObject[] players;
+    private GameObject[] players;
+    public GameObject[] listPrefabPlayer1;
+    public GameObject[] listPrefabPlayer2;
     public List<Vector3> playersPositions = new List<Vector3>();
 
     private Player[] uiplayer;
@@ -34,12 +36,30 @@ public class BoardManager : MonoBehaviour
         }
     }*/
 
+    private GameObject getPlayer(GameObject[] listPlayer, string namePlayer)
+    {
+        switch (namePlayer)
+        {
+            case "Spectre":
+                return listPlayer[0];
+            case "Random":
+                return listPlayer[Random.Range(0,listPlayer.Length)];
+            default:
+                return null;
+        }
+    }
+
     void BoardSetup()
     {
-        //boardHolder = new GameObject("Board").transform;
+        //boardHolder = new GameObject("Board").transform
 
         GameObject instance = null;
         GameObject toInstantiate = null;
+        SelectionPlayerManager selectionPlayer = GameObject.FindWithTag("SelectionPlayer").GetComponent<SelectionPlayerManager>();
+        players = new GameObject[] { getPlayer(listPrefabPlayer1, selectionPlayer.namePlayer1), getPlayer(listPrefabPlayer2, selectionPlayer.namePlayer2) };
+
+        /* players[0] = getPlayer(listPrefabPlayer1, selectionPlayer.namePlayer1);
+        players[1] = getPlayer(listPrefabPlayer2, selectionPlayer.namePlayer2); */
 
         /*for (int x = -1; x < columns + 1; x++)
         {

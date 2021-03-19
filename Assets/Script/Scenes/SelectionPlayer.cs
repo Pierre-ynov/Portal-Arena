@@ -25,6 +25,7 @@ public class SelectionPlayer : MonoBehaviour
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("Game");
+        selectionPlayerManager.GetComponent<SelectionPlayerManager>().updatePlayerName();
+        SceneManager.LoadScene("Jeu");
     }
 }

@@ -9,6 +9,8 @@ public class SelectionPlayerManager : MonoBehaviour
     public GameObject[] charactersList;
     private int indexPlayer1;
     private int indexPlayer2;
+    public string namePlayer1 { get; private set; }
+    public string namePlayer2 { get; private set; }
 
     void Start()
     {
@@ -67,5 +69,11 @@ public class SelectionPlayerManager : MonoBehaviour
             index--;
         }
         player = GetCharacterDescription(index);
+    }
+
+    public void updatePlayerName()
+    {
+        namePlayer1 = player1.nameCharacter;
+        namePlayer2 = player2.nameCharacter;
     }
 }

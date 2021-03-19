@@ -2655,7 +2655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: -147.99998}
+  m_AnchoredPosition: {x: 1, y: -148}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362341311
@@ -2730,7 +2730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.2000732, y: -149.99998}
+  m_AnchoredPosition: {x: 1.2000732, y: -150}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &365138212
@@ -8360,8 +8360,9 @@ MonoBehaviour:
   - {x: 14, y: 10, z: 0}
   - {x: 23, y: 13, z: 0}
   - {x: 17, y: 1, z: 0}
-  players:
+  listPrefabPlayer1:
   - {fileID: 2712287236134612094, guid: 69435c8dd24a44c40b69aa142c5edd8c, type: 3}
+  listPrefabPlayer2:
   - {fileID: 6706125799882838801, guid: 9a57348115ff6704fb49882d7c98cacb, type: 3}
   playersPositions:
   - {x: 3, y: 7, z: 0}

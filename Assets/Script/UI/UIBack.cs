@@ -16,8 +16,14 @@ public class UIBack : MonoBehaviour
     public Text RespawnPointPlayer1;
 
     public Image AttackBasePlayer1;
+    public float cooldown1 = 1;
+    bool isCooldown = false;
+    public KeyCode ability1;
     public Text TimeAttackBasePlayer1;
     public Image AttackSpecialPlayer1;
+    public float cooldown3 = 15;
+    bool isCooldown3 = false;
+    public KeyCode ability3;
     public Text TimeAttackSpecialPlayer1;
     public Image ObjectPlayer1;
     public Text DuralityObjectsPlayer1;
@@ -32,8 +38,14 @@ public class UIBack : MonoBehaviour
     public Text RespawnPointPlayer2;
 
     public Image AttackBasePlayer2;
+    public float cooldown2 = 1;
+    bool isCooldown2 = false;
+    public KeyCode ability2;
     public Text TimeAttackBasePlayer2;
     public Image AttackSpecialPlayer2;
+    public float cooldown4 = 15;
+    bool isCooldown4 = false;
+    public KeyCode ability4;
     public Text TimeAttackSpecialPlayer2;
     public Image ObjectPlayer2;
     public Text DuralityObjectsPlayer2;
@@ -60,6 +72,8 @@ public class UIBack : MonoBehaviour
         cycle = GameObject.FindWithTag("cycle").GetComponent<Cycle>();
         chrono = GameObject.FindWithTag("chrono").GetComponent<Chrono>();
         //InitializeUIPlayer();
+        //InitializeUIPlayer(Player1.GetComponent<Player>(), Player2.GetComponent<Player>());
+        AttackBasePlayer1.fillAmount = 0;
     }
 
     void Update()
@@ -71,6 +85,11 @@ public class UIBack : MonoBehaviour
             RefreshSlotPlayers();
         }
         RefreshUICycle();
+        
+        Ability1();
+        Ability2();
+        Ability3();
+        Ability4();
     }
 
     /// <summary>
@@ -258,5 +277,85 @@ public class UIBack : MonoBehaviour
     {
         PhaseText.text = string.Format("{0}", cycle.phaseCurrentName.ToUpper());
         TimeText.text = string.Format("TEMPS : {0}", chrono.getShowRestTime(cycle.timer));
+    }
+
+    void Ability1()
+    {
+        if(Input.GetKey(ability1) && isCooldown == false)
+        {
+            isCooldown = true;
+            AttackBasePlayer1.fillAmount = 1;
+        }
+
+        if(isCooldown)
+        {
+            AttackBasePlayer1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
+
+            if(AttackBasePlayer1.fillAmount <= 0)
+            {
+                AttackBasePlayer1.fillAmount = 1;
+                isCooldown = false;
+            }
+        }
+    }
+
+    void Ability2()
+    {
+        if (Input.GetKey(ability2) && isCooldown2 == false)
+        {
+            isCooldown2 = true;
+            AttackBasePlayer2.fillAmount = 1;
+        }
+
+        if (isCooldown2)
+        {
+            AttackBasePlayer2.fillAmount -= 1 / cooldown2 * Time.deltaTime;
+
+            if (AttackBasePlayer2.fillAmount <= 0)
+            {
+                AttackBasePlayer2.fillAmount = 1;
+                isCooldown2 = false;
+            }
+        }
+    }
+
+    void Ability3()
+    {
+        if (Input.GetKey(ability3) && isCooldown3 == false)
+        {
+            isCooldown3 = true;
+            AttackSpecialPlayer1.fillAmount = 1;
+        }
+
+        if (isCooldown3)
+        {
+            AttackSpecialPlayer1.fillAmount -= 1 / cooldown3 * Time.deltaTime;
+
+            if (AttackSpecialPlayer1.fillAmount <= 0)
+            {
+                AttackSpecialPlayer1.fillAmount = 1;
+                isCooldown3 = false;
+            }
+        }
+    }
+
+    void Ability4()
+    {
+        if (Input.GetKey(ability4) && isCooldown4 == false)
+        {
+            isCooldown4 = true;
+            AttackSpecialPlayer2.fillAmount = 1;
+        }
+
+        if (isCooldown4)
+        {
+            AttackSpecialPlayer2.fillAmount -= 1 / cooldown4 * Time.deltaTime;
+
+            if (AttackSpecialPlayer2.fillAmount <= 0)
+            {
+                AttackSpecialPlayer2.fillAmount = 1;
+                isCooldown4 = false;
+            }
+        }
     }
 }

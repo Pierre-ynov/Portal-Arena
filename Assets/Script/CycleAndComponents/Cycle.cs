@@ -4,32 +4,43 @@ using UnityEngine;
 
 public class Cycle : MonoBehaviour
 {
-    public Phase[] phases;
     public float timer;
     public Chrono chrono;
-    public string phaseName { get; private set; }
-    
-    public Cycle()
+    public string phaseCurrentName { get; private set; }
+
+    public GameObject[] phases;
+
+    public GameObject phaseLaunch;
+
+    private bool isFirstPhase;
+
+    void Start()
     {
-        phases = new Phase[] { new PhaseObject(), new PhaseFight() };
-        timer = Time.deltaTime;
-        chrono = new Chrono();
-        phaseName = "";
+        timer = Time.time;
+        phaseCurrentName = "";
+        isFirstPhase = true;
     }
 
-    private void lanchNewCycle()
+    private void launchNewCycle()
     {
-        Phase phase = phases[Random.Range(0, phases.Length)];
-        timer = Time.deltaTime + phase.time;
-        phaseName = phase.name;
+        Phase phase;
+        if (isFirstPhase)
+        {
+            phase = phaseLaunch.GetComponent<Phase>();
+            isFirstPhase = false;
+        }
+        else
+            phase = phases[Random.Range(0, phases.Length)].GetComponent<Phase>();
+        timer = Time.time + phase.time;
+        phaseCurrentName = phase.phaseName;
         phase.action();
     }
 
-    public void Update()
+    void Update()
     {
-        if(chrono.getTimeChrono(timer)<= 0)
+        if (chrono.getTimeChrono(timer) <= 0)
         {
-            lanchNewCycle();
+            launchNewCycle();
         }
     }
 }

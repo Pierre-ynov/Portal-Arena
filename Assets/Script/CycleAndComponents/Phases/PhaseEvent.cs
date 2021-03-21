@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class PhaseEvent : Phase
 {
-    public PhaseEvent()
-    {
-        name = "Phase d'événement";
-        time = 30;
-    }
+    public GameObject[] eventsList;
+
     public override void action()
     {
+        GenerateEvent();
+        GenerateCoolDown(time);
+    }
 
+    private void GenerateEvent()
+    {
+        Events events = eventsList[Random.Range(0, eventsList.Length)].GetComponent<Events>();
+        events.LauchEvent();
     }
 }

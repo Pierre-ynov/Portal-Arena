@@ -25,6 +25,7 @@ public class EventScorchedEarth : EventModificationMap
     {
         g.SetActive(true);
         yield return new WaitForSeconds(timeCooldown);
+        g.GetComponent<HurtScorchedEarth>().ResetBoolean();
         g.SetActive(false);
     }
 

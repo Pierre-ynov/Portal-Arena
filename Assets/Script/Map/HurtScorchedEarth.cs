@@ -32,4 +32,10 @@ public class HurtScorchedEarth : MonoBehaviour
         player.HurtPlayer(damage);
         player.AffectStatusEffectToPlayer(statusEffect);
     }
+
+    public void ResetBoolean()
+    {
+        isHurtPlayer1 = false;
+        isHurtPlayer2 = false;
+    }
 }

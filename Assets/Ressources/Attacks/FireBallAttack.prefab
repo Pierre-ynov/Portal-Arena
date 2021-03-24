@@ -46,4 +46,4 @@ MonoBehaviour:
   isReady: 0
   timeCooldown: 0
   parent: {fileID: 0}
-  attack: {fileID: 7509829210586615562, guid: 9647790093671f749bf91f1b84c42980, type: 3}
+  attack: {fileID: 7509829210586615562, guid: 531da40f021f6234bb8fbf761ef174c0, type: 3}

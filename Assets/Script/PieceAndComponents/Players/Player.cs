@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Script.Configuration;
 using Assets.Script.Capacites.BaseAttacks;
-
+using Assets.Script.StatusEffects;
 
 public class Player : Piece
 {
@@ -81,6 +81,16 @@ public class Player : Piece
     //Permet d'utiliser un objet
     public KeyCode? objetKey;
     #endregion
+
+    /// <summary>
+    /// Définit l'effet de statut affecté au joueur
+    /// </summary>
+    public StatusEffectBase statusEffect { get; private set; }
+
+    /// <summary>
+    /// Definit si le joueur peut agir
+    /// </summary>
+    private bool canAct = true;
     #endregion
 
     // Vérifie s'il peut revivre
@@ -92,10 +102,22 @@ public class Player : Piece
         {
             Game game = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<Game>();
             game.LoadVictoryScene(this);
-        }  
+        }
         else
         {
             Respawn();
+        }
+    }
+
+    /// <summary>
+    /// Enclenche le processus de dégât au joueur
+    /// </summary>
+    /// <param name="damage"></param>
+    public void HurtPlayer(int damage)
+    {
+        if (Hurt(damage))
+        {
+            CanRevive();
         }
     }
 
@@ -202,90 +224,105 @@ public class Player : Piece
 
     #endregion
 
+    public void AffectStatusEffectToPlayer(GameObject status)
+    {
+        statusEffect = Instantiate(status, transform.position, Quaternion.identity).GetComponent<StatusEffectBase>();
+        statusEffect.ActionStatusEffect(this);
+    }
+
+    public void DeleteStatusEffect()
+    {
+        statusEffect = null;
+        canAct = true;
+        Debug.Log("Status effect Player " + statusEffect);
+    }
+
     // Update is called once per frame
     void Update()
     {
-
-        //Permet de faire avancer le joueur
-        if (UpKey != null && Input.GetKey(UpKey.Value))
+        if (canAct)
         {
-            dirX = 0;
-            dirY = 1;
-            //animator.SetBool("GoUp", true);
-            Move(dirX, dirY, out hit);
-        }
-        else
-        {
-            //animator.SetBool("GoUp", false);
-        }
-
-        //Permet de faire reculer le joueur
-        if (DownKey != null && Input.GetKey(DownKey.Value))
-        {
-            dirX = 0;
-            dirY = -1;
-            //animator.SetBool("GoDown", true);
-            Move(dirX, dirY, out hit);
-        }
-        else
-        {
-            //animator.SetBool("GoDown", false);
-        }
-
-        // Permet de faire aller a gauche le joueur
-        if (LeftKey != null && Input.GetKey(LeftKey.Value))
-        {
-            dirX = -1;
-            dirY = 0;
-            //animator.SetBool("GoLeft", true);
-            Move(dirX, dirY, out hit);
-        }
-        else
-        {
-            //animator.SetBool("GoLeft", false);
-        }
-
-        // Permet de faire aller a droite le joueur
-        if (RightKey != null && Input.GetKey(RightKey.Value))
-        {
-            dirX = 1;
-            dirY = 0;
-            //animator.SetBool("GoRight", true);
-            Move(dirX, dirY, out hit);
-        }
-        else
-        {
-            //animator.SetBool("GoRight", false);
-        }
-
-        // Permet d'attaquer
-        // JR 15/11/2020 Modification pour ajouter possibilité d'empécher les inputs clavier durant le préchargement partie
-        if (baseAttackKey != null && Input.GetKeyDown(baseAttackKey.Value) && (GameManager.IsInputEnabled == true))
-        {
-            if (baseAttackSlot.isReady)
+            //Permet de faire avancer le joueur
+            if (UpKey != null && Input.GetKey(UpKey.Value))
             {
-                baseAttackSlot.Action(dirX, dirY);
-                baseAttackSlot.GenerateCoolDown();
+                dirX = 0;
+                dirY = 1;
+                //animator.SetBool("GoUp", true);
+                Move(dirX, dirY, out hit);
             }
-        }
-
-        // Permet d'attaquer avec l'attaque spéciale
-        if (specialAttackKey != null && Input.GetKeyDown(specialAttackKey.Value) && (GameManager.IsInputEnabled == true))
-        {
-            if (specialAttackSlot.isReady)
+            else
             {
-                specialAttackSlot.Action(dirX, dirY);
-                specialAttackSlot.GenerateCoolDown();
+                //animator.SetBool("GoUp", false);
             }
-        }
 
-        // Permet d'utiliser un objet après le préchargement partie, si le slot objet n'est pas vide
-        if (Input.GetKeyDown(objetKey.Value) && (GameManager.IsInputEnabled == true))
-        {
-            if (!isEmptyObjectSlot && objectSlot.isReady)
+            //Permet de faire reculer le joueur
+            if (DownKey != null && Input.GetKey(DownKey.Value))
             {
-                objectSlot.Action(this);
-                UpdateEmptyObjectSlot();
+                dirX = 0;
+                dirY = -1;
+                //animator.SetBool("GoDown", true);
+                Move(dirX, dirY, out hit);
+            }
+            else
+            {
+                //animator.SetBool("GoDown", false);
+            }
+
+            // Permet de faire aller a gauche le joueur
+            if (LeftKey != null && Input.GetKey(LeftKey.Value))
+            {
+                dirX = -1;
+                dirY = 0;
+                //animator.SetBool("GoLeft", true);
+                Move(dirX, dirY, out hit);
+            }
+            else
+            {
+                //animator.SetBool("GoLeft", false);
+            }
+
+            // Permet de faire aller a droite le joueur
+            if (RightKey != null && Input.GetKey(RightKey.Value))
+            {
+                dirX = 1;
+                dirY = 0;
+                //animator.SetBool("GoRight", true);
+                Move(dirX, dirY, out hit);
+            }
+            else
+            {
+                //animator.SetBool("GoRight", false);
+            }
+
+            // Permet d'attaquer
+            // JR 15/11/2020 Modification pour ajouter possibilité d'empécher les inputs clavier durant le préchargement partie
+            if (baseAttackKey != null && Input.GetKeyDown(baseAttackKey.Value) && (GameManager.IsInputEnabled == true))
+            {
+                if (baseAttackSlot.isReady)
+                {
+                    baseAttackSlot.Action(dirX, dirY);
+                    baseAttackSlot.GenerateCoolDown();
+                }
+            }
+
+            // Permet d'attaquer avec l'attaque spéciale
+            if (specialAttackKey != null && Input.GetKeyDown(specialAttackKey.Value) && (GameManager.IsInputEnabled == true))
+            {
+                if (specialAttackSlot.isReady)
+                {
+                    specialAttackSlot.Action(dirX, dirY);
+                    specialAttackSlot.GenerateCoolDown();
+                }
+            }
+
+            // Permet d'utiliser un objet après le préchargement partie, si le slot objet n'est pas vide
+            if (Input.GetKeyDown(objetKey.Value) && (GameManager.IsInputEnabled == true))
+            {
+                if (!isEmptyObjectSlot && objectSlot.isReady)
+                {
+                    objectSlot.Action(this);
+                    UpdateEmptyObjectSlot();
+                }
             }
         }
     }

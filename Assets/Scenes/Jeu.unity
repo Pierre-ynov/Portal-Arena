@@ -148,15 +148,15 @@ RectTransform:
   m_GameObject: {fileID: 97406016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1539342742}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: 180}
-  m_SizeDelta: {x: 60, y: 60}
+  m_AnchoredPosition: {x: 70, y: 178}
+  m_SizeDelta: {x: 60, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &97406018
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8000001, g: 0.8000001, b: 0.8000001, a: 0}
+  m_Color: {r: 0.9811321, g: 0.9765041, b: 0.9765041, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9633,6 +9633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0463b543f9310dd4d83fd1ad2b45f149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusEffect: {fileID: 3885972815700504011, guid: dd94eb666e8003c4ab3847d1686230ba,
+    type: 3}
 --- !u!1 &1178516597
 GameObject:
   m_ObjectHideFlags: 0
@@ -11020,15 +11022,15 @@ RectTransform:
   m_GameObject: {fileID: 1652149499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 945874900}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: 180}
-  m_SizeDelta: {x: 60, y: 60}
+  m_AnchoredPosition: {x: -70, y: 178}
+  m_SizeDelta: {x: 60, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652149501
 MonoBehaviour:
@@ -11043,7 +11045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12081,6 +12083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0463b543f9310dd4d83fd1ad2b45f149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusEffect: {fileID: 3885972815700504011, guid: dd94eb666e8003c4ab3847d1686230ba,
+    type: 3}
 --- !u!1001 &2053530296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12535,6 +12539,16 @@ PrefabInstance:
       propertyPath: ability4
       value: 106
       objectReference: {fileID: 0}
+    - target: {fileID: 4605468606664782574, guid: d3266d09c4d74d44e8c7325e1e4915e8,
+        type: 3}
+      propertyPath: ImageStatusEffectPlayer1
+      value: 
+      objectReference: {fileID: 1652149501}
+    - target: {fileID: 4605468606664782574, guid: d3266d09c4d74d44e8c7325e1e4915e8,
+        type: 3}
+      propertyPath: ImageStatusEffectPlayer2
+      value: 
+      objectReference: {fileID: 97406018}
     - target: {fileID: 4615731507118735589, guid: d3266d09c4d74d44e8c7325e1e4915e8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -13548,3 +13562,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0463b543f9310dd4d83fd1ad2b45f149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusEffect: {fileID: 3885972815700504011, guid: dd94eb666e8003c4ab3847d1686230ba,
+    type: 3}

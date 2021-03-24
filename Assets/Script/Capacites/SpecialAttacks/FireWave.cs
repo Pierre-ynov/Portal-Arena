@@ -24,10 +24,7 @@ public class FireWave : MonoBehaviour
             collision.gameObject != parent && !hasTouchedEnemy)
         {
             Player enemy = collision.gameObject.GetComponent<Player>();
-            if (enemy.Hurt(damage))
-            {
-                enemy.CanRevive();
-            }
+            enemy.HurtPlayer(damage);
             hasTouchedEnemy = true;
         }
         else if (collision.gameObject.tag == "Obstacle")

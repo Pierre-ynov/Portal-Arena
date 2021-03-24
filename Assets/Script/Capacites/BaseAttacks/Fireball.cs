@@ -31,10 +31,7 @@ public class Fireball : MonoBehaviour
         if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") && collision.gameObject != parent)
         {
             Player enemy = collision.gameObject.GetComponent<Player>();
-            if (enemy.Hurt(damage))
-            {
-                enemy.CanRevive();
-            }
+            enemy.HurtPlayer(damage);
             Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Obstacle")

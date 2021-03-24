@@ -74,8 +74,6 @@ public class UIBack : MonoBehaviour
         cycle = GameObject.FindWithTag("cycle").GetComponent<Cycle>();
         chrono = GameObject.FindWithTag("chrono").GetComponent<Chrono>();
         //InitializeUIPlayer();
-        //InitializeUIPlayer(Player1.GetComponent<Player>(), Player2.GetComponent<Player>());
-        //AttackBasePlayer1.fillAmount = 0;
     }
 
     void Update()

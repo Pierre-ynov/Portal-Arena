@@ -42,6 +42,8 @@ public class BoardManager : MonoBehaviour
         {
             case "Spectre":
                 return listPlayer[0];
+            case "Cap Oil":
+                return listPlayer[1];
             case "Random":
                 return listPlayer[Random.Range(0,listPlayer.Length)];
             default:

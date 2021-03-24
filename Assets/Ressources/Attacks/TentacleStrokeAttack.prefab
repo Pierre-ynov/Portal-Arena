@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5304179279059613226
+--- !u!1 &7881667067416664107
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2750953373102215397}
-  - component: {fileID: 3244959090230312500}
+  - component: {fileID: 3352874422741385702}
+  - component: {fileID: -5988309816063617471}
   m_Layer: 0
-  m_Name: FireBallAttack
+  m_Name: TentacleStrokeAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2750953373102215397
+--- !u!4 &3352874422741385702
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304179279059613226}
+  m_GameObject: {fileID: 7881667067416664107}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.848619, y: 16.582077, z: 259.8953}
+  m_LocalPosition: {x: -32.590508, y: 24.95392, z: 158.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3244959090230312500
+--- !u!114 &-5988309816063617471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304179279059613226}
+  m_GameObject: {fileID: 7881667067416664107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f141fc42e68af7c4ab3d64c466998e99, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d0e50a1ad7d0a74aafc9388441d052c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isReady: 0
   timeCooldown: 0
   parent: {fileID: 0}
-  attack: {fileID: 7509829210586615562, guid: 531da40f021f6234bb8fbf761ef174c0, type: 3}
+  rightAttack: {fileID: 4625922653738094139, guid: 5a9baae0632b3a646907c485c1be3557,
+    type: 3}
+  leftAttack: {fileID: 619923811107112991, guid: eba8bf114b66baa4cbbb5a4bdc03db75,
+    type: 3}
+  upAttack: {fileID: 3054210895246620148, guid: a0d55ed01124890499e663e690405bb3,
+    type: 3}
+  downAttack: {fileID: 8852774963389916853, guid: 5cdfb81fd5a82394fb45598948e8334e,
+    type: 3}

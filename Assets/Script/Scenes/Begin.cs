@@ -16,7 +16,7 @@ public class Begin : MonoBehaviour
 
     void Start()
     {
-        ButtonForBegin.onClick.AddListener(() => LoadGameScene("Jeu"));
+        ButtonForBegin.onClick.AddListener(() => LoadGameScene("SelectCharacter"));
         ButtonForExit.onClick.AddListener(() => Application.Quit());
         ButtonForConfig.onClick.AddListener(() => LoadGameScene("Configuration"));
         ButtonForCodex.onClick.AddListener(() => LoadGameScene("Codex"));
@@ -27,17 +27,17 @@ public class Begin : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Jeu");
+            LoadGameScene("SelectCharacter");
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("Configuration");
+            LoadGameScene("Configuration");
         }
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            SceneManager.LoadScene("Codex");
+            LoadGameScene("Codex");
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

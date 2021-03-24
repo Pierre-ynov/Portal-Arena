@@ -9,6 +9,7 @@ public class HurtScorchedEarth : MonoBehaviour
     private int damage = (int)Damage.medium;
     private bool isHurtPlayer1 = false;
     private bool isHurtPlayer2 = false;
+    public GameObject statusEffect;
 
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
@@ -28,9 +29,7 @@ public class HurtScorchedEarth : MonoBehaviour
     {
         Player player = gameObject.GetComponent<Player>();
 
-        if (player.Hurt(damage))
-        {
-            player.CanRevive();
-        }
+        player.HurtPlayer(damage);
+        player.AffectStatusEffectToPlayer(statusEffect);
     }
 }

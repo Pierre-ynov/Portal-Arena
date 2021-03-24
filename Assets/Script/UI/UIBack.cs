@@ -10,6 +10,7 @@ public class UIBack : MonoBehaviour
     // UI Player 1
     public Text NameCharacterPlayer1;
     public Image ImageCharacterPlayer1;
+    public Image ImageStatusEffectPlayer1;
 
     public Text LifePlayer1;
     public Text ArmorPlayer1;
@@ -32,6 +33,7 @@ public class UIBack : MonoBehaviour
     // UI Player 2
     public Text NameCharacterPlayer2;
     public Image ImageCharacterPlayer2;
+    public Image ImageStatusEffectPlayer2;
 
     public Text LifePlayer2;
     public Text ArmorPlayer2;
@@ -73,7 +75,7 @@ public class UIBack : MonoBehaviour
         chrono = GameObject.FindWithTag("chrono").GetComponent<Chrono>();
         //InitializeUIPlayer();
         //InitializeUIPlayer(Player1.GetComponent<Player>(), Player2.GetComponent<Player>());
-        AttackBasePlayer1.fillAmount = 0;
+        //AttackBasePlayer1.fillAmount = 0;
     }
 
     void Update()
@@ -85,7 +87,7 @@ public class UIBack : MonoBehaviour
             RefreshSlotPlayers();
         }
         RefreshUICycle();
-        
+
         Ability1();
         Ability2();
         Ability3();
@@ -114,15 +116,31 @@ public class UIBack : MonoBehaviour
     /// <param name="Player2"></param>
     public void RefreshInfoPlayers()
     {
-        LifePlayer1.text =string.Format("PV  :  {0}/{1}", Player1.health.load, Player1.health.capacity);
+        Debug.Log(string.Format("UI Image : {0}, status : {1}", ImageStatusEffectPlayer1.sprite, Player1.statusEffect?.imgStatusEffect));
+        UpdateImageUI(ImageStatusEffectPlayer1, Player1.statusEffect?.imgStatusEffect);
+        LifePlayer1.text = string.Format("PV  :  {0}/{1}", Player1.health.load, Player1.health.capacity);
         ArmorPlayer1.text = string.Format("PA  :  {0}/{1}", Player1.armor.load, Player1.armor.capacity);
         RespawnPointPlayer1.text = "x" + Player1.countRevive;
 
+        UpdateImageUI(ImageStatusEffectPlayer2, Player2.statusEffect?.imgStatusEffect);
         LifePlayer2.text = string.Format("PV  :  {0}/{1}", Player2.health.load, Player2.health.capacity);
         ArmorPlayer2.text = string.Format("PA  :  {0}/{1}", Player2.armor.load, Player2.armor.capacity);
         RespawnPointPlayer2.text = "x" + Player2.countRevive;
     }
 
+    private void UpdateImageUI(Image imgUI, Sprite imgPlayer)
+    {
+        if (imgUI.sprite == null && imgPlayer != null)
+        {
+            imgUI = ChangeImageTransparency(imgUI);
+            imgUI.sprite = imgPlayer;
+        }
+        else if (imgUI.sprite != null && imgPlayer == null)
+        {
+            imgUI = ChangeImageTransparency(imgUI);
+            imgUI.sprite = null;
+        }
+    }
 
     /// <summary>
     /// Rafraichisement de l'UI sur les slots des joueurs lors d'une partie
@@ -167,7 +185,7 @@ public class UIBack : MonoBehaviour
         }
 
         // Change le sprite de l'objet dans le slot ainsi que sa transparence, si le slot n'est pas vide
-        if ( !Player1.isEmptyObjectSlot && !(Player1.objectSlot is EmptyConsumable))
+        if (!Player1.isEmptyObjectSlot && !(Player1.objectSlot is EmptyConsumable))
         {
             // Verrouille le sprite et sa transparence une fois qu'il est égal au sprite du slot joueur
             if (ObjectPlayer1.sprite != Player1.objectSlot.consumableSprite)
@@ -227,7 +245,7 @@ public class UIBack : MonoBehaviour
             AttackSpecialPlayer2.sprite = null;
             TimeAttackSpecialPlayer2.text = "";
         }
-        
+
         // Change le sprite de l'objet dans le slot, ainsi que sa transparence, si le slot n'est pas vide
         if (!Player2.isEmptyObjectSlot && !(Player2.objectSlot is EmptyConsumable))
         {
@@ -281,17 +299,17 @@ public class UIBack : MonoBehaviour
 
     void Ability1()
     {
-        if(Input.GetKey(ability1) && isCooldown == false)
+        if (Input.GetKey(ability1) && isCooldown == false)
         {
             isCooldown = true;
             AttackBasePlayer1.fillAmount = 1;
         }
 
-        if(isCooldown)
+        if (isCooldown)
         {
             AttackBasePlayer1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
 
-            if(AttackBasePlayer1.fillAmount <= 0)
+            if (AttackBasePlayer1.fillAmount <= 0)
             {
                 AttackBasePlayer1.fillAmount = 1;
                 isCooldown = false;

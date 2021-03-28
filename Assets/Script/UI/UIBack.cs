@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIBack : MonoBehaviour
 {
 
-    // UI Player 1
+    #region UI Player 1
     public Text NameCharacterPlayer1;
     public Image ImageCharacterPlayer1;
     public Image ImageStatusEffectPlayer1;
@@ -20,17 +20,16 @@ public class UIBack : MonoBehaviour
     public float cooldown1 = 1;
     bool isCooldown = false;
     public KeyCode ability1;
-    public Text TimeAttackBasePlayer1;
     public Image AttackSpecialPlayer1;
     public float cooldown3 = 15;
     bool isCooldown3 = false;
     public KeyCode ability3;
-    public Text TimeAttackSpecialPlayer1;
     public Image ObjectPlayer1;
     public Text DuralityObjectsPlayer1;
     public Text InfoObjectPlayer1;
+    #endregion
 
-    // UI Player 2
+    #region UI Player 2
     public Text NameCharacterPlayer2;
     public Image ImageCharacterPlayer2;
     public Image ImageStatusEffectPlayer2;
@@ -43,15 +42,14 @@ public class UIBack : MonoBehaviour
     public float cooldown2 = 1;
     bool isCooldown2 = false;
     public KeyCode ability2;
-    public Text TimeAttackBasePlayer2;
     public Image AttackSpecialPlayer2;
     public float cooldown4 = 15;
     bool isCooldown4 = false;
     public KeyCode ability4;
-    public Text TimeAttackSpecialPlayer2;
     public Image ObjectPlayer2;
     public Text DuralityObjectsPlayer2;
     public Text InfoObjectPlayer2;
+    #endregion
 
     //UI Cycle
     public Text PhaseText;
@@ -73,7 +71,6 @@ public class UIBack : MonoBehaviour
         Player2 = GameObject.FindWithTag("Player2").GetComponent<Player>();
         cycle = GameObject.FindWithTag("cycle").GetComponent<Cycle>();
         chrono = GameObject.FindWithTag("chrono").GetComponent<Chrono>();
-        //InitializeUIPlayer();
     }
 
     void Update()
@@ -81,6 +78,7 @@ public class UIBack : MonoBehaviour
         // Rafraichi l'UI des joueurs 
         if (Player1 != null && Player2 != null)
         {
+            InitializeUIPlayer();
             RefreshInfoPlayers();
             RefreshSlotPlayers();
         }
@@ -114,7 +112,6 @@ public class UIBack : MonoBehaviour
     /// <param name="Player2"></param>
     public void RefreshInfoPlayers()
     {
-        Debug.Log(string.Format("UI Image : {0}, status : {1}", ImageStatusEffectPlayer1.sprite, Player1.statusEffect?.imgStatusEffect));
         UpdateImageUI(ImageStatusEffectPlayer1, Player1.statusEffect?.imgStatusEffect);
         LifePlayer1.text = string.Format("PV  :  {0}/{1}", Player1.health.load, Player1.health.capacity);
         ArmorPlayer1.text = string.Format("PA  :  {0}/{1}", Player1.armor.load, Player1.armor.capacity);
@@ -147,41 +144,7 @@ public class UIBack : MonoBehaviour
     /// <param name="Player2"></param>
     public void RefreshSlotPlayers()
     {
-        //Player 1
-        if (!(Player1.baseAttackSlot == null))
-        {
-            if (!Player1.baseAttackSlot.isReady)
-            {
-                TimeAttackBasePlayer1.text = Player1.baseAttackSlot.endCooldown + "s";
-            }
-            else
-            {
-                TimeAttackBasePlayer1.text = "";
-            }
-        }
-        else
-        {
-            AttackBasePlayer1.sprite = null;
-            TimeAttackBasePlayer1.text = "";
-        }
-
-        if (!(Player1.specialAttackSlot == null))
-        {
-            if (!Player1.specialAttackSlot.isReady)
-            {
-                TimeAttackSpecialPlayer1.text = Player1.specialAttackSlot.endCooldown + "s";
-            }
-            else
-            {
-                TimeAttackSpecialPlayer1.text = "";
-            }
-        }
-        else
-        {
-            AttackSpecialPlayer1.sprite = null;
-            TimeAttackSpecialPlayer1.text = "";
-        }
-
+        #region Player 1
         // Change le sprite de l'objet dans le slot ainsi que sa transparence, si le slot n'est pas vide
         if (!Player1.isEmptyObjectSlot && !(Player1.objectSlot is EmptyConsumable))
         {
@@ -208,41 +171,9 @@ public class UIBack : MonoBehaviour
             DuralityObjectsPlayer1.text = "";
             InfoObjectPlayer1.text = "";
         }
+        #endregion
 
-        //Player2
-        if (!(Player2.baseAttackSlot == null))
-        {
-            if (!Player2.baseAttackSlot.isReady)
-            {
-                TimeAttackBasePlayer2.text = Player2.baseAttackSlot.endCooldown + "s";
-            }
-            else
-            {
-                TimeAttackBasePlayer2.text = "";
-            }
-        }
-        else
-        {
-            AttackBasePlayer2.sprite = null;
-            TimeAttackBasePlayer2.text = "";
-        }
-
-        if (!(Player2.specialAttackSlot == null))
-        {
-            if (!Player2.specialAttackSlot.isReady)
-            {
-                TimeAttackSpecialPlayer2.text = Player2.specialAttackSlot.endCooldown + "s";
-            }
-            else
-            {
-                TimeAttackSpecialPlayer2.text = "";
-            }
-        }
-        else
-        {
-            AttackSpecialPlayer2.sprite = null;
-            TimeAttackSpecialPlayer2.text = "";
-        }
+        #region Player2
 
         // Change le sprite de l'objet dans le slot, ainsi que sa transparence, si le slot n'est pas vide
         if (!Player2.isEmptyObjectSlot && !(Player2.objectSlot is EmptyConsumable))
@@ -270,23 +201,24 @@ public class UIBack : MonoBehaviour
             DuralityObjectsPlayer2.text = "";
             InfoObjectPlayer2.text = "";
         }
+        #endregion
     }
 
     private void InitializeUIPlayer()
     {
         //Player 1
-        NameCharacterPlayer1.text = Player1.namePiece;
+        //NameCharacterPlayer1.text = Player1.namePiece;
         ImageCharacterPlayer1.sprite = Player1.profilePlayerImage;
 
-        AttackBasePlayer1.sprite = Player1.baseAttackSlot.imgAttack;
-        AttackSpecialPlayer1.sprite = Player1.specialAttackSlot.imgAttack;
+        AttackBasePlayer1.sprite = Player1.baseAttackSlot?.imgAttack;
+        AttackSpecialPlayer1.sprite = Player1.specialAttackSlot?.imgAttack;
 
         //Player 2
-        NameCharacterPlayer2.text = Player2.namePiece;
+        //NameCharacterPlayer2.text = Player2.namePiece;
         ImageCharacterPlayer2.sprite = Player2.profilePlayerImage;
 
-        AttackBasePlayer2.sprite = Player2.baseAttackSlot.imgAttack;
-        AttackSpecialPlayer2.sprite = Player2.specialAttackSlot.imgAttack;
+        AttackBasePlayer2.sprite = Player2.baseAttackSlot?.imgAttack;
+        AttackSpecialPlayer2.sprite = Player2.specialAttackSlot?.imgAttack;
     }
 
     private void RefreshUICycle()

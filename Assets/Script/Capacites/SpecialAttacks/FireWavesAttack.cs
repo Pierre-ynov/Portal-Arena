@@ -9,7 +9,6 @@ public class FireWavesAttack : Capacite
 
     void Start()
     {
-        imgAttack = Resources.Load<Sprite>("icon_firewaves"); //à modifier
         timeCooldown = 15;
         isReady = true;
     }

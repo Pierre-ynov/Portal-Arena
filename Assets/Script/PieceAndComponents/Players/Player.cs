@@ -234,7 +234,6 @@ public class Player : Piece
     {
         statusEffect = null;
         canAct = true;
-        Debug.Log("Status effect Player " + statusEffect);
     }
 
     // Update is called once per frame

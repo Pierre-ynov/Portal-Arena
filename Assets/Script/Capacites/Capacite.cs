@@ -8,7 +8,7 @@ public abstract class Capacite : Slot
     public int timeCooldown;
 
     //Contient l'image de la capacité
-    public Sprite imgAttack { get; protected set; }
+    public Sprite imgAttack;
 
     // Contient le GameObject Piece qui est son parent
     public GameObject parent;

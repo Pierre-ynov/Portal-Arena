@@ -45,5 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReady: 0
   timeCooldown: 0
+  imgAttack: {fileID: 21300000, guid: 32ff82f6ec3a661488dd09dd966cc39d, type: 3}
   parent: {fileID: 0}
   attack: {fileID: 557685357088412397, guid: b0ee869909066994d912380318e7061b, type: 3}

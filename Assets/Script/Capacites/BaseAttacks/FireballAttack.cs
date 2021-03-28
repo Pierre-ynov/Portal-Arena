@@ -15,7 +15,6 @@ namespace Assets.Script.Capacites.BaseAttacks
 
         void Start()
         {
-            imgAttack = Resources.Load<Sprite>("FireBall"); //à modifier
             timeCooldown = 3;
             isReady = true;
         }

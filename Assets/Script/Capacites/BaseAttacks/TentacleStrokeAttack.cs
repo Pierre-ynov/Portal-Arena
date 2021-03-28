@@ -12,7 +12,6 @@ public class TentacleStrokeAttack : Capacite
 
     void Start()
     {
-        imgAttack = Resources.Load<Sprite>("icone-base-attack-tentacle"); //à modifier
         timeCooldown = 3;
         isReady = true;
     }

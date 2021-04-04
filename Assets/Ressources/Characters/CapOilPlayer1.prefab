@@ -179,6 +179,13 @@ MonoBehaviour:
   blockingLayer:
     serializedVersion: 2
     m_Bits: 256
+  spritesMovementUp: {fileID: 21300000, guid: b57695ccd46428f41b0c12c231d78dcb, type: 3}
+  spritesMovementRight: {fileID: 21300000, guid: 10c30c92632f4c14d8d6c5b077961470,
+    type: 3}
+  spritesMovementLeft: {fileID: 21300000, guid: 5480d14826aa68d45967b6d1308cf9b2,
+    type: 3}
+  spritesMovementDown: {fileID: 21300000, guid: 0a16bf34ee33d7e45afce60dbcd36fd8,
+    type: 3}
   player: {fileID: 6706125799882838801}
   countRevive: 2
   baseAttackSlot: {fileID: 0}

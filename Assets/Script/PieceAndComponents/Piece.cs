@@ -14,6 +14,12 @@ public abstract class Piece : MonoBehaviour
     public RaycastHit2D hit;
     protected float Speed;
 
+    #region SpriteMovements
+    public Sprite spritesMovementUp;
+    public Sprite spritesMovementRight;
+    public Sprite spritesMovementLeft;
+    public Sprite spritesMovementDown;
+    #endregion
     /// <summary>
     /// Deplace un pion
     /// </summary>
@@ -39,6 +45,7 @@ public abstract class Piece : MonoBehaviour
 
         if (hit.transform == null)
         {
+            UpdateSpriteMovementPiece(dirX, dirY);
             transform.Translate(end);
             return true;
         }
@@ -73,5 +80,20 @@ public abstract class Piece : MonoBehaviour
         else
             damage -= oldArmorLoad;
         return !health.ModifyLoad(-damage);
+    }
+
+    public void UpdateSpriteMovementPiece(int dirx, int diry)
+    {
+        Sprite sprite = spritesMovementUp;
+        if (dirx == 1)
+            sprite = spritesMovementRight;
+        else if (diry == -1)
+            sprite = spritesMovementDown;
+        else if (dirx == -1)
+            sprite = spritesMovementLeft;
+        if (sprite != this.GetComponent<SpriteRenderer>().sprite)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = sprite;
+        }
     }
 }

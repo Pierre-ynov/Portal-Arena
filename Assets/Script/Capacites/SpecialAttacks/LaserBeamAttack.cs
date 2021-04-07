@@ -29,10 +29,10 @@ public class LaserBeamAttack : Capacite
         GameObject[] attack = GetDirectionAttack(dirx, diry);
         while (i < attack.Length)
         {
-            /* LaserBeam laserBeam = Instantiate(attack[i], position, Quaternion.identity).GetComponent<LaserBeam>();
+            position = new Vector3(position.x + dirx * 1f, position.y + diry * 1f, position.z);
+            LaserBeam laserBeam = Instantiate(attack[i], position, Quaternion.identity).GetComponent<LaserBeam>();
             laserBeam.parent = parent;
             laserBeam.transform.position = new Vector3(position.x + dirx * 1f, position.y + diry * 1f, position.z);
-            */
             i++;
         }
     }

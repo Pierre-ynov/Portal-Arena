@@ -12,7 +12,7 @@ public class CapOilPlayer : Player
     void Start()
     {
         ConfigurationPlayer();
-        InitializePlayerCapacities<TentacleStrokeAttack, FireWavesAttack>(attackBasePrefab, specialAttackPrefab);
+        InitializePlayerCapacities<TentacleStrokeAttack, LaserBeamAttack>(attackBasePrefab, specialAttackPrefab);
         UpdateEmptyObjectSlot();
     }
 }

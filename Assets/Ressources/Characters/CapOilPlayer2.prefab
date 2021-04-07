@@ -195,5 +195,5 @@ MonoBehaviour:
   animator: {fileID: 0}
   attackBasePrefab: {fileID: 7881667067416664107, guid: e41cf827487f3804da23e99f16c960fe,
     type: 3}
-  specialAttackPrefab: {fileID: 7510103795330393518, guid: 5285528f4940c9b42af7baaf99c9c41d,
+  specialAttackPrefab: {fileID: 7510103795330393518, guid: b429a9f866570e3499aa0cc076ee0110,
     type: 3}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5144713166409311167}
   - component: {fileID: 333413141475673520}
   - component: {fileID: 2382729280302021793}
+  - component: {fileID: 1535699346923692318}
   m_Layer: 0
   m_Name: TentacleStrokeLeft
   m_TagString: Untagged
@@ -144,3 +145,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+--- !u!95 &1535699346923692318
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619923811107112991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5756504266471554fb90c21aa57a25c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

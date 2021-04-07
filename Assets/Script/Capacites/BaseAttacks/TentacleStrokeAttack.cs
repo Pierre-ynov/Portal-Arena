@@ -23,6 +23,7 @@ public class TentacleStrokeAttack : Capacite
     /// <param name="diry"></param>
     public override void Action(int dirx, int diry)
     {
+        SoundManagerScript5.soundInstance.Audio.PlayOneShot(SoundManagerScript5.soundInstance.Tentacle);
         Vector3 position = parent.transform.position;
         GameObject attack = GetDirectionAttack(dirx, diry);
         TentacleStroke tentacleStroke = Instantiate(attack, position, Quaternion.identity).GetComponent<TentacleStroke>();

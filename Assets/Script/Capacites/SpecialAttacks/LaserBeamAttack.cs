@@ -23,7 +23,7 @@ public class LaserBeamAttack : Capacite
     /// <param name="diry"></param>
     public override void Action(int dirx, int diry)
     {
-        // SoundManagerScript3.soundInstance.Audio.PlayOneShot(SoundManagerScript3.soundInstance.Fire);
+        SoundManagerScript6.soundInstance.Audio.PlayOneShot(SoundManagerScript6.soundInstance.LaserBeam);
         int i = 0;
         Vector3 position = parent.transform.position;
         GameObject[] attack = GetDirectionAttack(dirx, diry);

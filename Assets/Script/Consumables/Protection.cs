@@ -35,6 +35,7 @@ public class Protection : Consumable
             //Crée une instance de la protection dans le slot objet du joueur, puis détruit la potion sur l'arène
             Player player = collision.gameObject.GetComponent<Player>();
             player.UpdateObjectSlot(this);
+            SoundManagerScript7.soundInstance.Audio.PlayOneShot(SoundManagerScript7.soundInstance.PickUp);
             //Détruit la protection
             Destroy(gameObject);
         }

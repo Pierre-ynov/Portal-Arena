@@ -4,11 +4,66 @@ Toutes les modifications notables apportées à ce projet seront documentées da
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 et ce projet s'inscrit dans [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3] - 2021-04-07
+### Ajouté
+- Scenes :
+  - Ajout de la scene sélection du personnage 
+- Sons :
+  - Ajout musique pour la scene de démarrage du jeu
+  - Ajout musique pour la scene de victoire de la partie
+  - Ajout deux musiques pour la scene affrontement
+  - Ajout de bruitage pour les attaques de bases et spéciales des personnages
+  - Ajout bruitage pour la mort d'un joueur
+  - Ajout bruitage lors des dégats
+  - Ajout bruitage pour la récupération d'un objet
+  - Ajout bruitage lors réapparition d'un joueur
+- Joueurs :
+  - Ajout attaque special du personnage Spectre
+  - Ajout animation attaque spéciale de Spectre
+  - Ajout d'un nouveau personnage : Cap Oil
+    - Ajout design du personage  
+    - Ajout de son attaque de base : Coup de tentacule
+    - Ajout de l'animation pour l'attaque de base
+    - Ajout de son attaque spécial : Rayon laser
+  - Ramassage et utilisation des objets
+- UI :
+  - Ajout icônes pour les joueurs
+  - Ajout icônes pour attaque de base et special pour chaque personnage
+  - Ajout emplacement pour l'icône état (brûlure) du joueur
+  - Ajout background pour affichage phase
+  - Ajout background pour affichage chrono de la phase
+  - Ajout animation cooldown :
+    - Attaque de base
+    - Attaque spéciale
+- Technique :
+  - Ajout principe de phase
+  - Ajout phase modification de la map :
+    - Ajout phase "terres brulées"
+  - Ajout échange d'informations entre scenes
+  - Ajout changement sprite lors déplacement personages
+  - Ajout principe de cooldown :
+    - Ajout cooldown lors des attaques de bases et spéciales
+
+### Modifications
+- Graphique :
+  - Redesign background de scenes :
+    - Scene menu démarage
+    - Scene victoire
+  - Modification sprite attaque de base Spectre
+  - Nouveau design pour un des obstacles internes
+  - Nouveau design du logo du jeu
+- Technique :
+  - Rassemblement des touches dans un même script
+
+### Correction de bugs
+- Technique :
+  - Correction bug lors du lancement de l'attaque de base de Spectre : n'envoi plus plusieurs attaques
+
 ## [0.2] - 2021-01-06
 ### Ajouté
 - Map :
   - Ajout de plusieurs zone de respawn pour les joueurs
-- Scene
+- Scene :
   - Ajout d'un background pour la scene de jeu
   - Ajout de la scene de codex
   - Ajout de la scene de configuration

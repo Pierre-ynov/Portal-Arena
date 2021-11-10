@@ -61,6 +61,13 @@ namespace Assets.Script.Configuration
 
         //Quitter le jeu
         public KeyCode QuitKey;
+
+        // Activation ou desactivation mode démo
+        public static bool isDemo = false;
+
+        public static int damageDemoBaseAttack = 10;
+        public static int damageDemoSpecialAttack = 20;
+
         void Awake()
         {
             Player1_DownKey = KeyCode.S;

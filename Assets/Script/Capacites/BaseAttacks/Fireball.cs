@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Script.Configuration;
 
 public class Fireball : MonoBehaviour
 {
@@ -15,7 +16,16 @@ public class Fireball : MonoBehaviour
     public Sprite fireballDown;
     void Start()
     {
-        damage = (int)Damage.low;
+
+        if (!GameConfiguration.isDemo)
+        {
+            damage = (int)Damage.low;
+        }
+        else
+        {
+            damage = GameConfiguration.damageDemoBaseAttack;
+        }
+
     }
 
 

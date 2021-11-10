@@ -91,6 +91,7 @@ public class Player : Piece
     /// Definit si le joueur peut agir
     /// </summary>
     private bool canAct = true;
+
     #endregion
 
     // Vérifie s'il peut revivre
@@ -152,13 +153,8 @@ public class Player : Piece
     public void Respawn()
     {
         SoundManagerScript.soundInstance.Audio.PlayOneShot(SoundManagerScript.soundInstance.Respawn);
-        List<Vector3> playersPositions = new List<Vector3>();
-        playersPositions.Add(new Vector3(-6, -4, 0));
-        playersPositions.Add(new Vector3(-6, 17, 0));
-        playersPositions.Add(new Vector3(30, -4, 0));
-        playersPositions.Add(new Vector3(30, 17, 0));
 
-        RandomSpawn(player.gameObject, playersPositions);
+        GameObject.Find("SpawnerManager").GetComponent<SpawnerManager>().RandomPlayerSpawn(gameObject);
 
         health.ModifyLoad(20);
         armor.ModifyLoad(-20);
@@ -235,6 +231,11 @@ public class Player : Piece
         statusEffect = null;
         canAct = true;
     }
+    public override void Move(int dirX, int dirY, out RaycastHit2D hit)
+    {
+        base.Move(dirX, dirY, out hit);
+    }
+
 
     // Update is called once per frame
     void Update()

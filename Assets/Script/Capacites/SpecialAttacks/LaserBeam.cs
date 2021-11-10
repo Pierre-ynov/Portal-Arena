@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Assets.Script.Configuration;
 
 public class LaserBeam : MonoBehaviour
 {
@@ -12,7 +13,14 @@ public class LaserBeam : MonoBehaviour
     void Start()
     {
         hasTouchedEnemy = false;
-        damage = (int)Damage.strong;
+        if (!GameConfiguration.isDemo)
+        {
+            damage = (int)Damage.strong;
+        }
+        else
+        {
+            damage = GameConfiguration.damageDemoBaseAttack;
+        }
         StartCoroutine(GenerateTimeAttack(1));
     }
 

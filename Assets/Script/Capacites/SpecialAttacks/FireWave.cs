@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.Script.Configuration;
 
 public class FireWave : MonoBehaviour
 {
@@ -13,7 +14,14 @@ public class FireWave : MonoBehaviour
     void Start()
     {
         hasTouchedEnemy = false;
-        damage = (int)Damage.low + /*en attente de l'effet brulure*/(int)Damage.low;
+        if (!GameConfiguration.isDemo)
+        {
+            damage = (int)Damage.low + /*en attente de l'effet brulure*/(int)Damage.low;
+        }
+        else
+        {
+            damage = GameConfiguration.damageDemoBaseAttack;
+        }
         StartCoroutine(GenerateTimeAttack(1));    
     }
 

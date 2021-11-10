@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.Script.Configuration;
 
 public class TentacleStroke : MonoBehaviour
 {
@@ -14,7 +15,14 @@ public class TentacleStroke : MonoBehaviour
     void Start()
     {
         hasTouchedEnemy = false;
-        damage = (int)Damage.low;
+        if (!GameConfiguration.isDemo)
+        {
+            damage = (int)Damage.low;
+        }
+        else
+        {
+            damage = GameConfiguration.damageDemoBaseAttack;
+        }
         StartCoroutine(GenerateTimeAttack(1));
     }
 

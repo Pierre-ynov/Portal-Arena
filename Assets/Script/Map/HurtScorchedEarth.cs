@@ -17,11 +17,13 @@ public class HurtScorchedEarth : MonoBehaviour
         {
             HurtPlayer(collision.gameObject);
             isHurtPlayer1 = true;
+            StartCoroutine(CoolDown());
         }
         if (collision.gameObject.tag == "Player2" && !isHurtPlayer2)
         {
             HurtPlayer(collision.gameObject);
             isHurtPlayer2 = true;
+            StartCoroutine(CoolDown());
         }
     }
 
@@ -37,5 +39,11 @@ public class HurtScorchedEarth : MonoBehaviour
     {
         isHurtPlayer1 = false;
         isHurtPlayer2 = false;
+    }
+
+    public IEnumerator CoolDown()
+    {
+        yield return new WaitForSeconds(10);
+        isHurtPlayer1 = false;
     }
 }

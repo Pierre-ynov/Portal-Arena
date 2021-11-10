@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public abstract class Piece : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public abstract class Piece : MonoBehaviour
     /// <param name="dirY"></param>
     /// <param name="hit"></param>
     /// <returns> si il peut être déplacer dans cette direction</returns>
-    public bool Move(int dirX, int dirY, out RaycastHit2D hit)
+    public virtual void Move(int dirX, int dirY, out RaycastHit2D hit)
     {
         Vector3 start = transform.position;
 
@@ -43,21 +44,18 @@ public abstract class Piece : MonoBehaviour
         //Re-enable boxCollider after linecast
         boxCollider.enabled = true;
 
+
         if (hit.transform == null)
         {
+
             UpdateSpriteMovementPiece(dirX, dirY);
             transform.Translate(end);
-            return true;
-        }
-        else
-        {
-            return false;
         }
 
     }
 
     // Déplace une pièce vers une position aleátoirement parmi une liste de vecteurs
-    public void RandomSpawn(GameObject gameObject, List<Vector3> spawnPositions)
+    public virtual void RandomSpawn(GameObject gameObject, List<Vector3> spawnPositions)
     {
         int i = Random.Range(0, spawnPositions.Count);
         Vector3 newSpawnpoint = spawnPositions[i];

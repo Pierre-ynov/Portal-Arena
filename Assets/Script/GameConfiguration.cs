@@ -63,7 +63,7 @@ namespace Assets.Script.Configuration
         public KeyCode QuitKey;
 
         // Activation ou desactivation mode démo
-        public static bool isDemo = true;
+        public static bool isDemo = false;
 
         public static int damageDemoBaseAttack = 10;
         public static int damageDemoSpecialAttack = 20;

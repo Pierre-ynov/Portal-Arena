@@ -148,9 +148,111 @@ namespace Assets.Script.Configuration
             }
         }
 
+        /// <summary>
+        /// Affecte une nouvelle touche lié au numéro de joueur et à l'action souhaité.
+        /// </summary>
+        /// <param name="numberPlayer"></param>
+        /// <param name="actionName"></param>
+        /// <param name="keyCode"></param>
+        /// <returns>Retourne une KeyCode ou null si il ne la trouve pas</returns>
+        public KeyCode? SetKeyCodePlayerAction(string numberPlayer, string actionName, KeyCode keyCode)
+        {
+            Debug.Log("ChangeKeyCode");
+            switch (numberPlayer)
+            {
+                case "Player1":
+                    switch (actionName)
+                    {
+                        case "Up":
+                             Player1_UpKey = keyCode;
+                            return Player1_UpKey;
+                        case "Down":
+                             Player1_DownKey = keyCode;
+                            return Player1_DownKey;
+                        case "Left":
+                            Player1_LeftKey = keyCode;
+                            return Player1_LeftKey;
+                        case "Right":
+                            Player1_RightKey = keyCode;
+                            return Player1_RightKey;
+                        case "AttackBase":
+                            Player1_BaseAttackKey = keyCode;
+                            return Player1_BaseAttackKey;
+                        case "SpecialAttack":
+                            Player1_SpecialAttackKey = keyCode;
+                            return Player1_SpecialAttackKey;
+                        case "UseObject":
+                            Player1_UseObjectKey = keyCode;
+                            return Player1_UseObjectKey;
+                        default:
+                            AddDebugLogActionMessage(actionName);
+                            return null;
+                    }
+                case "Player2":
+                    switch (actionName)
+                    {
+                        case "Up":
+                            Player2_UpKey = keyCode;
+                            return Player2_UpKey;
+                        case "Down":
+                            Player2_DownKey = keyCode;
+                            return Player2_DownKey;
+                        case "Left":
+                            Player2_LeftKey = keyCode;
+                            return Player2_LeftKey;
+                        case "Right":
+                            Player2_RightKey = keyCode;
+                            return Player2_RightKey;
+                        case "AttackBase":
+                            Player2_BaseAttackKey = keyCode;
+                            return Player2_BaseAttackKey;
+                        case "SpecialAttack":
+                            Player2_SpecialAttackKey = keyCode;
+                            return Player2_SpecialAttackKey;
+                        case "UseObject":
+                            Player2_UseObjectKey = keyCode;
+                            return Player2_UseObjectKey;
+                        default:
+                            AddDebugLogActionMessage(actionName);
+                            return null;
+                    }
+                default:
+                    Debug.Log(string.Format("Ce joueur n'existe pas. Value = {0}", numberPlayer));
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// Vérifié si le keycode est déjà affecté
+        /// </summary>
+        /// <param name="keyCode"></param>
+        /// <returns>Retourne true si le keyCode est déjà affecté</returns>
+        public bool VerifyIfKeyCodeExist(KeyCode keyCode)
+        {
+            if (Player1_UpKey == keyCode ||
+                Player1_DownKey == keyCode ||
+                Player1_LeftKey == keyCode ||
+                Player1_RightKey == keyCode ||
+                Player1_BaseAttackKey == keyCode ||
+                Player1_SpecialAttackKey == keyCode ||
+                Player1_UseObjectKey == keyCode ||
+                Player2_UpKey == keyCode ||
+                Player2_DownKey == keyCode ||
+                Player2_LeftKey == keyCode ||
+                Player2_RightKey == keyCode ||
+                Player2_BaseAttackKey == keyCode ||
+                Player2_SpecialAttackKey == keyCode ||
+                Player2_UseObjectKey == keyCode)
+                return true;
+            return false;
+        }
+
+
         private void AddDebugLogActionMessage(string actionName)
         {
             Debug.Log(string.Format("Cette action n'existe pas. Value = {0}", actionName));
         }
+
+        
     }
 }

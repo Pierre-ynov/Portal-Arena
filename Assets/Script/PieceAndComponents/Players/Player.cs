@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Assets.Script.Configuration;
-using Assets.Script.Capacites.BaseAttacks;
 using Assets.Script.StatusEffects;
 
 public class Player : Piece
@@ -54,7 +51,9 @@ public class Player : Piece
     public bool isEmptyObjectSlot { get; private set; }
 
 
-    //Variable gérant l'animation controller
+    /// <summary>
+    /// Variable gérant l'animation controller
+    /// </summary>
     public Animator animator;
 
     #region Player keys
@@ -94,9 +93,12 @@ public class Player : Piece
 
     #endregion
 
-    // Vérifie s'il peut revivre
+    /// <summary>
+    /// Vérifie s'il peut revivre
+    /// </summary>
     public void CanRevive()
     {
+        DeleteStatusEffect();
         SoundManagerScript2.soundInstance.Audio.PlayOneShot(SoundManagerScript2.soundInstance.Death);
         countRevive -= 1;
         if (countRevive < 0)
@@ -149,7 +151,9 @@ public class Player : Piece
     }
 
 
-    // Fait revivre le joueur
+    /// <summary>
+    /// Fait revivre le joueur
+    /// </summary>
     public void Respawn()
     {
         SoundManagerScript.soundInstance.Audio.PlayOneShot(SoundManagerScript.soundInstance.Respawn);
@@ -220,17 +224,37 @@ public class Player : Piece
 
     #endregion
 
+    /// <summary>
+    /// Affecte un statut au joueur
+    /// </summary>
+    /// <param name="status"></param>
     public void AffectStatusEffectToPlayer(GameObject status)
     {
         statusEffect = Instantiate(status, transform.position, Quaternion.identity).GetComponent<StatusEffectBase>();
         statusEffect.ActionStatusEffect(this);
     }
 
+    /// <summary>
+    /// Immobilise le joueur (Il ne peut faire aucune action)
+    /// </summary>
+    public void ImmobilizePlayer()
+    {
+        canAct = false;
+    }
+
+    /// <summary>
+    /// Supprime le statut du joueur
+    /// </summary>
     public void DeleteStatusEffect()
     {
-        statusEffect = null;
+        if (statusEffect != null)
+        {
+            Destroy(statusEffect.gameObject);
+            statusEffect = null;
+        }
         canAct = true;
     }
+
     public override void Move(int dirX, int dirY, out RaycastHit2D hit)
     {
         base.Move(dirX, dirY, out hit);

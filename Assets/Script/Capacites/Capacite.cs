@@ -29,4 +29,6 @@ public abstract class Capacite : Slot
         isReady = false;
         StartCoroutine(CoolDown());
     }
+    
+
 }

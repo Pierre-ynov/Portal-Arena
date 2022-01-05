@@ -11,7 +11,24 @@ public class HurtScorchedEarth : MonoBehaviour
     private bool isHurtPlayer2 = false;
     public GameObject statusEffect;
 
+    /*
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player1" && !isHurtPlayer1)
+        {
+            HurtPlayer(collision.gameObject);
+            isHurtPlayer1 = true;
+            StartCoroutine(CoolDown());
+        }
+        if (collision.gameObject.tag == "Player2" && !isHurtPlayer2)
+        {
+            HurtPlayer(collision.gameObject);
+            isHurtPlayer2 = true;
+            StartCoroutine(CoolDown());
+        }
+    }*/
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player1" && !isHurtPlayer1)
         {

@@ -10390,7 +10390,7 @@ TilemapCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -10442,16 +10442,16 @@ MonoBehaviour:
   minimumDistance: 1
   cooldown: 3
   spawners:
-  - isSomeoneNear: 0
+  - canBeUsed: 0
     position: {x: -6, y: -4, z: 0}
     actualCooldowns: 0
-  - isSomeoneNear: 0
+  - canBeUsed: 0
     position: {x: -6, y: 17, z: 0}
     actualCooldowns: 0
-  - isSomeoneNear: 0
+  - canBeUsed: 0
     position: {x: 30, y: -4, z: 0}
     actualCooldowns: 0
-  - isSomeoneNear: 0
+  - canBeUsed: 0
     position: {x: 30, y: 17, z: 0}
     actualCooldowns: 0
 --- !u!4 &1164785917
@@ -12933,7 +12933,7 @@ TilemapCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12984,7 +12984,7 @@ PrefabInstance:
     - target: {fileID: 126374300564082937, guid: d3266d09c4d74d44e8c7325e1e4915e8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -209.99997
+      value: -210
       objectReference: {fileID: 0}
     - target: {fileID: 1619391589973328427, guid: d3266d09c4d74d44e8c7325e1e4915e8,
         type: 3}
@@ -13948,7 +13948,7 @@ TilemapCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

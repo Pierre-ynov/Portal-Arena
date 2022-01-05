@@ -10,8 +10,8 @@ public abstract class Piece : MonoBehaviour
     public Bar health { get; set; }
     public Bar armor { get; set; }
     public LayerMask blockingLayer;
-    protected BoxCollider2D boxCollider;         //The BoxCollider2D component attached to this object.
-    protected Rigidbody2D rb2D;                //The Rigidbody2D component attached to this object.
+    public BoxCollider2D boxCollider;         //The BoxCollider2D component attached to this object.
+    public Rigidbody2D rb2D;                //The Rigidbody2D component attached to this object.
     public RaycastHit2D hit;
     protected float Speed;
 
@@ -28,33 +28,33 @@ public abstract class Piece : MonoBehaviour
     /// <param name="dirY"></param>
     /// <param name="hit"></param>
     /// <returns> si il peut être déplacer dans cette direction</returns>
-    public virtual void Move(int dirX, int dirY, out RaycastHit2D hit)
+    public virtual void Move(int dirX, int dirY)
     {
-        Vector3 start = transform.position;
+        Vector2 start = transform.position;
 
         // Calculate end position based on the direction parameters passed in when calling Move.
-        Vector3 end = new Vector3(Speed * dirX * Time.deltaTime, Speed * dirY * Time.deltaTime, 0f);
+        Vector2 end = new Vector3(Speed * dirX * Time.deltaTime, Speed * dirY * Time.deltaTime);
 
-        //Disable the boxCollider so that linecast doesn't hit this object's own collider.
-        boxCollider.enabled = false;
-
-        //Cast a line from start point to end point checking collision on blockingLayer.
-        hit = Physics2D.Linecast(start, start + end, blockingLayer);
-
-        //Re-enable boxCollider after linecast
-        boxCollider.enabled = true;
-
-
-        if (hit.transform == null)
-        {
-
-            UpdateSpriteMovementPiece(dirX, dirY);
-            transform.Translate(end);
-        }
-
+        UpdateSpriteMovementPiece(dirX, dirY);
+        transform.Translate(end);
     }
 
-    // Déplace une pièce vers une position aleátoirement parmi une liste de vecteurs
+    public void Awake()
+    {
+        rb2D = gameObject.GetComponent<Rigidbody2D>();
+        rb2D.isKinematic = false;
+        rb2D.freezeRotation = true;
+        rb2D.gravityScale = 0;
+    }
+
+    /// TODO :
+    /// Mettre le layer du joueur en default
+    /// Mettre le collider des gameobjects ScorchedEarth en isTrigger = true
+    /// 
+
+    /// <summary>
+    /// Déplace une pièce vers une position aleátoirement parmi une liste de vecteurs
+    /// </summary>
     public virtual void RandomSpawn(GameObject gameObject, List<Vector3> spawnPositions)
     {
         int i = Random.Range(0, spawnPositions.Count);
@@ -89,9 +89,9 @@ public abstract class Piece : MonoBehaviour
             sprite = spritesMovementDown;
         else if (dirx == -1)
             sprite = spritesMovementLeft;
-        if (sprite != this.GetComponent<SpriteRenderer>().sprite)
+        if (sprite != GetComponent<SpriteRenderer>().sprite)
         {
-            this.GetComponent<SpriteRenderer>().sprite = sprite;
+            GetComponent<SpriteRenderer>().sprite = sprite;
         }
     }
 }

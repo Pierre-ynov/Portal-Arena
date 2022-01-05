@@ -12,7 +12,7 @@ public class ReturnButton : MonoBehaviour
         SceneManager.LoadScene("Début");
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {

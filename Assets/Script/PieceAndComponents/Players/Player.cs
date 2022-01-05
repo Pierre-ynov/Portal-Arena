@@ -130,10 +130,7 @@ public class Player : Piece
     /// <returns></returns>
     public void UpdateObjectSlot(Consumable newValue)
     {
-        if (!(newValue is EmptyConsumable))
-        {
-            isEmptyObjectSlot = false;
-        }
+        isEmptyObjectSlot = false;
         objectSlot = newValue;
     }
 
@@ -145,7 +142,6 @@ public class Player : Piece
     {
         if (objectSlot == null || objectSlot.counter <= 0)
         {
-            UpdateObjectSlot(new EmptyConsumable());
             isEmptyObjectSlot = true;
         }
     }

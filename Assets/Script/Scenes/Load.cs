@@ -18,14 +18,12 @@ public class Load : MonoBehaviour
     {
         if (loadTime != 0)
         {
-            Time.timeScale = 0;
             loadTime--;
             // JR 15/11/2020 Permet d'empécher le joueur d'attaquer
             GameManager.IsInputEnabled = false;
         }
         else
         {
-            Time.timeScale = 1;
             // JR 15/11/2020 Permet au joueur d'attaquer
             GameManager.IsInputEnabled = true;
         }

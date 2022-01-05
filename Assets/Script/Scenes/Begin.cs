@@ -20,6 +20,8 @@ public class Begin : MonoBehaviour
         ButtonForExit.onClick.AddListener(() => Application.Quit());
         ButtonForConfig.onClick.AddListener(() => LoadGameScene("Configuration"));
         ButtonForCodex.onClick.AddListener(() => LoadGameScene("Codex"));
+        GameObject configuration = GameObject.FindWithTag("configuration");
+        DontDestroyOnLoad(configuration);
     }
 
     // Update is called once per frame

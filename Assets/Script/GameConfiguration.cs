@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,9 +65,19 @@ namespace Assets.Script.Configuration
 
         // Activation ou desactivation mode démo
         public static bool isDemo = false;
-
         public static int damageDemoBaseAttack = 10;
         public static int damageDemoSpecialAttack = 20;
+
+        // Tableau des noms de touches
+        private string[] actionsKeys = { "Up", "Down", "Left", "Right", "AttackBase", "SpecialAttack", "UseObject" };
+        private string[] players = { "Player1", "Player2" };
+
+        //Séparateur des données
+        private string keySeparator = "!";
+        private string valueSeparator = "=";
+        private string nameSeparator = "*";
+
+        public bool needSaveConfig = false;
 
         void Awake()
         {
@@ -88,6 +99,8 @@ namespace Assets.Script.Configuration
             Player2_UseObjectKey = KeyCode.N;
 
             QuitKey = KeyCode.Escape;
+
+            LoadConfig();
         }
 
         /// <summary>
@@ -101,9 +114,9 @@ namespace Assets.Script.Configuration
             switch (numberPlayer)
             {
                 case "Player1":
-                    switch (actionName) 
+                    switch (actionName)
                     {
-                        case  "Up":
+                        case "Up":
                             return Player1_UpKey;
                         case "Down":
                             return Player1_DownKey;
@@ -164,10 +177,10 @@ namespace Assets.Script.Configuration
                     switch (actionName)
                     {
                         case "Up":
-                             Player1_UpKey = keyCode;
+                            Player1_UpKey = keyCode;
                             return Player1_UpKey;
                         case "Down":
-                             Player1_DownKey = keyCode;
+                            Player1_DownKey = keyCode;
                             return Player1_DownKey;
                         case "Left":
                             Player1_LeftKey = keyCode;
@@ -253,6 +266,73 @@ namespace Assets.Script.Configuration
             Debug.Log(string.Format("Cette action n'existe pas. Value = {0}", actionName));
         }
 
-        
+        #region Save and Load methods
+        /// <summary>
+        /// Lance la sauvegarde des données de configuration
+        /// </summary>
+        public void LaunchSaveConfig()
+        {
+            if (needSaveConfig)
+            {
+                SaveConfig();
+                needSaveConfig = false;
+            }
+            else
+                Debug.Log("Sauvegarde des données de configuration non nécessaire.");
+        }
+
+
+        /// <summary>
+        /// Sauvegarde les données de configuration
+        /// </summary>
+        private void SaveConfig()
+        {
+            string saveDatas = ConstructSaveData();
+            File.WriteAllText(Application.dataPath + "/SaveData/config.txt", saveDatas);
+            Debug.Log("Sauvegarde des données de configuration");
+        }
+
+        /// <summary>
+        /// Charger les données de configuration
+        /// </summary>
+        private void LoadConfig()
+        {
+            if (!File.Exists(Application.dataPath + "/SaveData/config.txt"))
+            {
+                Debug.Log("Le fichier de config.txt n'existe pas. Il va prendre les données par défauts.");
+                return;
+            }
+
+            string saveDatas = File.ReadAllText(Application.dataPath + "/SaveData/config.txt");
+            foreach (string key in saveDatas.Split(new[] { keySeparator }, StringSplitOptions.None))
+            {
+                if (string.IsNullOrEmpty(key) || string.IsNullOrWhiteSpace(key))
+                    break;
+                //On récupère le nom du champ et sa valeur
+                string[] content = key.Split(new[] { valueSeparator }, StringSplitOptions.None);
+
+                //On récupère les 2 parties qui composent le nom du champ
+                string[] nameKeyCode = content[0].Split(new[] { nameSeparator }, StringSplitOptions.None);
+                
+                SetKeyCodePlayerAction(nameKeyCode[0], nameKeyCode[1], (KeyCode)Enum.Parse(typeof(KeyCode), content[1]));
+            }
+            Debug.Log("Chargement des données de configuration");
+        }
+
+        private string ConstructSaveData()
+        {
+            string saveDatas = "";
+            foreach (string player in players)
+            {
+                foreach (string action in actionsKeys)
+                {
+                    saveDatas += player + nameSeparator + action + valueSeparator +
+                        GetKeyCodePlayerAction(player, action).ToString() + keySeparator;
+                }
+            }
+            return saveDatas;
+        }
+        #endregion
+
     }
 }

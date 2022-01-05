@@ -16,6 +16,8 @@ public class UIChangeKeyPanel : MonoBehaviour
     public Text keyText;
     public Text messageText;
 
+    public GameObject eventSystemGameObject;
+
     private bool isChangeKeyPanelActive = false;
     private GameConfiguration configuration;
 
@@ -37,6 +39,7 @@ public class UIChangeKeyPanel : MonoBehaviour
                             keyText.text = keyCode.ToString();
                             configuration.SetKeyCodePlayerAction(playerNameInSystem, actionNameInSystem, keyCode);
                             ShowOrHideChangeKeyPanel();
+                            configuration.needSaveConfig = true;
                         }
                         else
                         {
@@ -45,7 +48,9 @@ public class UIChangeKeyPanel : MonoBehaviour
                     }
                     else
                     {
-                        messageText.text = string.Format("La touche {0} n'est pas accepté.", keyCode);
+                            ShowOrHideChangeKeyPanel();
+                            return;
+                       // messageText.text = string.Format("La touche {0} n'est pas accepté.", keyCode);
                     }
                 }
             }
@@ -74,6 +79,7 @@ public class UIChangeKeyPanel : MonoBehaviour
         switch (keyCode)
         {
             case KeyCode.Escape:
+            case KeyCode.Mouse0:
             case KeyCode.Return:
                 return false;
             default:

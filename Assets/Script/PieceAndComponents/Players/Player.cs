@@ -254,10 +254,10 @@ public class Player : Piece
         }
         canAct = true;
     }
+    public override void Move(int dirX, int dirY)
 
-    public override void Move(int dirX, int dirY, out RaycastHit2D hit)
     {
-        base.Move(dirX, dirY, out hit);
+        base.Move(dirX, dirY);
     }
 
 
@@ -272,7 +272,7 @@ public class Player : Piece
                 dirX = 0;
                 dirY = 1;
                 //animator.SetBool("GoUp", true);
-                Move(dirX, dirY, out hit);
+                Move(dirX, dirY);
             }
             else
             {
@@ -285,7 +285,7 @@ public class Player : Piece
                 dirX = 0;
                 dirY = -1;
                 //animator.SetBool("GoDown", true);
-                Move(dirX, dirY, out hit);
+                Move(dirX, dirY);
             }
             else
             {
@@ -298,7 +298,7 @@ public class Player : Piece
                 dirX = -1;
                 dirY = 0;
                 //animator.SetBool("GoLeft", true);
-                Move(dirX, dirY, out hit);
+                Move(dirX, dirY);
             }
             else
             {
@@ -311,7 +311,7 @@ public class Player : Piece
                 dirX = 1;
                 dirY = 0;
                 //animator.SetBool("GoRight", true);
-                Move(dirX, dirY, out hit);
+                Move(dirX, dirY);
             }
             else
             {

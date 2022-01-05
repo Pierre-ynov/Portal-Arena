@@ -22,10 +22,27 @@ public class FireWave : MonoBehaviour
         {
             damage = GameConfiguration.damageDemoBaseAttack;
         }
-        StartCoroutine(GenerateTimeAttack(1));    
+        Destroy(gameObject, 1f);
+        //StartCoroutine(GenerateTimeAttack(1));    
     }
 
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    {
+        //Permet de savoir si le gameobject est bien le joueur
+        if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") &&
+            collision.gameObject != parent && !hasTouchedEnemy)
+        {
+            Player enemy = collision.gameObject.GetComponent<Player>();
+            enemy.HurtPlayer(damage);
+            hasTouchedEnemy = true;
+        }
+        else if (collision.gameObject.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         //Permet de savoir si le gameobject est bien le joueur
         if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") &&

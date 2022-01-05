@@ -14,6 +14,7 @@ public class Fireball : MonoBehaviour
     public Sprite fireballLeft;
     public Sprite fireballUp;
     public Sprite fireballDown;
+
     void Start()
     {
 
@@ -25,28 +26,41 @@ public class Fireball : MonoBehaviour
         {
             damage = GameConfiguration.damageDemoBaseAttack;
         }
-
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(dirX * Time.deltaTime * Speed, dirY * Time.deltaTime * Speed, 0f));
+        transform.Translate(new Vector2(dirX * Time.deltaTime * Speed, dirY * Time.deltaTime * Speed));
     }
 
-    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Permet de savoir si le gameobject est bien le joueur
-        if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") && collision.gameObject != parent)
+        if (collision.gameObject.layer == 8)
         {
-            Player enemy = collision.gameObject.GetComponent<Player>();
-            enemy.HurtPlayer(damage);
             Destroy(gameObject);
+            //Permet de savoir si le gameobject est bien le joueur
+            if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") && collision.gameObject != parent)
+            {
+                Player enemy = collision.gameObject.GetComponent<Player>();
+                enemy.HurtPlayer(damage);
+            }
         }
-        else if (collision.gameObject.tag == "Obstacle")
-            //Détruit l'entité
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
             Destroy(gameObject);
+            //Permet de savoir si le gameobject est bien le joueur
+            if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") && collision.gameObject != parent)
+            {
+                Player enemy = collision.gameObject.GetComponent<Player>();
+                enemy.HurtPlayer(damage);
+            }
+        }
     }
 
     public void LoadSprite()

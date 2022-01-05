@@ -47,11 +47,6 @@ public abstract class Piece : MonoBehaviour
         rb2D.gravityScale = 0;
     }
 
-    /// TODO :
-    /// Mettre le layer du joueur en default
-    /// Mettre le collider des gameobjects ScorchedEarth en isTrigger = true
-    /// 
-
     /// <summary>
     /// Déplace une pièce vers une position aleátoirement parmi une liste de vecteurs
     /// </summary>

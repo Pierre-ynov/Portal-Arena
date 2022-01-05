@@ -24,7 +24,6 @@ public class LaserBeam : MonoBehaviour
         }
 
         Destroy(gameObject, 1f);
-        //StartCoroutine(GenerateTimeAttack(1));
     }
 
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)

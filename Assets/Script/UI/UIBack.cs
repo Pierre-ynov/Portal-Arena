@@ -146,7 +146,7 @@ public class UIBack : MonoBehaviour
     {
         #region Player 1
         // Change le sprite de l'objet dans le slot ainsi que sa transparence, si le slot n'est pas vide
-        if (!Player1.isEmptyObjectSlot/* && !(Player1.objectSlot is EmptyConsumable)*/)
+        if (!Player1.isEmptyObjectSlot)
         {
             // Verrouille le sprite et sa transparence une fois qu'il est égal au sprite du slot joueur
             if (ObjectPlayer1.sprite != Player1.objectSlot.consumableSprite)
@@ -176,7 +176,7 @@ public class UIBack : MonoBehaviour
         #region Player2
 
         // Change le sprite de l'objet dans le slot, ainsi que sa transparence, si le slot n'est pas vide
-        if (!Player2.isEmptyObjectSlot /*&& !(Player2.objectSlot is EmptyConsumable)*/)
+        if (!Player2.isEmptyObjectSlot)
         {
             // Verrouille le sprite et sa transparence une fois qu'il est égal au sprite du slot joueur
             if (ObjectPlayer2.sprite != Player2.objectSlot.consumableSprite)

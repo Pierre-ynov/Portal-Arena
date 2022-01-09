@@ -18,6 +18,8 @@ public abstract class Minion : Piece
     /// </summary>
     protected int dirY;
 
+    public GameObject targetPlayer;
+
     public void Update()
     {
         

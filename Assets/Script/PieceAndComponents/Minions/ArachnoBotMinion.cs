@@ -1,5 +1,4 @@
 ﻿using Assets.Script.Capacites.MinionAttacks;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +8,11 @@ using UnityEngine.AI;
 
 namespace Assets.Script.PieceAndComponents.Minions
 {
-    public class RobBombeMinion : Minion
+    public class ArachnoBotMinion : Minion
     {
         public GameObject attackMinionPrefab;
         public NavMeshAgent agent;
-        public GameObject targetPlayer;
+        private string numberPlayer;
 
         void Start()
         {
@@ -22,6 +21,8 @@ namespace Assets.Script.PieceAndComponents.Minions
             agent.updateRotation = false;
             agent.updateUpAxis = false;
             agent.speed = 5;
+            numberPlayer = Random.Range(1, 2).ToString();
+            targetPlayer = GameObject.FindGameObjectWithTag("Player" + numberPlayer);
         }
 
         void Update()

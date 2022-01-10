@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Script.audio;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ public class LaserBeamAttack : Capacite
     /// <param name="diry"></param>
     public override void Action(int dirx, int diry)
     {
-        SoundManagerScript6.soundInstance.Audio.PlayOneShot(SoundManagerScript6.soundInstance.LaserBeam);
+        LaserBeamSoundManagerScript.soundInstance.PlaySound();
         int i = 0;
         Vector3 position = parent.transform.position;
         GameObject[] attack = GetDirectionAttack(dirx, diry);

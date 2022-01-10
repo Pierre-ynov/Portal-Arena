@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Script.audio;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ public class TentacleStrokeAttack : Capacite
     /// <param name="diry"></param>
     public override void Action(int dirx, int diry)
     {
-        SoundManagerScript5.soundInstance.Audio.PlayOneShot(SoundManagerScript5.soundInstance.Tentacle);
+        TentacleSoundManagerScript.soundInstance.PlaySound();
         Transform p = parent.transform;
         GameObject attack = GetDirectionAttack(dirx, diry);
 

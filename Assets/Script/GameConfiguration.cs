@@ -68,6 +68,7 @@ namespace Assets.Script.Configuration
         public static int damageDemoBaseAttack = 10;
         public static int damageDemoSpecialAttack = 20;
 
+        #region Variables de sauvegarde / chargement
         // Tableau des noms de touches
         private string[] actionsKeys = { "Up", "Down", "Left", "Right", "AttackBase", "SpecialAttack", "UseObject" };
         private string[] players = { "Player1", "Player2" };
@@ -78,6 +79,10 @@ namespace Assets.Script.Configuration
         private string nameSeparator = "*";
 
         public bool needSaveConfig = false;
+        #endregion
+
+        public float musicVolume;
+        public float soundVolume;
 
         void Awake()
         {
@@ -100,6 +105,8 @@ namespace Assets.Script.Configuration
 
             QuitKey = KeyCode.Escape;
 
+            musicVolume = 0.05f;
+            soundVolume = 0.05f;
             LoadConfig();
         }
 
@@ -312,9 +319,22 @@ namespace Assets.Script.Configuration
                 string[] content = key.Split(new[] { valueSeparator }, StringSplitOptions.None);
 
                 //On récupère les 2 parties qui composent le nom du champ
-                string[] nameKeyCode = content[0].Split(new[] { nameSeparator }, StringSplitOptions.None);
-                
-                SetKeyCodePlayerAction(nameKeyCode[0], nameKeyCode[1], (KeyCode)Enum.Parse(typeof(KeyCode), content[1]));
+                string[] nameKey = content[0].Split(new[] { nameSeparator }, StringSplitOptions.None);
+                if(nameKey.Length == 1)
+                {
+                    if(nameKey[0] == "MusicVolume")
+                    {
+                        musicVolume = float.Parse(content[1]);
+                    }
+                    else if(nameKey[0] == "SoundVolume")
+                    {
+                        soundVolume = float.Parse(content[1]);
+                    }
+                }
+                else if (nameKey.Length == 2)
+                {
+                    SetKeyCodePlayerAction(nameKey[0], nameKey[1], (KeyCode)Enum.Parse(typeof(KeyCode), content[1]));
+                }
             }
             Debug.Log("Chargement des données de configuration");
         }
@@ -330,6 +350,8 @@ namespace Assets.Script.Configuration
                         GetKeyCodePlayerAction(player, action).ToString() + keySeparator;
                 }
             }
+            saveDatas += "MusicVolume" + valueSeparator + musicVolume + keySeparator;
+            saveDatas += "SoundVolume" + valueSeparator + soundVolume + keySeparator;
             return saveDatas;
         }
         #endregion

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Assets.Script.Configuration;
 using Assets.Script.StatusEffects;
+using Assets.Script.audio;
 
 public class Player : Piece
 {
@@ -99,7 +100,7 @@ public class Player : Piece
     public void CanRevive()
     {
         DeleteStatusEffect();
-        SoundManagerScript2.soundInstance.Audio.PlayOneShot(SoundManagerScript2.soundInstance.Death);
+        DeathSoundManagerScript.soundInstance.PlaySound();
         countRevive -= 1;
         if (countRevive < 0)
         {
@@ -156,7 +157,7 @@ public class Player : Piece
     /// </summary>
     public void Respawn()
     {
-        SoundManagerScript.soundInstance.Audio.PlayOneShot(SoundManagerScript.soundInstance.Respawn);
+        RespawnSoundManagerScript.soundInstance.PlaySound();
 
         GameObject.Find("SpawnerManager").GetComponent<SpawnerManager>().RandomPlayerSpawn(gameObject);
 

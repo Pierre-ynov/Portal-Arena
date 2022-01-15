@@ -107,6 +107,7 @@ namespace Assets.Script.Configuration
 
             musicVolume = 0.05f;
             soundVolume = 0.05f;
+            VerifyExistSaveDirectory();
             LoadConfig();
         }
 
@@ -339,6 +340,10 @@ namespace Assets.Script.Configuration
             Debug.Log("Chargement des données de configuration");
         }
 
+        /// <summary>
+        /// Permet de construire une chaine de caractère avec les données de configuration pour pouvoir les sauvegarder
+        /// </summary>
+        /// <returns></returns>
         private string ConstructSaveData()
         {
             string saveDatas = "";
@@ -353,6 +358,18 @@ namespace Assets.Script.Configuration
             saveDatas += "MusicVolume" + valueSeparator + musicVolume + keySeparator;
             saveDatas += "SoundVolume" + valueSeparator + soundVolume + keySeparator;
             return saveDatas;
+        }
+
+        /// <summary>
+        /// Vérifie si le dossier pour les sauvegardes existe et le cas échéant, le créer 
+        /// </summary>
+        private void VerifyExistSaveDirectory()
+        {
+            if(!Directory.Exists(Application.dataPath + "/SaveData"))
+            {
+                Debug.Log("Dossier 'SaveData' non existant, création du dossier.");
+                Directory.CreateDirectory(Application.dataPath + "/SaveData");
+            }
         }
         #endregion
 

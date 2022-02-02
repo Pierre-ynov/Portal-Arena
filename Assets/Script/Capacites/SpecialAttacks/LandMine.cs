@@ -2,6 +2,7 @@ using Assets.Script.Configuration;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Script.Capacites.MinionAttacks;
 
 public class LandMine : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class LandMine : MonoBehaviour
     private float InvisibleTimer;
     [SerializeField]
     private Color TargetColor;
+    [SerializeField]
+    private GameObject ExplosionPrefab;
     public GameObject parent;
     private int damage;
     private SpriteRenderer sr;
@@ -39,6 +42,12 @@ public class LandMine : MonoBehaviour
         if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") && collision.gameObject != parent)
         {
             Debug.Log("Boom");
+            GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
+            explosion.transform.SetParent(transform.parent);
+            Destroy(gameObject);
+
+            Player enemy = collision.gameObject.GetComponent<Player>();
+            enemy.HurtPlayer(damage);
         }
     }
 

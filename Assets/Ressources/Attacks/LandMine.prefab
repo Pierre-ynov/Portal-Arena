@@ -50,6 +50,8 @@ MonoBehaviour:
   TimeToLive: 15
   InvisibleTimer: 5
   TargetColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 0.09411765}
+  ExplosionPrefab: {fileID: 924115704006910221, guid: 1d9ebdf667bddd94db023480103a723b,
+    type: 3}
   parent: {fileID: 0}
 --- !u!212 &5838034242333865117
 SpriteRenderer:

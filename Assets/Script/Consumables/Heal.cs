@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Script.audio;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,7 +36,7 @@ public class Heal : Consumable
             //Crée une instance de la potion dans le slot objet du joueur, puis détruit la potion sur l'arène
             Player player = collision.gameObject.GetComponent<Player>();
             player.UpdateObjectSlot(this);
-            SoundManagerScript7.soundInstance.Audio.PlayOneShot(SoundManagerScript7.soundInstance.PickUp);
+            PickUpSoundManagerScript.soundInstance.PlaySound();
             //Détruit la potion
             Destroy(gameObject);
         }

@@ -55,5 +55,6 @@ public class End : MonoBehaviour
         LoserLeaderboard.text.Replace("\\n", "\n");
         Destroy(winner.gameObject);
         Destroy(loser.gameObject);
+        Destroy(GameObject.FindGameObjectWithTag("SelectionPlayer"));
     }
 }

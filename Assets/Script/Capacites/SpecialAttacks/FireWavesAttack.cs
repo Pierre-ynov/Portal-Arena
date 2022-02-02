@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Script.audio;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +21,7 @@ public class FireWavesAttack : Capacite
     /// <param name="diry"></param>
     public override void Action(int dirx, int diry)
     {
-        SoundManagerScript3.soundInstance.Audio.PlayOneShot(SoundManagerScript3.soundInstance.Fire);
+        FireballSoundManagerScript.soundInstance.PlaySound();
         Vector3 position = parent.transform.position;
         for (int i = -1; i < 2; i += 2)
         {

@@ -1,1 +1,1 @@
-Player1*Up=Z!Player1*Down=S!Player1*Left=Q!Player1*Right=D!Player1*AttackBase=E!Player1*SpecialAttack=R!Player1*UseObject=LeftShift!Player2*Up=O!Player2*Down=L!Player2*Left=K!Player2*Right=M!Player2*AttackBase=P!Player2*SpecialAttack=J!Player2*UseObject=N!
+Player1*Up=Z!Player1*Down=S!Player1*Left=Q!Player1*Right=D!Player1*AttackBase=E!Player1*SpecialAttack=R!Player1*UseObject=LeftShift!Player2*Up=O!Player2*Down=L!Player2*Left=K!Player2*Right=M!Player2*AttackBase=P!Player2*SpecialAttack=J!Player2*UseObject=N!MusicVolume=0,04960766!SoundVolume=0,05!

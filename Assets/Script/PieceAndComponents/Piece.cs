@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Assets.Script.audio;
 
 public abstract class Piece : MonoBehaviour
 {
@@ -47,11 +48,6 @@ public abstract class Piece : MonoBehaviour
         rb2D.gravityScale = 0;
     }
 
-    /// TODO :
-    /// Mettre le layer du joueur en default
-    /// Mettre le collider des gameobjects ScorchedEarth en isTrigger = true
-    /// 
-
     /// <summary>
     /// Déplace une pièce vers une position aleátoirement parmi une liste de vecteurs
     /// </summary>
@@ -71,7 +67,7 @@ public abstract class Piece : MonoBehaviour
     /// <returns>si le pion est mort ou non</returns>
     public bool Hurt(int damage)
     {
-        SoundManagerScript4.soundInstance.Audio.PlayOneShot(SoundManagerScript4.soundInstance.Hurt);
+        HurtSoundManagerScript.soundInstance.PlaySound();
         int oldArmorLoad = armor.load;
         if (armor.load != 0 && armor.ModifyLoad(-damage))
             return false;

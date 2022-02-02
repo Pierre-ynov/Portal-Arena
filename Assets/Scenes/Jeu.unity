@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 275024284}
   - component: {fileID: 275024283}
   m_Layer: 0
-  m_Name: SoundManagerScript6
+  m_Name: LaserBeamSoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,11 +216,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 275024282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c66ffdbe1b0bee44bee01f123e9bba0, type: 3}
+  m_Script: {fileID: 11500000, guid: cf635bbea3fbc914d9c7e7608dc5509c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Audio: {fileID: 275024284}
-  LaserBeam: {fileID: 8300000, guid: e36292d661f7ca649b0db5540a801155, type: 3}
+  audioSource: {fileID: 275024284}
+  sound: {fileID: 8300000, guid: e36292d661f7ca649b0db5540a801155, type: 3}
 --- !u!82 &275024284
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3207,7 +3207,7 @@ GameObject:
   - component: {fileID: 834753249}
   - component: {fileID: 834753248}
   m_Layer: 0
-  m_Name: SoundManagerScript7
+  m_Name: PickUpSoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3222,11 +3222,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 834753247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f86485a7bbcfc704c88c79e0465f1a37, type: 3}
+  m_Script: {fileID: 11500000, guid: bbeb720f7d3c5204797003c4b21f8645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Audio: {fileID: 834753249}
-  PickUp: {fileID: 8300000, guid: b1c4422d179d976479eae9704ec58c4f, type: 3}
+  audioSource: {fileID: 834753249}
+  sound: {fileID: 8300000, guid: b1c4422d179d976479eae9704ec58c4f, type: 3}
 --- !u!82 &834753249
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10617,7 +10617,7 @@ GameObject:
   - component: {fileID: 1247146046}
   - component: {fileID: 1247146045}
   m_Layer: 0
-  m_Name: SoundManagerScript2
+  m_Name: DeathSoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10632,11 +10632,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1247146044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38774473e34e85e45af1764c97c0e807, type: 3}
+  m_Script: {fileID: 11500000, guid: 57a73137df3351f4a8d189a1fde22170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Audio: {fileID: 1247146046}
-  Death: {fileID: 8300000, guid: 5952705fd9222c1468bde89afe66c6e0, type: 3}
+  audioSource: {fileID: 1247146046}
+  sound: {fileID: 8300000, guid: 5952705fd9222c1468bde89afe66c6e0, type: 3}
 --- !u!82 &1247146046
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10792,6 +10792,8 @@ MonoBehaviour:
   Player2_UseObjectKey: 0
   QuitKey: 0
   needSaveConfig: 0
+  musicVolume: 0
+  soundVolume: 0
 --- !u!4 &1278373125
 Transform:
   m_ObjectHideFlags: 0
@@ -10818,7 +10820,7 @@ GameObject:
   - component: {fileID: 1290560648}
   - component: {fileID: 1290560647}
   m_Layer: 0
-  m_Name: SoundManagerScript
+  m_Name: RespawnSoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10833,11 +10835,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1290560646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e3c05dd88001294ca013a5b05fc645b, type: 3}
+  m_Script: {fileID: 11500000, guid: c0555f6770f3256499221fe252b3e432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Audio: {fileID: 1290560648}
-  Respawn: {fileID: 8300000, guid: b640b744c5df46041b9bee711d5bf0f9, type: 3}
+  audioSource: {fileID: 1290560648}
+  sound: {fileID: 8300000, guid: b640b744c5df46041b9bee711d5bf0f9, type: 3}
 --- !u!82 &1290560648
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11645,7 +11647,7 @@ GameObject:
   - component: {fileID: 1436469322}
   - component: {fileID: 1436469321}
   m_Layer: 0
-  m_Name: SoundManagerScript5
+  m_Name: TentacleSoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11660,11 +11662,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1436469320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cfbb922c6e714946ad50dca97b785dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 13255bd7b86383047b9f3826759a8383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Audio: {fileID: 1436469322}
-  Tentacle: {fileID: 8300000, guid: ec8d718925176124f82daa7a73d5a970, type: 3}
+  audioSource: {fileID: 1436469322}
+  sound: {fileID: 8300000, guid: ec8d718925176124f82daa7a73d5a970, type: 3}
 --- !u!82 &1436469322
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11787,7 +11789,7 @@ GameObject:
   - component: {fileID: 1463805425}
   - component: {fileID: 1463805424}
   m_Layer: 0
-  m_Name: SoundManagerScript4
+  m_Name: HurtSoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11802,11 +11804,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1463805423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bb2993a0d7746e419f05f73b57316fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 40756cd4fb52d86408719c2e54bfa7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Audio: {fileID: 1463805425}
-  Hurt: {fileID: 8300000, guid: 1a20999d348d207498ce31c572e59772, type: 3}
+  audioSource: {fileID: 1463805425}
+  sound: {fileID: 8300000, guid: 1a20999d348d207498ce31c572e59772, type: 3}
 --- !u!82 &1463805425
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11929,7 +11931,7 @@ GameObject:
   - component: {fileID: 1478703244}
   - component: {fileID: 1478703243}
   m_Layer: 0
-  m_Name: SoundManagerScript3
+  m_Name: FireballSoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11944,11 +11946,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1478703242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da655e69176881409ccfd19574a348f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0398a2720825c80448a4a1b65078d81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Audio: {fileID: 1478703244}
-  Fire: {fileID: 8300000, guid: 6d3dbb349b67c2f45976eade2a0bf6e9, type: 3}
+  audioSource: {fileID: 1478703244}
+  sound: {fileID: 8300000, guid: 6d3dbb349b67c2f45976eade2a0bf6e9, type: 3}
 --- !u!82 &1478703244
 AudioSource:
   m_ObjectHideFlags: 0

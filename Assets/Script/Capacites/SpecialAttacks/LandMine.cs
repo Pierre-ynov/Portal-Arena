@@ -41,7 +41,6 @@ public class LandMine : MonoBehaviour
     {
         if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") && collision.gameObject != parent)
         {
-            Debug.Log("Boom");
             GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
             explosion.transform.SetParent(transform.parent);
             Destroy(gameObject);

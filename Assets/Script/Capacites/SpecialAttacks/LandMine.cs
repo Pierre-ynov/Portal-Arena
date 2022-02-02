@@ -53,10 +53,11 @@ public class LandMine : MonoBehaviour
         {
             GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
             explosion.transform.SetParent(transform.parent);
-            Destroy(gameObject);
 
             Minion enemy = collision.gameObject.GetComponent<Minion>();
             enemy.HurtMinion(damage);
+
+            Destroy(gameObject);
         }
     }
 

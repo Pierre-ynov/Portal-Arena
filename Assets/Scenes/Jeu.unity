@@ -9344,9 +9344,11 @@ MonoBehaviour:
   listPrefabPlayer1:
   - {fileID: 2712287236134612094, guid: 69435c8dd24a44c40b69aa142c5edd8c, type: 3}
   - {fileID: 6706125799882838801, guid: 54c8e0fa8cb9ffd4e892d0b371958c4f, type: 3}
+  - {fileID: 7496341466810567425, guid: 4b7da879a4833dc489b42845dcd8fefd, type: 3}
   listPrefabPlayer2:
   - {fileID: 6706125799882838801, guid: 9a57348115ff6704fb49882d7c98cacb, type: 3}
   - {fileID: 6706125799882838801, guid: fff67ab94554bf64392171d62e107d85, type: 3}
+  - {fileID: 5143812315551695, guid: 33a71da5abd32264e844a59ebf3646c0, type: 3}
   playersPositions:
   - {x: 3, y: 7, z: 0}
   - {x: 25, y: 7, z: 0}
@@ -13296,6 +13298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644938703277577204, guid: d3266d09c4d74d44e8c7325e1e4915e8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -68.00001
       objectReference: {fileID: 0}
     - target: {fileID: 3726486055389721489, guid: d3266d09c4d74d44e8c7325e1e4915e8,
         type: 3}

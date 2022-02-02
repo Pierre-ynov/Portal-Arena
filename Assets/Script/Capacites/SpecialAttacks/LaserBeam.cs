@@ -36,6 +36,13 @@ public class LaserBeam : MonoBehaviour
             enemy.HurtPlayer(damage);
             hasTouchedEnemy = true;
         }
+        if (collision.gameObject.tag == "Minion" &&
+            collision.gameObject != parent && !hasTouchedEnemy)
+        {
+            Minion enemy = collision.gameObject.GetComponent<Minion>();
+            enemy.HurtMinion(damage);
+            hasTouchedEnemy = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,6 +53,13 @@ public class LaserBeam : MonoBehaviour
         {
             Player enemy = collision.gameObject.GetComponent<Player>();
             enemy.HurtPlayer(damage);
+            hasTouchedEnemy = true;
+        }
+        if (collision.gameObject.tag == "Minion" &&
+            collision.gameObject != parent && !hasTouchedEnemy)
+        {
+            Minion enemy = collision.gameObject.GetComponent<Minion>();
+            enemy.HurtMinion(damage);
             hasTouchedEnemy = true;
         }
     }

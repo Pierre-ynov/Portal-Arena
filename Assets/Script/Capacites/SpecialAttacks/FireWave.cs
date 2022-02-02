@@ -35,6 +35,12 @@ public class FireWave : MonoBehaviour
             enemy.HurtPlayer(damage);
             hasTouchedEnemy = true;
         }
+        if ((collision.gameObject.tag == "Minion") && !hasTouchedEnemy)
+        {
+            Minion enemy = collision.gameObject.GetComponent<Minion>();
+            enemy.HurtMinion(damage);
+            hasTouchedEnemy = true;
+        }
         else if (collision.gameObject.tag == "Obstacle")
         {
             Destroy(gameObject);
@@ -49,6 +55,13 @@ public class FireWave : MonoBehaviour
         {
             Player enemy = collision.gameObject.GetComponent<Player>();
             enemy.HurtPlayer(damage);
+            hasTouchedEnemy = true;
+        }
+        if (collision.gameObject.tag == "Minion" &&
+            collision.gameObject != parent && !hasTouchedEnemy)
+        {
+            Minion enemy = collision.gameObject.GetComponent<Minion>();
+            enemy.HurtMinion(damage);
             hasTouchedEnemy = true;
         }
         else if (collision.gameObject.tag == "Obstacle")

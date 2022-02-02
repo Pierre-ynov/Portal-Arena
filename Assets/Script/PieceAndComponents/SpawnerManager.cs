@@ -68,4 +68,9 @@ public class SpawnerManager : MonoBehaviour
 
         player.transform.position = usableSpawners[randomIndex].position;
     }
+
+    public void MinionSpawn(GameObject minion, int numberMinion)
+    {
+        minion = Instantiate(minion, spawners[numberMinion].position, Quaternion.identity) as GameObject;
+    }
 }

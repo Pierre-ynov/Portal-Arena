@@ -48,6 +48,15 @@ public class LandMine : MonoBehaviour
             Player enemy = collision.gameObject.GetComponent<Player>();
             enemy.HurtPlayer(damage);
         }
+        if (collision.gameObject.tag == "Minion")
+        {
+            GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
+            explosion.transform.SetParent(transform.parent);
+            Destroy(gameObject);
+
+            Minion enemy = collision.gameObject.GetComponent<Minion>();
+            enemy.HurtMinion(damage);
+        }
     }
 
     private IEnumerator Invisible()

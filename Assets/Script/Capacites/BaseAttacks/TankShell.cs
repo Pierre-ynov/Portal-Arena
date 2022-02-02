@@ -38,6 +38,11 @@ public class TankShell : MonoBehaviour
                 Player enemy = collision.gameObject.GetComponent<Player>();
                 enemy.HurtPlayer(damage);
             }
+            if (collision.gameObject.tag == "Minion")
+            {
+                Minion enemy = collision.gameObject.GetComponent<Minion>();
+                enemy.HurtMinion(damage);
+            }
         }
 
     }

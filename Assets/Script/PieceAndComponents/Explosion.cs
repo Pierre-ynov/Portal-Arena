@@ -20,6 +20,6 @@ public class Explosion : MonoBehaviour
     //Called by animation to self destroy when it's over
     void DestroyEvent()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

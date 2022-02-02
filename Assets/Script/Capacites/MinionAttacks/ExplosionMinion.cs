@@ -1,5 +1,6 @@
 ﻿using Assets.Script.Configuration;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace Assets.Script.Capacites.MinionAttacks
 {
-    public class Explosion : MonoBehaviour
+    public class ExplosionMinion : MonoBehaviour
     {
         private int damage;
 
@@ -19,7 +20,7 @@ namespace Assets.Script.Capacites.MinionAttacks
 
             if (!GameConfiguration.isDemo)
             {
-                damage = (int)Damage.veryStrong;
+                damage = (int)Damage.strong;
             }
             else
             {
@@ -31,15 +32,32 @@ namespace Assets.Script.Capacites.MinionAttacks
         private void OnCollisionEnter2D(Collision2D collision)
         {
             //Permet de savoir si le gameobject est bien le joueur
-            if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") && collision.gameObject != parent)
+            if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2"))
             {
                 Player enemy = collision.gameObject.GetComponent<Player>();
                 enemy.HurtPlayer(damage);
+                StartCoroutine(CoolDown());
                 Destroy(gameObject);
+                Destroy(parent);
             }
-            else if (collision.gameObject.tag == "Obstacle")
-                //Détruit l'entité
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            //Permet de savoir si le gameobject est bien le joueur
+            if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2")
+            {
+                Player enemy = collision.gameObject.GetComponent<Player>();
+                enemy.HurtPlayer(damage);
+                StartCoroutine(CoolDown());
                 Destroy(gameObject);
+                Destroy(parent);
+            }
+        }
+
+        public IEnumerator CoolDown()
+        {
+            yield return new WaitForSeconds(10);
         }
 
     }

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Script.Capacites.MinionAttacks
 {
-    public class ExplosionAttack : Capacite
+    public class ExplosionMinionAttack : Capacite
     {
         public GameObject attack;
 
@@ -19,10 +19,10 @@ namespace Assets.Script.Capacites.MinionAttacks
 
         public override void Action(int dirx, int diry)
         {
-            Vector3 position = transform.position;
-            Explosion explosion = Instantiate(attack, position, Quaternion.identity).GetComponent<Explosion>();
-            explosion.parent = parent;
-
+            Vector3 position = parent.transform.position;
+            ExplosionMinion explosionMinion = Instantiate(attack, position, Quaternion.identity).GetComponent<ExplosionMinion>();
+            explosionMinion.parent = parent;
+            Destroy(gameObject);
         }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EventSpawnMinions : Events
 {
+    public GameObject spawnerManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,7 @@ public class EventSpawnMinions : Events
     {
         for (int x = 0; x < 4; x++)
         {
-            minion = Instantiate(minion);
-            GameObject.Find("SpawnerManager").GetComponent<SpawnerManager>().MinionSpawn(minion, x);
+            spawnerManager.GetComponent<SpawnerManager>().MinionSpawn(minion, x);
         }
     }
 }

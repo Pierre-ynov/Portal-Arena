@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 2756411259900875668}
   - component: {fileID: 2763920882031384473}
   - component: {fileID: -3058791147801811446}
-  - component: {fileID: -6955586096604088896}
   - component: {fileID: 7275428322403779261}
-  m_Layer: 0
+  - component: {fileID: 5083482716690617241}
+  m_Layer: 8
   m_Name: ArachnoBot
-  m_TagString: Untagged
+  m_TagString: Minion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f97fbb41fe9275742acc6df673273e39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,28 +133,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!195 &-6955586096604088896
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9039875039462368159}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &7275428322403779261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,8 +148,8 @@ MonoBehaviour:
   blockingLayer:
     serializedVersion: 2
     m_Bits: 256
-  boxCollider: {fileID: 0}
-  rb2D: {fileID: 0}
+  boxCollider: {fileID: 2763920882031384473}
+  rb2D: {fileID: 2756411259900875668}
   spritesMovementUp: {fileID: 21300000, guid: 8c4b6bf96799e8142865b33bb0775295, type: 3}
   spritesMovementRight: {fileID: 21300000, guid: 53726ab5e3e72424eb594161a24c1847,
     type: 3}
@@ -180,8 +158,31 @@ MonoBehaviour:
   spritesMovementDown: {fileID: 21300000, guid: f97fbb41fe9275742acc6df673273e39,
     type: 3}
   minionAttack: {fileID: 0}
-  minion: {fileID: 9039875039462368159}
+  minion: {fileID: 0}
   targetPlayer: {fileID: 0}
   attackMinionPrefab: {fileID: 5873416508161338196, guid: a3dcf68485fdb90419c8448d60072f24,
     type: 3}
-  agent: {fileID: -6955586096604088896}
+  agent: {fileID: 5083482716690617241}
+  parent: {fileID: 9039875039462368159}
+--- !u!195 &5083482716690617241
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9039875039462368159}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.64
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.28
+  m_BaseOffset: 0.64
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

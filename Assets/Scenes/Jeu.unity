@@ -9271,6 +9271,7 @@ MonoBehaviour:
   time: 30
   phaseName: "Phase d'\xE9v\xE8nement"
   eventsList:
+  - {fileID: 920781191}
   - {fileID: 1388267084}
 --- !u!4 &877749693
 Transform:
@@ -9473,6 +9474,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73ee995750b0092418046e4c717d90a4, type: 3}
+--- !u!1 &920781191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6324567740044406709, guid: 73ee995750b0092418046e4c717d90a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 920781190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &955702983
 GameObject:
   m_ObjectHideFlags: 0
@@ -12095,6 +12102,8 @@ MonoBehaviour:
   timer: 0
   chrono: {fileID: 517090467}
   phases:
+  - {fileID: 1178516597}
+  - {fileID: 1572927427}
   - {fileID: 877749691}
   phaseLaunch: {fileID: 1071282028}
 --- !u!4 &1539235851
@@ -13302,7 +13311,7 @@ PrefabInstance:
     - target: {fileID: 3644938703277577204, guid: d3266d09c4d74d44e8c7325e1e4915e8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -68.00001
+      value: -68
       objectReference: {fileID: 0}
     - target: {fileID: 3726486055389721489, guid: d3266d09c4d74d44e8c7325e1e4915e8,
         type: 3}

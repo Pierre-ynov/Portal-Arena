@@ -10,10 +10,6 @@ public abstract class CharacterDescription : MonoBehaviour
     /// </summary>
     public string nameCharacter;
     /// <summary>
-    /// Variable contenant la description du personnage
-    /// </summary>
-    public string description;
-    /// <summary>
     /// Variable contenant le nom de l'attaque de base du personnage
     /// </summary>
     public string baseAttack;

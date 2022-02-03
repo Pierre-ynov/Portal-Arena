@@ -12,8 +12,8 @@ public class UIBack : MonoBehaviour
     public Image ImageCharacterPlayer1;
     public Image ImageStatusEffectPlayer1;
 
-    public Text LifePlayer1;
-    public Text ArmorPlayer1;
+    public Image HealthBarPlayer1;
+    public Image ArmorBarPlayer1;
     public Text RespawnPointPlayer1;
 
     public Image AttackBasePlayer1;
@@ -34,8 +34,8 @@ public class UIBack : MonoBehaviour
     public Image ImageCharacterPlayer2;
     public Image ImageStatusEffectPlayer2;
 
-    public Text LifePlayer2;
-    public Text ArmorPlayer2;
+    public Image HealthBarPlayer2;
+    public Image ArmorBarPlayer2;
     public Text RespawnPointPlayer2;
 
     public Image AttackBasePlayer2;
@@ -113,13 +113,13 @@ public class UIBack : MonoBehaviour
     public void RefreshInfoPlayers()
     {
         UpdateImageUI(ImageStatusEffectPlayer1, Player1.statusEffect?.imgStatusEffect);
-        LifePlayer1.text = string.Format("PV  :  {0}/{1}", Player1.health.load, Player1.health.capacity);
-        ArmorPlayer1.text = string.Format("PA  :  {0}/{1}", Player1.armor.load, Player1.armor.capacity);
+        HealthBarPlayer1.fillAmount = (float)Player1.health.load / Player1.health.capacity;
+        ArmorBarPlayer1.fillAmount = (float)Player1.armor.load / Player1.armor.capacity;
         RespawnPointPlayer1.text = "x" + Player1.countRevive;
 
         UpdateImageUI(ImageStatusEffectPlayer2, Player2.statusEffect?.imgStatusEffect);
-        LifePlayer2.text = string.Format("PV  :  {0}/{1}", Player2.health.load, Player2.health.capacity);
-        ArmorPlayer2.text = string.Format("PA  :  {0}/{1}", Player2.armor.load, Player2.armor.capacity);
+        HealthBarPlayer2.fillAmount = (float)Player2.health.load / Player2.health.capacity;
+        ArmorBarPlayer2.fillAmount = (float)Player2.armor.load / Player2.armor.capacity;
         RespawnPointPlayer2.text = "x" + Player2.countRevive;
     }
 

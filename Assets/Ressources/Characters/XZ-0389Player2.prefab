@@ -347,7 +347,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: da2beb8262503dc4a89c2a1f326f3e53, type: 3}
+  m_Texture: {fileID: 2800000, guid: 2396b0a6301365447a24fe5d59d85423, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -432,4 +432,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: J1
+  m_Text: J2

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4482192432714304923}
   - component: {fileID: 1372343957774033986}
   m_Layer: 0
-  m_Name: ExplosionAttack
+  m_Name: ExplosionMinionAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReady: 0
   timeCooldown: 0
-  imgAttack: {fileID: 21300000, guid: ba92c5a8c69b9894db27da6effc8eae5, type: 3}
+  imgAttack: {fileID: 0}
   parent: {fileID: 0}
-  attack: {fileID: 7301483034385403384, guid: 0313d7027b80ba44fa64932e7f1ce8f0, type: 3}
+  attack: {fileID: 9051992772140645342, guid: 0313d7027b80ba44fa64932e7f1ce8f0, type: 3}

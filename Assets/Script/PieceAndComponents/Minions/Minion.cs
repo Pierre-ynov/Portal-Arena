@@ -53,4 +53,9 @@ public abstract class Minion : Piece
 
     protected abstract void executeIAAction();
 
+    public virtual void setNumberTargetPlayer(int numberPlayer)
+    {
+     
+    }
+
 }

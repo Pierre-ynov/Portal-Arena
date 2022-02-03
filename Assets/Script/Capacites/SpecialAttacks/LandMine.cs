@@ -41,13 +41,22 @@ public class LandMine : MonoBehaviour
     {
         if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") && collision.gameObject != parent)
         {
-            Debug.Log("Boom");
             GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
             explosion.transform.SetParent(transform.parent);
 
             Player enemy = collision.gameObject.GetComponent<Player>();
             enemy.HurtPlayer(damage);
             
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Minion")
+        {
+            GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
+            explosion.transform.SetParent(transform.parent);
+
+            Minion enemy = collision.gameObject.GetComponent<Minion>();
+            enemy.HurtMinion(damage);
+
             Destroy(gameObject);
         }
     }

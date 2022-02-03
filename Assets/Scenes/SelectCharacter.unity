@@ -864,8 +864,8 @@ MonoBehaviour:
   charactersList:
   - {fileID: 606782992}
   - {fileID: 508583314}
-  - {fileID: 235641069}
   - {fileID: 1682908078}
+  - {fileID: 235641069}
 --- !u!4 &867641768
 Transform:
   m_ObjectHideFlags: 0

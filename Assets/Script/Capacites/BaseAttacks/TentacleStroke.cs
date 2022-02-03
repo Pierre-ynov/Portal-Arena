@@ -39,6 +39,13 @@ public class TentacleStroke : MonoBehaviour
             }
             hasTouchedEnemy = true;
         }
+        if (collision.gameObject.tag == "Minion" &&
+            collision.gameObject != parent && !hasTouchedEnemy)
+        {
+            Minion enemy = collision.gameObject.GetComponent<Minion>();
+            enemy.HurtMinion(damage);
+            hasTouchedEnemy = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,6 +59,13 @@ public class TentacleStroke : MonoBehaviour
             {
                 enemy.CanRevive();
             }
+            hasTouchedEnemy = true;
+        }
+        if (collision.gameObject.tag == "Minion" &&
+            collision.gameObject != parent && !hasTouchedEnemy)
+        {
+            Minion enemy = collision.gameObject.GetComponent<Minion>();
+            enemy.HurtMinion(damage);
             hasTouchedEnemy = true;
         }
     }

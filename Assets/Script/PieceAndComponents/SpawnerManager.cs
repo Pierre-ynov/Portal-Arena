@@ -63,9 +63,14 @@ public class SpawnerManager : MonoBehaviour
 
         int randomIndex = Random.Range(0, usableSpawners.Count);
 
-        Debug.Log($"{usableSpawners.Count} usable spawns");
-        Debug.Log($"Spawn id:{spawners.IndexOf(usableSpawners[randomIndex])} at {usableSpawners[randomIndex].position}");
-
         player.transform.position = usableSpawners[randomIndex].position;
+    }
+
+    public void MinionSpawn(GameObject minion, int numberMinion)
+    {
+        minion = Instantiate(minion, spawners[numberMinion].position, Quaternion.identity) as GameObject;
+        Minion minionToSpawn = minion.GetComponent<Minion>();
+        int randomNumber = Random.Range(0, 100);
+        minionToSpawn.setNumberTargetPlayer(randomNumber);
     }
 }

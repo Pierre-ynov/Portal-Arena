@@ -4,8 +4,51 @@ Toutes les modifications notables apportées à ce projet seront documentées da
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 et ce projet s'inscrit dans [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4] - 2022-02-03
+### Ajoutés
+- Minion :
+  - Ajout du patron technique des minions
+  - Ajout du design du minion 'Arachnobot'
+  - Ajout du prefab du minion 'Arachnobot'
+  - Ajout design de l'attaque 'Explosion' du minion
+  - Ajout du prefab de l'attaque 'Explosion'
+- Evènement :
+  - Ajout de l'évènement 'Apparition de minion'
+  - Ajout de l'évènement 'Apparition d'arachnobot'
+- Joueur :
+  - Ajout du design du nouveau personnage 'XZ-0389'
+  - Ajout du prefab du personnage 'XZ-0389'
+  - Ajout de la fiche du personnage 'XZ-0389'
+  - Ajout du design des attaques de base et spéciale pour 'XZ-0389'
+  - Ajout du prefab pour l'attaque de base 'Tir d'obus' de 'XZ-0389'
+  - Ajout du prefab pour l'attaque spéciale 'Mine' de 'XZ-0389'
+- Technique :
+  - Ajout de la possibilité de sauvegarder et charger la configuration en local
+  - Ajout d'un mode démo pour augmenter les dégâts (Seulement pour faciliter les démos ou les tests si besoin)
+- Graphisme :
+  - Ajout d'indicateur sur les joueurs 
+
+### Modifications
+- Technique :
+  - Modification de la scène 'Configuration' pour ajouter la gestion audio
+  - Modification de la scène 'Configuration' pour pouvoir modifier les touches de contrôles et l'audio
+  - Modification de la version d'unity du projet '2020.3.3f1'
+- Graphisme :
+  - Refonte du background de la scène 'Début'
+- Autre :
+  - Diminuer la quantité d'objet qui apparaisse sur la map lors de l'évènement "Apparition d'objets"
+
+### Correction de bugs
+- Technique :
+  - Correction du bug apparition des joueurs sur la même case
+	- Correction de cooldown de la reprise de dégâts lors de la modification de map
+	- Correction de la synchronisation de la phase de lancement et le blocage des commandes d'attaque
+	- Correction des problèmes de hitbox des personnages (Personnages, attaques, etc.)
+	- Correction de la sélection de personnage persistante si on recommence une partie sans quitter le jeu
+	- Correction de l'effet de statut toujours actif après réapparition du joueur
+
 ## [0.3] - 2021-04-07
-### Ajouté
+### Ajoutés
 - Scenes :
   - Ajout de la scene sélection du personnage 
 - Sons :
@@ -60,7 +103,7 @@ et ce projet s'inscrit dans [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Correction bug lors du lancement de l'attaque de base de Spectre : n'envoi plus plusieurs attaques
 
 ## [0.2] - 2021-01-06
-### Ajouté
+### Ajoutés
 - Map :
   - Ajout de plusieurs zone de respawn pour les joueurs
 - Scene :
@@ -72,7 +115,7 @@ et ce projet s'inscrit dans [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Joueurs :
   - Ajout de la fonctionnalité de respawn
 
-### Modification
+### Modifications
 - UI :
   - Réorganisation des composants
 - Map :
@@ -83,12 +126,12 @@ et ce projet s'inscrit dans [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Nouveau design avec changement de la taille des limites du terrain
     - Nouveau design des terrains
 
-### Correction de bug
+### Correction de bugs
 - UI :
   - Correction de la synchronisation entre UI back-end et UI front-end
 
 ## [0.1] - 2020-11-25
-### Ajouté
+### Ajoutés
 - Personnages :
   - Modelisation du personnage "Spectre"
   - Déplacement des personnages sur 2 axes

@@ -7,11 +7,6 @@ public class UIBackSelectCharacter : MonoBehaviour
 {
     #region Variables
     /// <summary>
-    /// Recupere text UI pour afficher la description du personnage
-    /// </summary>
-    public Text descriptionPlayer1;
-    public Text descriptionPlayer2;
-    /// <summary>
     /// Recupere text UI pour afficher les différentes attaques du personnage
     /// </summary>
     public Text baseAttackPlayer1;
@@ -39,14 +34,12 @@ public class UIBackSelectCharacter : MonoBehaviour
     {
         #region Player1
         namePlayer1.text = spm.player1.nameCharacter;
-        descriptionPlayer1.text = spm.player1.description;
         baseAttackPlayer1.text = spm.player1.baseAttack;
         specialAttackPlayer1.text = spm.player1.specialAttack;
         iconePlayer1.sprite = spm.player1.GetIconCharacter("player1");
         #endregion
         #region Player2
         namePlayer2.text = spm.player2.nameCharacter;
-        descriptionPlayer2.text = spm.player2.description;
         baseAttackPlayer2.text = spm.player2.baseAttack;
         specialAttackPlayer2.text = spm.player2.specialAttack;
         iconePlayer2.sprite = spm.player2.GetIconCharacter("player2");

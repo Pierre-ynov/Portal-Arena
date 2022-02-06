@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e3cae733ac90a244c9b72a7500bb3618,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -173,12 +176,14 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 7cb9428bdbdae9847a4de94be07475a1, type: 3}
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -196,23 +201,16 @@ MonoBehaviour:
     plusieurs types de portails, qui m\xE8nent vers plusieurs mondes, o\xF9 peuvent
     les accueillir des Boss. Les personnages doivent se battre dans une ar\xE8ne,
     pour la gloire de leur esp\xE8ce\r.\n\r\nFonctionalit\xE9 :\r\nJouable en multijoueur\r\nLe
-    jeu est jouable en multijoueur local, permettant de jouer aux 2 mode de jeu (\"Versus\"
-    et \"Coop\").\r\n\r\nMode de jeu \"Versus\" ou \"Coop\"\r\nLe jeu poss\xE8de
-    2 modes de jeu :\r\n > Mode \"Versus\": Affrontement de 2 joueurs suivant les
-    diff\xE9rentes phases de jeu.\r\n > Mode \"Coop\": Affrontement d'une s\xE9rie
-    de Boss par les 2 joueurs qui coop\xE8rent. Avant chaque affrontement de boss,
-    chaque joueur choisi un objet parmi 5 objets g\xE9n\xE9r\xE9s al\xE9atoirement.
-    Et \xE0 chaque Boss vaincue, les joueurs peuvent am\xE9liorer leur personnage
-    et r\xE9cup\xE8rent un point de r\xE9apparition suppl\xE9mentaire.\r\n\r\nEv\xE9nement
-    al\xE9atoire\r\nDurant certains cycles, la phase \"\xE9v\xE9nement\" va arriver,
-    apportant de la difficult\xE9 aux joueurs, elle dispara\xEEt \xE0 la fin de son
-    cycle.\r\nDans ces \xE9v\xE9nements, on va trouver plusieurs types de difficult\xE9s:\r\n>
-    Modification du terrain : Certaines bloc de terrain vont \xEAtre transform\xE9s
-    en bloc avec un statut ou en bloc contenant obstacle indestructible.\r\n > Invocation
-    de minions: Sur le terrain, des cr\xE9atures faibles vont \xEAtre invoqu\xE9es
-    et attaquer les joueurs.\r\n > Invocation de boss: Sur le terrain, un boss avec
-    une vuln\xE9rabilit\xE9 aux d\xE9g\xE2ts est invoqu\xE9, il dispara\xEEt \xE0
-    la fin du cycle.\r\n\r\nChronom\xE8tre de phase de jeu\r\nLe jeu va \xEAtre rythm\xE9
+    jeu est jouable en multijoueur local, permettant de jouer aux 2 mode de jeu \"Versus\".\r\n\r\nMode
+    de jeu \"Versus\" :\r\nLe mode \"Versus\" propose un affrontement entre 2 joueurs
+    qui va se rythmer avec diff\xE9rentes phases de jeu.\r\n\r\nEv\xE9nement al\xE9atoire\r\nDurant
+    certains cycles, la phase \"\xE9v\xE9nement\" va arriver, apportant de la difficult\xE9
+    aux joueurs, elle dispara\xEEt \xE0 la fin de son cycle.\r\nDans ces \xE9v\xE9nements,
+    on va trouver plusieurs types de difficult\xE9s:\r\n> Modification du terrain
+    : Certaines bloc de terrain vont \xEAtre transform\xE9s en bloc avec un statut
+    ou en bloc contenant obstacle indestructible.\r\n > Invocation de minions: Sur
+    le terrain, des cr\xE9atures faibles vont \xEAtre invoqu\xE9es et attaquer les
+    joueurs.\r\n\r\nChronom\xE8tre de phase de jeu\r\nLe jeu va \xEAtre rythm\xE9
     par des cycles de 15 \xE0 45 secondes, contenant une phase du jeu :\r\n > Phase
     \"Apparition d'objets\": Divers objets vont appara\xEEtre sur le terrain pour
     aider les joueurs.\r\n > Phase \"Ev\xE9nement\": D\xE9clenche un \xE9v\xE9nement
@@ -265,8 +263,8 @@ MonoBehaviour:
     lancer des attaques multiples\u2026) \r\n\r\nAm\xE9lioration du personnage\r\nEn
     mode \"Coop\", les joueurs peuvent apporter des am\xE9liorations sur leurs personnages
     apr\xE8s avoir triompher du Boss.\r\nLes diff\xE9rentes am\xE9liorations sont
-    :\r\n > Augmenter sa capacit\xE9 de vie.\r\n > Augmenter sa capacit\xE9 d'armure.\r\n
-    > Diminuer le temps de rechargement de l'attaque de base ou de l'attaque sp\xE9ciale."
+    :\r\n > Augmenter sa capacit\xE9 de vie.\r\n > Augmenter sa capacit\xE9 d'armure.\r\n>
+    Diminuer le temps de rechargement de l'attaque de base ou de l'attaque sp\xE9ciale."
 --- !u!222 &95296876
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -328,6 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -357,7 +356,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 975374805}
   m_Direction: 2
   m_Value: 0.9999008
-  m_Size: 0.17064206
+  m_Size: 0.17064208
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -377,6 +376,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -648,6 +649,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -722,6 +725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -752,6 +756,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 313308421}
+        m_TargetAssemblyTypeName: 
         m_MethodName: ReturnMenu
         m_Mode: 1
         m_Arguments:
@@ -777,6 +782,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -850,6 +857,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -923,11 +932,13 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7cb9428bdbdae9847a4de94be07475a1, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -984,7 +995,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 46.875, y: 21.800018}
+  m_AnchoredPosition: {x: 46.875, y: 21.800049}
   m_SizeDelta: {x: -93.75, y: -142.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1775176175
@@ -1015,6 +1026,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1094,6 +1107,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1779670486
 Canvas:
   m_ObjectHideFlags: 0

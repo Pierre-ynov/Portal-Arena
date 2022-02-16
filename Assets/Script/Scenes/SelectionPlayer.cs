@@ -25,6 +25,7 @@ public class SelectionPlayer : MonoBehaviour
 
     public void LoadGameScene()
     {
+        UISoundManagerScript.soundInstance.PlaySound();
         selectionPlayerManager.GetComponent<SelectionPlayerManager>().updatePlayerName();
         SceneManager.LoadScene("Jeu");
     }

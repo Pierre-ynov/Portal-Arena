@@ -29,6 +29,7 @@ public class UIChangeKeyButton : MonoBehaviour
 
     public void ExecuteChangeKey()
     {
+        UISoundManagerScript.soundInstance.PlaySound();
         UIChangeKeyPanel panel = changeKeyPanel.GetComponent<UIChangeKeyPanel>();
         panel.playerNameInSystem = playerNameInSystem;
         panel.playerNameText = playerNameText;

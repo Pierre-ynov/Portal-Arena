@@ -21,6 +21,7 @@ public class Configuration : ReturnButton
 
     public void SaveConfiguration()
     {
+        UISoundManagerScript.soundInstance.PlaySound();
         conf.LaunchSaveConfig();
     }
 

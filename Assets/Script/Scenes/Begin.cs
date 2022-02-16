@@ -22,6 +22,7 @@ public class Begin : MonoBehaviour
         ButtonForCodex.onClick.AddListener(() => LoadGameScene("Codex"));
         GameObject configuration = GameObject.FindWithTag("configuration");
         DontDestroyOnLoad(configuration);
+        DontDestroyOnLoad(GameObject.Find("AudioManager"));
     }
 
     // Update is called once per frame

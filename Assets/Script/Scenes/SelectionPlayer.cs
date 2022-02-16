@@ -26,6 +26,7 @@ public class SelectionPlayer : MonoBehaviour
     public void LoadGameScene()
     {
         selectionPlayerManager.GetComponent<SelectionPlayerManager>().updatePlayerName();
+        Destroy(GameObject.Find("AudioManager"));
         SceneManager.LoadScene("Jeu");
     }
 }

@@ -9,6 +9,8 @@ public class Configuration : ReturnButton
 
     private GameConfiguration conf;
 
+    private GameObject audioManager;
+
     protected override void Update()
     {
         base.Update();
@@ -16,7 +18,10 @@ public class Configuration : ReturnButton
             conf = GameObject.FindWithTag("configuration").GetComponent<GameConfiguration>();
         if (saveConfigButton != null)
             saveConfigButton.SetActive(conf.needSaveConfig);
-        
+        if (audioManager == null)
+            audioManager = GameObject.Find("AudioManager");
+        if (audioManager != null && conf != null)
+            audioManager.GetComponent<AudioSource>().volume = conf.musicVolume;
     }
 
     public void SaveConfiguration()

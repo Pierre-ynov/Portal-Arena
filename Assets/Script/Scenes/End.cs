@@ -9,15 +9,15 @@ public class End : MonoBehaviour
     public Text WinnerLeaderboard;
     public Text LoserLeaderboard;
 
-    public Player winner;
-    public Player loser;
+    public Player player1;
+    public Player player2;
 
     void Start()
     {
-        winner = GameObject.FindGameObjectWithTag("Winner").GetComponent<Player>();
-        loser = GameObject.FindGameObjectWithTag("Loser").GetComponent<Player>();
+        player1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<Player>();
+        player2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<Player>();
 
-        if ((winner != null) && (loser != null))
+        if ((player1 != null) && (player2 != null))
         {
             ShowLeaderboard();
         }
@@ -38,23 +38,24 @@ public class End : MonoBehaviour
 
     public void ShowLeaderboard()
     {
-        if (winner.name.Contains("Player1"))
+        string winner, loser;
+        if ((player1.countRevive*20+player1.health.load) > (player2.countRevive * 20 + player2.health.load))
         {
-            winner.name = "Joueur 1";
-            loser.name = "Joueur 2";
+            winner = "Joueur 1";
+            loser = "Joueur 2";
         }
         else
         {
-            winner.name = "Joueur 2";
-            loser.name = "Joueur 1";
+            winner = "Joueur 2";
+            loser = "Joueur 1";
         }
 
-        WinnerLeaderboard.text = string.Format("Vainqueur\n{0}\nSanté : {1}\nArmure : {2}\nCountRevive : {3}", winner.name, winner.health.load, winner.armor.load, winner.countRevive);
+        WinnerLeaderboard.text = string.Format("Vainqueur\n{0}",winner);
         WinnerLeaderboard.text.Replace("\\n", "\n");
-        LoserLeaderboard.text = string.Format("Perdant\n{0}\nSanté : {1}\nArmure : {2}\nCountRevive : {3}", loser.name, loser.health.load, loser.armor.load, loser.countRevive);
+        LoserLeaderboard.text = string.Format("Perdant\n{0}", loser);
         LoserLeaderboard.text.Replace("\\n", "\n");
-        Destroy(winner.gameObject);
-        Destroy(loser.gameObject);
+        Destroy(player1);
+        Destroy(player2);
         Destroy(GameObject.FindGameObjectWithTag("SelectionPlayer"));
     }
 }

@@ -28,7 +28,6 @@ namespace Assets.Script.audio
 
         public void PlaySound()
         {
-            Debug.Log("Play Sound : " + gameObject.name);
             audioSource.volume = configuration.soundVolume;
             audioSource.PlayOneShot(sound);
         }

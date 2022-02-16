@@ -30,6 +30,5 @@ public class UIVolumeManage : MonoBehaviour
             configuration.soundVolume = slider.value / 1000;
         }
         configuration.needSaveConfig = true;
-        Debug.Log("Update Music = " + slider.value);
     }
 }

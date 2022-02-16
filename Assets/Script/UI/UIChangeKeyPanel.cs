@@ -26,7 +26,6 @@ public class UIChangeKeyPanel : MonoBehaviour
     {
         if (isChangeKeyPanelActive)
         {
-            Debug.Log("Activer");
             foreach (KeyCode keyCode in Enum.GetValues(typeof(KeyCode)))
             {
                 if (Input.GetKeyDown(keyCode))
@@ -35,7 +34,6 @@ public class UIChangeKeyPanel : MonoBehaviour
                     {
                         if (!configuration.VerifyIfKeyCodeExist(keyCode))
                         {
-                            Debug.Log("New keycode : " + keyCode);
                             keyText.text = keyCode.ToString();
                             configuration.SetKeyCodePlayerAction(playerNameInSystem, actionNameInSystem, keyCode);
                             ShowOrHideChangeKeyPanel();
@@ -61,7 +59,6 @@ public class UIChangeKeyPanel : MonoBehaviour
     {
         if (configuration == null)
             configuration = GameObject.FindWithTag("configuration").GetComponent<GameConfiguration>();
-        Debug.Log("refresh");
         KeyCode keyCode = configuration.GetKeyCodePlayerAction(playerNameInSystem, actionNameInSystem) ?? KeyCode.None;
         keyText.text = keyCode.ToString();
         messageText.text = "";

@@ -68,6 +68,7 @@ public abstract class Piece : MonoBehaviour
     public bool Hurt(int damage)
     {
         HurtSoundManagerScript.soundInstance.PlaySound();
+        StartCoroutine(VisualizeHurt());
         int oldArmorLoad = armor.load;
         if (armor.load != 0 && armor.ModifyLoad(-damage))
             return false;
@@ -90,4 +91,12 @@ public abstract class Piece : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = sprite;
         }
     }
+
+    public IEnumerator VisualizeHurt()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.25f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
 }

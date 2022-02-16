@@ -21,7 +21,6 @@ public class LandMineAttack : Capacite
 
     public override void Action(int dirx, int diry)
     {
-        //TODO AJOUTER BRUIT
 
         Vector2 position = new Vector2(parent.transform.position.x, parent.transform.position.y);
 

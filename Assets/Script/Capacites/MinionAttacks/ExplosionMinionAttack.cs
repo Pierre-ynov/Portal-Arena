@@ -19,6 +19,7 @@ namespace Assets.Script.Capacites.MinionAttacks
 
         public override void Action(int dirx, int diry)
         {
+            LandMineSoundManagerScript.soundInstance.PlaySound();
             Vector3 position = parent.transform.position;
             ExplosionMinion explosionMinion = Instantiate(attack, position, Quaternion.identity).GetComponent<ExplosionMinion>();
             explosionMinion.parent = parent;

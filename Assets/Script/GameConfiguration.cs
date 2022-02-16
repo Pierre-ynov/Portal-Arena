@@ -178,7 +178,6 @@ namespace Assets.Script.Configuration
         /// <returns>Retourne une KeyCode ou null si il ne la trouve pas</returns>
         public KeyCode? SetKeyCodePlayerAction(string numberPlayer, string actionName, KeyCode keyCode)
         {
-            Debug.Log("ChangeKeyCode");
             switch (numberPlayer)
             {
                 case "Player1":
@@ -297,7 +296,6 @@ namespace Assets.Script.Configuration
         {
             string saveDatas = ConstructSaveData();
             File.WriteAllText(Application.dataPath + "/SaveData/config.txt", saveDatas);
-            Debug.Log("Sauvegarde des données de configuration");
         }
 
         /// <summary>
@@ -337,7 +335,6 @@ namespace Assets.Script.Configuration
                     SetKeyCodePlayerAction(nameKey[0], nameKey[1], (KeyCode)Enum.Parse(typeof(KeyCode), content[1]));
                 }
             }
-            Debug.Log("Chargement des données de configuration");
         }
 
         /// <summary>
@@ -367,7 +364,6 @@ namespace Assets.Script.Configuration
         {
             if(!Directory.Exists(Application.dataPath + "/SaveData"))
             {
-                Debug.Log("Dossier 'SaveData' non existant, création du dossier.");
                 Directory.CreateDirectory(Application.dataPath + "/SaveData");
             }
         }

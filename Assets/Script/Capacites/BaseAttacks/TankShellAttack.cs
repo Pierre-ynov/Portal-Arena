@@ -15,6 +15,7 @@ public class TankShellAttack : Capacite
 
     public override void Action(int dirx, int diry)
     {
+        TankShellSoundManagerScript.soundInstance.PlaySound();
         Vector3 position = parent.transform.position;
         TankShell shell = Instantiate(attack, position, Quaternion.identity).GetComponent<TankShell>();
         shell.parent = parent;

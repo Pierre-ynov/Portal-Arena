@@ -9,6 +9,7 @@ public class ReturnButton : MonoBehaviour
     // Update is called once per frame
     public void ReturnMenu()
     {
+        UISoundManagerScript.soundInstance.PlaySound();
         SceneManager.LoadScene("Début");
     }
 

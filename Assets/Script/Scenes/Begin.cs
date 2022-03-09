@@ -32,24 +32,6 @@ public class Begin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            UISoundManagerScript.soundInstance.PlaySound();
-            LoadGameScene("SelectCharacter");
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            UISoundManagerScript.soundInstance.PlaySound();
-            LoadGameScene("Configuration");
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            UISoundManagerScript.soundInstance.PlaySound();
-            LoadGameScene("Codex");
-        }
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             UISoundManagerScript.soundInstance.PlaySound();

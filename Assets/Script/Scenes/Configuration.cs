@@ -1,6 +1,4 @@
-﻿
-
-using Assets.Script.Configuration;
+﻿using Assets.Script.Configuration;
 using UnityEngine;
 
 public class Configuration : ReturnButton
@@ -11,9 +9,8 @@ public class Configuration : ReturnButton
 
     private GameObject audioManager;
 
-    protected override void Update()
+    void Update()
     {
-        base.Update();
         if (conf == null)
             conf = GameObject.FindWithTag("configuration").GetComponent<GameConfiguration>();
         if (saveConfigButton != null)

@@ -32,11 +32,7 @@ public class Begin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            UISoundManagerScript.soundInstance.PlaySound();
-            Application.Quit();
-        }
+
     }
 
     void LoadGameScene(string sceneName)

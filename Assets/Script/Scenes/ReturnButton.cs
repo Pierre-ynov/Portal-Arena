@@ -13,11 +13,4 @@ public class ReturnButton : MonoBehaviour
         SceneManager.LoadScene("Début");
     }
 
-    protected virtual void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-    }
 }

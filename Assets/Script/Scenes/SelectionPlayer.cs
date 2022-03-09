@@ -14,20 +14,18 @@ public class SelectionPlayer : MonoBehaviour
         DontDestroyOnLoad(selectionPlayerManager);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-    }
-
     public void LoadGameScene()
     {
         UISoundManagerScript.soundInstance.PlaySound();
         selectionPlayerManager.GetComponent<SelectionPlayerManager>().updatePlayerName();
         Destroy(GameObject.Find("AudioManager"));
         SceneManager.LoadScene("Jeu");
+    }
+
+    public void LoadBeginScene()
+    {
+        UISoundManagerScript.soundInstance.PlaySound();
+        Destroy(GameObject.Find("AudioManager"));
+        SceneManager.LoadScene("Début");
     }
 }

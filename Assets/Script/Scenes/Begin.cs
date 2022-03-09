@@ -11,6 +11,7 @@ public class Begin : MonoBehaviour
     public Button ButtonForExit;
     public Button ButtonForConfig;
     public Button ButtonForCodex;
+    public Button ButtonForCredits;
 
     public EventTrigger trigger;
 
@@ -24,6 +25,8 @@ public class Begin : MonoBehaviour
         ButtonForConfig.onClick.AddListener(() => LoadGameScene("Configuration"));
         ButtonForCodex.onClick.AddListener(() => UISoundManagerScript.soundInstance.PlaySound());
         ButtonForCodex.onClick.AddListener(() => LoadGameScene("Codex"));
+        ButtonForCredits.onClick.AddListener(() => UISoundManagerScript.soundInstance.PlaySound());
+        ButtonForCredits.onClick.AddListener(() => LoadGameScene("Credits"));
         GameObject configuration = GameObject.FindWithTag("configuration");
         DontDestroyOnLoad(configuration);
         DontDestroyOnLoad(GameObject.Find("AudioManager"));

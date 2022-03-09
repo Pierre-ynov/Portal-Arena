@@ -25,7 +25,6 @@ public class SelectionPlayer : MonoBehaviour
     public void LoadBeginScene()
     {
         UISoundManagerScript.soundInstance.PlaySound();
-        Destroy(GameObject.Find("AudioManager"));
         SceneManager.LoadScene("Début");
     }
 }

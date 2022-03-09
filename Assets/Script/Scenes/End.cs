@@ -4,57 +4,58 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class End : MonoBehaviour
+public class End : ReturnButton
 {
-    public Text WinnerLeaderboard;
-    public Text LoserLeaderboard;
+    public Text Player1VictoryStatus;
+    public Text Player2VictoryStatus;
 
-    public Player winner;
-    public Player loser;
+    public Image Player1Image;
+    public Image Player2Image;
+
+    public Player player1;
+    public Player player2;
 
     void Start()
     {
-        winner = GameObject.FindGameObjectWithTag("Winner").GetComponent<Player>();
-        loser = GameObject.FindGameObjectWithTag("Loser").GetComponent<Player>();
+        GameObject player1GameObject = GameObject.FindGameObjectWithTag("Player1");
+        player1GameObject.SetActive(false);
+        player1 = player1GameObject.GetComponent<Player>();
+        GameObject player2GameObject = GameObject.FindGameObjectWithTag("Player2");
+        player2 = player2GameObject.GetComponent<Player>();
 
-        if ((winner != null) && (loser != null))
+        if ((player1 != null) && (player2 != null))
         {
             ShowLeaderboard();
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene("Début");
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-    }
-
     public void ShowLeaderboard()
     {
-        if (winner.name.Contains("Player1"))
+        string player1Text, player2Text;
+        if ((player1.countRevive*20+player1.health.load) > (player2.countRevive * 20 + player2.health.load))
         {
-            winner.name = "Joueur 1";
-            loser.name = "Joueur 2";
+            player1Text = "Vainqueur";
+            player2Text = "Perdant";
+        }
+        else if((player1.countRevive * 20 + player1.health.load) < (player2.countRevive * 20 + player2.health.load))
+        {
+            player1Text = "Perdant";
+            player2Text = "Vainqueur";
         }
         else
         {
-            winner.name = "Joueur 2";
-            loser.name = "Joueur 1";
+            player1Text = "Egalité";
+            player2Text = "Egalité";
         }
 
-        WinnerLeaderboard.text = string.Format("Vainqueur\n{0}\nSanté : {1}\nArmure : {2}\nCountRevive : {3}", winner.name, winner.health.load, winner.armor.load, winner.countRevive);
-        WinnerLeaderboard.text.Replace("\\n", "\n");
-        LoserLeaderboard.text = string.Format("Perdant\n{0}\nSanté : {1}\nArmure : {2}\nCountRevive : {3}", loser.name, loser.health.load, loser.armor.load, loser.countRevive);
-        LoserLeaderboard.text.Replace("\\n", "\n");
-        Destroy(winner.gameObject);
-        Destroy(loser.gameObject);
+        Player1VictoryStatus.text = player1Text;
+        Player2VictoryStatus.text = player2Text;
+        Player1Image.sprite = player1.profilePlayerImage;
+        Player2Image.sprite = player2.profilePlayerImage;
+        Destroy(player1.gameObject);
+        Destroy(player2.gameObject);
         Destroy(GameObject.FindGameObjectWithTag("SelectionPlayer"));
     }
+
+
 }

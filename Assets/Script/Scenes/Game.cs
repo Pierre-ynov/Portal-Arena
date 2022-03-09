@@ -28,17 +28,8 @@ public class Game : MonoBehaviour
 
     // Modifie les tags des deux joueurs pour les rendre accessible depuis la scène de victoire,
     // et charge la scène de victoire
-    public void LoadVictoryScene(Player loser)
+    public void LoadVictoryScene()
     {
-        Player winner;
-        //Déclaration player ayant gagné
-        if (loser.tag == "Player1")
-            winner = GameObject.FindGameObjectWithTag("Player2").GetComponent<Player>();
-        else
-            winner = GameObject.FindGameObjectWithTag("Player1").GetComponent<Player>();
-        winner.tag = "Winner";
-        loser.tag = "Loser";
-
         SceneManager.LoadScene("Fin");
     }
 }

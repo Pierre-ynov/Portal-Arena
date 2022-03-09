@@ -105,7 +105,7 @@ public class Player : Piece
         if (countRevive < 0)
         {
             Game game = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<Game>();
-            game.LoadVictoryScene(this);
+            game.LoadVictoryScene();
         }
         else
         {

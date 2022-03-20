@@ -84,6 +84,9 @@ namespace Assets.Script.Configuration
         public float musicVolume;
         public float soundVolume;
 
+        public bool asNeedRefreshSliderVolumeUi = false;
+        public bool asNeedRefreshSliderSoundEffectsUi = false;
+
         void Awake()
         {
             resetConfig();
@@ -114,6 +117,9 @@ namespace Assets.Script.Configuration
 
             musicVolume = 0.05f;
             soundVolume = 0.05f;
+
+            asNeedRefreshSliderVolumeUi = true;
+            asNeedRefreshSliderSoundEffectsUi = true;
         }
 
         /// <summary>

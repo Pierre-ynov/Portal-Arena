@@ -86,6 +86,13 @@ namespace Assets.Script.Configuration
 
         void Awake()
         {
+            resetConfig();
+            VerifyExistSaveDirectory();
+            LoadConfig();
+        }
+
+        void resetConfig()
+        {
             Player1_DownKey = KeyCode.S;
             Player1_LeftKey = KeyCode.Q;
             Player1_RightKey = KeyCode.D;
@@ -107,8 +114,6 @@ namespace Assets.Script.Configuration
 
             musicVolume = 0.05f;
             soundVolume = 0.05f;
-            VerifyExistSaveDirectory();
-            LoadConfig();
         }
 
         /// <summary>
@@ -286,6 +291,12 @@ namespace Assets.Script.Configuration
             }
             else
                 Debug.Log("Sauvegarde des données de configuration non nécessaire.");
+        }
+
+        public void LaunchResetConfig()
+        {
+            resetConfig();
+            SaveConfig();
         }
 
 

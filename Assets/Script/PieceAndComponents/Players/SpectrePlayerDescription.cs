@@ -9,6 +9,8 @@ public class SpectrePlayerDescription : CharacterDescription
     {
         nameCharacter = "Spectre";
         baseAttack = "Boule de feu";
+        baseAttackDescription = "Attaque à distance, Se déplace en ligne droite, Détruit au contact d'un obstacle, dégâts faible (2)";
         specialAttack = "Vague de flammes";
+        specialAttackDescription = "Attaque au corps à corps, Apparait dans les 4 directions, Zone de 5 case en ligne, Dégâts moyen (4)";
     }
 }

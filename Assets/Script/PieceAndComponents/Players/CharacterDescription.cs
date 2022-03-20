@@ -17,6 +17,9 @@ public abstract class CharacterDescription : MonoBehaviour
     /// Variable contenant le nom de l'attaque spéciale du personnage
     /// </summary>
     public string specialAttack;
+
+    public string baseAttackDescription;
+    public string specialAttackDescription;
     public Sprite iconeCharacter1;
     public Sprite iconeCharacter2;
     #endregion

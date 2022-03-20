@@ -19,7 +19,8 @@ public class SelectionPlayer : MonoBehaviour
         UISoundManagerScript.soundInstance.PlaySound();
         selectionPlayerManager.GetComponent<SelectionPlayerManager>().updatePlayerName();
         Destroy(GameObject.Find("AudioManager"));
-        SceneManager.LoadScene("Jeu");
+        //SceneManager.LoadScene("Jeu");
+        SceneManager.LoadScene("Chargement");
     }
 
     public void LoadBeginScene()

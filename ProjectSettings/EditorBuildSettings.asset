@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fin.unity
     guid: 1c4e838d6f7a4c34ebc7458237ee41a8
+  - enabled: 1
+    path: Assets/Scenes/Chargement.unity
+    guid: 70f1db22d882e7b4d84aaff9cc3423dd
   m_configObjects: {}

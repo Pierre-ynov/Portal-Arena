@@ -14,7 +14,7 @@ public class TankShell : MonoBehaviour
     void Start()
     {
         if (!GameConfiguration.isDemo)
-            damage = (int)Damage.low;
+            damage = (int)Damage.veryLow;
         else
             damage = GameConfiguration.damageDemoBaseAttack;
 

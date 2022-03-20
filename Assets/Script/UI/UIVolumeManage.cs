@@ -13,10 +13,30 @@ public class UIVolumeManage : MonoBehaviour
 
     private GameConfiguration configuration;
 
-    void Start()
+    void Awake()
     {
         configuration = GameObject.FindWithTag("configuration").GetComponent<GameConfiguration>();
-        slider.value = (IsMusicVolume) ? configuration.musicVolume * 1000 : configuration.soundVolume * 1000;
+        initialiseSlider();
+    }
+
+    void Update()
+    {
+        if(IsMusicVolume)
+        {
+            if (configuration.asNeedRefreshSliderVolumeUi)
+            {
+                initialiseSlider();
+                configuration.asNeedRefreshSliderVolumeUi = false;
+            }
+        }
+        else
+        {
+            if (configuration.asNeedRefreshSliderSoundEffectsUi)
+            {
+                initialiseSlider();
+                configuration.asNeedRefreshSliderSoundEffectsUi = false;
+            }
+        }
     }
 
     public void UpdateVolume()
@@ -30,5 +50,10 @@ public class UIVolumeManage : MonoBehaviour
             configuration.soundVolume = slider.value / 1000;
         }
         configuration.needSaveConfig = true;
+    }
+
+    private void initialiseSlider()
+    {
+        slider.value = (IsMusicVolume) ? configuration.musicVolume * 1000 : configuration.soundVolume * 1000;
     }
 }

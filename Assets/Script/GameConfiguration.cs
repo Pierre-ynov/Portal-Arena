@@ -84,7 +84,17 @@ namespace Assets.Script.Configuration
         public float musicVolume;
         public float soundVolume;
 
+        public bool asNeedRefreshSliderVolumeUi = false;
+        public bool asNeedRefreshSliderSoundEffectsUi = false;
+
         void Awake()
+        {
+            resetConfig();
+            VerifyExistSaveDirectory();
+            LoadConfig();
+        }
+
+        void resetConfig()
         {
             Player1_DownKey = KeyCode.S;
             Player1_LeftKey = KeyCode.Q;
@@ -107,8 +117,9 @@ namespace Assets.Script.Configuration
 
             musicVolume = 0.05f;
             soundVolume = 0.05f;
-            VerifyExistSaveDirectory();
-            LoadConfig();
+
+            asNeedRefreshSliderVolumeUi = true;
+            asNeedRefreshSliderSoundEffectsUi = true;
         }
 
         /// <summary>
@@ -286,6 +297,12 @@ namespace Assets.Script.Configuration
             }
             else
                 Debug.Log("Sauvegarde des données de configuration non nécessaire.");
+        }
+
+        public void LaunchResetConfig()
+        {
+            resetConfig();
+            SaveConfig();
         }
 
 

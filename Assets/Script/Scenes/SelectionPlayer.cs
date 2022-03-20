@@ -7,19 +7,12 @@ public class SelectionPlayer : MonoBehaviour
 {
     public GameObject selectionPlayerManager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //selectionPlayerManager = GameObject.FindWithTag("selectPlayer");
-        DontDestroyOnLoad(selectionPlayerManager);
-    }
-
     public void LoadGameScene()
     {
+        DontDestroyOnLoad(selectionPlayerManager);
         UISoundManagerScript.soundInstance.PlaySound();
         selectionPlayerManager.GetComponent<SelectionPlayerManager>().updatePlayerName();
         Destroy(GameObject.Find("AudioManager"));
-        //SceneManager.LoadScene("Jeu");
         SceneManager.LoadScene("Chargement");
     }
 

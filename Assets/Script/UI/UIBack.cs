@@ -232,14 +232,14 @@ public class UIBack : MonoBehaviour
         if (Input.GetKey(ability1) && isCooldown == false)
         {
             isCooldown = true;
-            AttackBasePlayer1.fillAmount = 1;
+            AttackBasePlayer1.fillAmount = 0;
         }
 
         if (isCooldown)
         {
-            AttackBasePlayer1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
+            AttackBasePlayer1.fillAmount += 1 / cooldown1 * Time.deltaTime;
 
-            if (AttackBasePlayer1.fillAmount <= 0)
+            if (AttackBasePlayer1.fillAmount >= 1)
             {
                 AttackBasePlayer1.fillAmount = 1;
                 isCooldown = false;
@@ -252,14 +252,14 @@ public class UIBack : MonoBehaviour
         if (Input.GetKey(ability2) && isCooldown2 == false)
         {
             isCooldown2 = true;
-            AttackBasePlayer2.fillAmount = 1;
+            AttackBasePlayer2.fillAmount = 0;
         }
 
         if (isCooldown2)
         {
-            AttackBasePlayer2.fillAmount -= 1 / cooldown2 * Time.deltaTime;
+            AttackBasePlayer2.fillAmount += 1 / cooldown2 * Time.deltaTime;
 
-            if (AttackBasePlayer2.fillAmount <= 0)
+            if (AttackBasePlayer2.fillAmount >= 1)
             {
                 AttackBasePlayer2.fillAmount = 1;
                 isCooldown2 = false;
@@ -272,14 +272,14 @@ public class UIBack : MonoBehaviour
         if (Input.GetKey(ability3) && isCooldown3 == false)
         {
             isCooldown3 = true;
-            AttackSpecialPlayer1.fillAmount = 1;
+            AttackSpecialPlayer1.fillAmount = 0;
         }
 
         if (isCooldown3)
         {
-            AttackSpecialPlayer1.fillAmount -= 1 / cooldown3 * Time.deltaTime;
+            AttackSpecialPlayer1.fillAmount += 1 / cooldown3 * Time.deltaTime;
 
-            if (AttackSpecialPlayer1.fillAmount <= 0)
+            if (AttackSpecialPlayer1.fillAmount >= 1)
             {
                 AttackSpecialPlayer1.fillAmount = 1;
                 isCooldown3 = false;
@@ -292,14 +292,14 @@ public class UIBack : MonoBehaviour
         if (Input.GetKey(ability4) && isCooldown4 == false)
         {
             isCooldown4 = true;
-            AttackSpecialPlayer2.fillAmount = 1;
+            AttackSpecialPlayer2.fillAmount = 0;
         }
 
         if (isCooldown4)
         {
-            AttackSpecialPlayer2.fillAmount -= 1 / cooldown4 * Time.deltaTime;
+            AttackSpecialPlayer2.fillAmount += 1 / cooldown4 * Time.deltaTime;
 
-            if (AttackSpecialPlayer2.fillAmount <= 0)
+            if (AttackSpecialPlayer2.fillAmount >= 1)
             {
                 AttackSpecialPlayer2.fillAmount = 1;
                 isCooldown4 = false;

@@ -1,4 +1,4 @@
-﻿using Assets.Script.Configuration;
+using Assets.Script.Configuration;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -61,6 +61,9 @@ public class UIBack : MonoBehaviour
     //Gameobject chrono
     private Chrono chrono;
 
+    public GameObject panelQuit;
+    public bool panelQuitActive;
+    
     private GameConfiguration conf;
 
 
@@ -70,6 +73,7 @@ public class UIBack : MonoBehaviour
         Player2 = GameObject.FindWithTag("Player2").GetComponent<Player>();
         cycle = GameObject.FindWithTag("cycle").GetComponent<Cycle>();
         chrono = GameObject.FindWithTag("chrono").GetComponent<Chrono>();
+        panelQuitActive = false;
         conf = GameObject.FindWithTag("configuration").GetComponent<GameConfiguration>();
     }
 
@@ -83,6 +87,20 @@ public class UIBack : MonoBehaviour
             RefreshSlotPlayers();
         }
         RefreshUICycle();
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(!panelQuitActive)
+            {
+                panelQuit.SetActive(true);
+                panelQuitActive = true;
+            }
+            else
+            {
+                panelQuit.SetActive(false);
+                panelQuitActive = false;
+            }
+        }
 
         AttackBasePlayer1Ability();
         AttackBasePlayer2Ability();
@@ -305,5 +323,16 @@ public class UIBack : MonoBehaviour
                 isCooldown4 = false;
             }
         }
+    }
+
+    public void returnGame()
+    {
+        panelQuit.SetActive(false);
+        panelQuitActive = false;
+    }
+
+    public void buttonApplicationQuit()
+    {
+        Application.Quit();
     }
 }

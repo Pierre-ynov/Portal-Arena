@@ -64,6 +64,9 @@ public class UIBack : MonoBehaviour
     //Gameobject chrono
     private Chrono chrono;
 
+    public GameObject panelQuit;
+    public bool panelQuitActive;
+
 
     void Start()
     {
@@ -71,6 +74,7 @@ public class UIBack : MonoBehaviour
         Player2 = GameObject.FindWithTag("Player2").GetComponent<Player>();
         cycle = GameObject.FindWithTag("cycle").GetComponent<Cycle>();
         chrono = GameObject.FindWithTag("chrono").GetComponent<Chrono>();
+        panelQuitActive = false;
     }
 
     void Update()
@@ -88,6 +92,20 @@ public class UIBack : MonoBehaviour
         Ability2();
         Ability3();
         Ability4();
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(!panelQuitActive)
+            {
+                panelQuit.SetActive(true);
+                panelQuitActive = true;
+            }
+            else
+            {
+                panelQuit.SetActive(false);
+                panelQuitActive = false;
+            }
+        }
     }
 
     /// <summary>
@@ -305,5 +323,16 @@ public class UIBack : MonoBehaviour
                 isCooldown4 = false;
             }
         }
+    }
+
+    public void returnGame()
+    {
+        panelQuit.SetActive(false);
+        panelQuitActive = false;
+    }
+
+    public void buttonApplicationQuit()
+    {
+        Application.Quit();
     }
 }

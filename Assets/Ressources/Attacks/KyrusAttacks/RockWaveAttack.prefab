@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &998318581393316942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4763548301841455204}
+  - component: {fileID: -2438637303871916277}
+  m_Layer: 0
+  m_Name: RockWaveAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4763548301841455204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998318581393316942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2438637303871916277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998318581393316942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a34e8e83c15e6c4d807bf8c83257c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isReady: 1
+  timeCooldown: 1
+  imgAttack: {fileID: -1916236507332333500, guid: d75a996dd43001c4ca08140ad1538333,
+    type: 3}
+  parent: {fileID: 0}
+  AttackPrefab: {fileID: 3545392980520497645, guid: 72c88e55933447c468cd38f0fcf6d20a,
+    type: 3}
+  Count: 5
+  AnimationSpeed: 1
+  SpawnDelay: 0.05
+  TimeToLive: 1
+  IntervalMultiplier: {x: 1, y: 0.75}

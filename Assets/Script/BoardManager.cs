@@ -30,6 +30,8 @@ public class BoardManager : MonoBehaviour
                 return listPlayer[1];
             case "XZ-0389":
                 return listPlayer[2];
+            case "Kyrus":
+                return listPlayer[3];
             case "Random":
                 return listPlayer[Random.Range(0,listPlayer.Length)];
             default:

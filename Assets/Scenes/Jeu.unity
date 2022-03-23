@@ -9712,13 +9712,15 @@ MonoBehaviour:
   - {x: 23, y: 13, z: 0}
   - {x: 17, y: 1, z: 0}
   listPrefabPlayer1:
-  - {fileID: 2712287236134612094, guid: 69435c8dd24a44c40b69aa142c5edd8c, type: 3}
-  - {fileID: 6706125799882838801, guid: 54c8e0fa8cb9ffd4e892d0b371958c4f, type: 3}
-  - {fileID: 7496341466810567425, guid: 4b7da879a4833dc489b42845dcd8fefd, type: 3}
+  - {fileID: 2712287236134612094, guid: 4ef6f3f3fbf9166498bcf809b784ec75, type: 3}
+  - {fileID: 6706125799882838801, guid: 19fa199db0173bd47ae9a90ab1c2e685, type: 3}
+  - {fileID: 7496341466810567425, guid: af1a510054631b1498e1af684d8e8ce3, type: 3}
+  - {fileID: 567435031466432175, guid: 786000e58bb27c945a78f336cc021f0c, type: 3}
   listPrefabPlayer2:
-  - {fileID: 6706125799882838801, guid: 9a57348115ff6704fb49882d7c98cacb, type: 3}
-  - {fileID: 6706125799882838801, guid: fff67ab94554bf64392171d62e107d85, type: 3}
-  - {fileID: 5143812315551695, guid: 33a71da5abd32264e844a59ebf3646c0, type: 3}
+  - {fileID: 6706125799882838801, guid: 8da0efbd9d0dc35408729fdf8b1ebf70, type: 3}
+  - {fileID: 6706125799882838801, guid: bf9dc93f4a1737c4a94f21162d81375d, type: 3}
+  - {fileID: 5143812315551695, guid: ef40ccac659995d4b9724babd67f3a2e, type: 3}
+  - {fileID: 3795650142497082673, guid: 22e7e3038dc57ef48ac3bae83e059f16, type: 3}
   playersPositions:
   - {x: 3, y: 7, z: 0}
   - {x: 25, y: 7, z: 0}
@@ -12371,6 +12373,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8978798149806483445, guid: 0e6422837b0d04a4693b5f7beda4c85d,
+        type: 3}
+      propertyPath: arachnoBot
+      value: 
+      objectReference: {fileID: 9039875039462368159, guid: fb0bf425f85f5ee4e8db0f5f99491c58,
+        type: 3}
     - target: {fileID: -8978798149806483445, guid: 0e6422837b0d04a4693b5f7beda4c85d,
         type: 3}
       propertyPath: spawnerManager

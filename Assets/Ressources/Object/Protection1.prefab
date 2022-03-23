@@ -49,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 0bc0a934f2840ee4294cd4f288ea4985, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 638880bbefdf6134894ca8e1a35daf95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.81, y: 0.91}
+    oldSize: {x: 1.0666667, y: 1.2}
     newSize: {x: 2.49, y: 2.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -143,9 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a23020e0eb793d4180c417b600621f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isReady: 0
   typeValue: 
   description: 
-  consumableSprite: {fileID: 21300000, guid: 0bc0a934f2840ee4294cd4f288ea4985, type: 3}
+  consumableSprite: {fileID: 21300000, guid: 638880bbefdf6134894ca8e1a35daf95, type: 3}
   counter: 0
   value: 0
   consumable: {fileID: 0}

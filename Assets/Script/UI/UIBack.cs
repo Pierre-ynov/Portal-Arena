@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Script.Configuration;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,11 +20,9 @@ public class UIBack : MonoBehaviour
     public Image AttackBasePlayer1;
     public float cooldown1 = 1;
     bool isCooldown = false;
-    public KeyCode ability1;
     public Image AttackSpecialPlayer1;
     public float cooldown3 = 15;
     bool isCooldown3 = false;
-    public KeyCode ability3;
     public Image ObjectPlayer1;
     public Text DuralityObjectsPlayer1;
     public Text InfoObjectPlayer1;
@@ -41,11 +40,9 @@ public class UIBack : MonoBehaviour
     public Image AttackBasePlayer2;
     public float cooldown2 = 1;
     bool isCooldown2 = false;
-    public KeyCode ability2;
     public Image AttackSpecialPlayer2;
     public float cooldown4 = 15;
     bool isCooldown4 = false;
-    public KeyCode ability4;
     public Image ObjectPlayer2;
     public Text DuralityObjectsPlayer2;
     public Text InfoObjectPlayer2;
@@ -64,6 +61,8 @@ public class UIBack : MonoBehaviour
     //Gameobject chrono
     private Chrono chrono;
 
+    private GameConfiguration conf;
+
 
     void Start()
     {
@@ -71,6 +70,7 @@ public class UIBack : MonoBehaviour
         Player2 = GameObject.FindWithTag("Player2").GetComponent<Player>();
         cycle = GameObject.FindWithTag("cycle").GetComponent<Cycle>();
         chrono = GameObject.FindWithTag("chrono").GetComponent<Chrono>();
+        conf = GameObject.FindWithTag("configuration").GetComponent<GameConfiguration>();
     }
 
     void Update()
@@ -84,10 +84,10 @@ public class UIBack : MonoBehaviour
         }
         RefreshUICycle();
 
-        Ability1();
-        Ability2();
-        Ability3();
-        Ability4();
+        AttackBasePlayer1Ability();
+        AttackBasePlayer2Ability();
+        AttackSpecialPlayer1Ability();
+        AttackSpecialPlayer2Ability();
     }
 
     /// <summary>
@@ -227,9 +227,9 @@ public class UIBack : MonoBehaviour
         TimeText.text = string.Format("TEMPS : {0}", chrono.getShowRestTime(cycle.timer));
     }
 
-    void Ability1()
+    void AttackBasePlayer1Ability()
     {
-        if (Input.GetKey(ability1) && isCooldown == false)
+        if (Input.GetKey(conf.Player1_BaseAttackKey) && isCooldown == false)
         {
             isCooldown = true;
             AttackBasePlayer1.fillAmount = 0;
@@ -247,9 +247,9 @@ public class UIBack : MonoBehaviour
         }
     }
 
-    void Ability2()
+    void AttackBasePlayer2Ability()
     {
-        if (Input.GetKey(ability2) && isCooldown2 == false)
+        if (Input.GetKey(conf.Player2_BaseAttackKey) && isCooldown2 == false)
         {
             isCooldown2 = true;
             AttackBasePlayer2.fillAmount = 0;
@@ -267,9 +267,9 @@ public class UIBack : MonoBehaviour
         }
     }
 
-    void Ability3()
+    void AttackSpecialPlayer1Ability()
     {
-        if (Input.GetKey(ability3) && isCooldown3 == false)
+        if (Input.GetKey(conf.Player1_SpecialAttackKey) && isCooldown3 == false)
         {
             isCooldown3 = true;
             AttackSpecialPlayer1.fillAmount = 0;
@@ -287,9 +287,9 @@ public class UIBack : MonoBehaviour
         }
     }
 
-    void Ability4()
+    void AttackSpecialPlayer2Ability()
     {
-        if (Input.GetKey(ability4) && isCooldown4 == false)
+        if (Input.GetKey(conf.Player2_SpecialAttackKey) && isCooldown4 == false)
         {
             isCooldown4 = true;
             AttackSpecialPlayer2.fillAmount = 0;

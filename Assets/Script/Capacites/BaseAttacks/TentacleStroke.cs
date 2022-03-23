@@ -52,8 +52,9 @@ public class TentacleStroke : MonoBehaviour
     {
         //Permet de savoir si le gameobject est bien le joueur
         if ((collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2") &&
-            collision.gameObject != parent && !hasTouchedEnemy)
+            collision.transform != transform.parent && !hasTouchedEnemy)
         {
+
             Player enemy = collision.gameObject.GetComponent<Player>();
             if (enemy.Hurt(damage))
             {

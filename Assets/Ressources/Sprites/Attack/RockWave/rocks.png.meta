@@ -1,0 +1,744 @@
+fileFormatVersion: 2
+guid: d75a996dd43001c4ca08140ad1538333
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2705597995764985619
+    second: rocks_0
+  - first:
+      213: 8032301891362702160
+    second: rocks_1
+  - first:
+      213: -1916236507332333500
+    second: rocks_2
+  - first:
+      213: -3327394054111465296
+    second: rocks_3
+  - first:
+      213: -4801779533427383079
+    second: rocks_4
+  - first:
+      213: 7298283456765205186
+    second: rocks_5
+  - first:
+      213: 6121542324556834107
+    second: rocks_6
+  - first:
+      213: 7099062288176452497
+    second: rocks_7
+  - first:
+      213: -8333436651470688534
+    second: rocks_8
+  - first:
+      213: -8501297529017742733
+    second: rocks_9
+  - first:
+      213: -5748061094662017199
+    second: rocks_10
+  - first:
+      213: 6353385552450186822
+    second: rocks_11
+  - first:
+      213: 6750611467916827374
+    second: rocks_12
+  - first:
+      213: 281760726442044659
+    second: rocks_13
+  - first:
+      213: 5395025830516228126
+    second: rocks_14
+  - first:
+      213: 1146189245206979319
+    second: rocks_15
+  - first:
+      213: -5877506413909735477
+    second: rocks_16
+  - first:
+      213: 2397543651997770057
+    second: rocks_17
+  - first:
+      213: -6279317893585579963
+    second: rocks_18
+  - first:
+      213: 4633743580835569794
+    second: rocks_19
+  - first:
+      213: 654399432496466302
+    second: rocks_20
+  - first:
+      213: 3184120798885481848
+    second: rocks_21
+  - first:
+      213: 1901294962745628600
+    second: rocks_22
+  - first:
+      213: -4196514101131072696
+    second: rocks_23
+  - first:
+      213: 4684843303557127733
+    second: rocks_24
+  - first:
+      213: -1514167740159850766
+    second: rocks_25
+  - first:
+      213: -2110576210301090644
+    second: rocks_26
+  - first:
+      213: 5394165280109673265
+    second: rocks_27
+  - first:
+      213: -2739157520156667831
+    second: rocks_28
+  - first:
+      213: 2978954164446355653
+    second: rocks_29
+  - first:
+      213: 1907366778859940601
+    second: rocks_30
+  - first:
+      213: 1801306861494899282
+    second: rocks_31
+  - first:
+      213: 6981273598449576002
+    second: rocks_32
+  - first:
+      213: -6578407224070321046
+    second: rocks_33
+  - first:
+      213: 9056807308527481448
+    second: rocks_34
+  - first:
+      213: 7373911083907277864
+    second: rocks_35
+  - first:
+      213: -6041930920594877743
+    second: rocks_36
+  - first:
+      213: -6865166781117211991
+    second: rocks_37
+  - first:
+      213: 673556996757511284
+    second: rocks_38
+  - first:
+      213: -575877521278400394
+    second: rocks_39
+  - first:
+      213: 1658083225304199909
+    second: rocks_40
+  - first:
+      213: 3508955196352692111
+    second: rocks_41
+  - first:
+      213: 165230573434514714
+    second: rocks_42
+  - first:
+      213: 5349615128887457363
+    second: rocks_43
+  - first:
+      213: 5978569993380751965
+    second: rocks_44
+  - first:
+      213: -6217398009576432910
+    second: rocks_45
+  - first:
+      213: -3006320908733258049
+    second: rocks_46
+  - first:
+      213: 2023475590168413849
+    second: rocks_47
+  - first:
+      213: 2161056827019789590
+    second: rocks_48
+  - first:
+      213: 797839656504160734
+    second: rocks_49
+  - first:
+      213: -4920391141241789304
+    second: rocks_50
+  - first:
+      213: 5161782368166981299
+    second: rocks_51
+  - first:
+      213: -6583844975616622881
+    second: rocks_52
+  - first:
+      213: 5994107053507089617
+    second: rocks_53
+  - first:
+      213: 7044314408171723399
+    second: rocks_54
+  - first:
+      213: 7397552779648209645
+    second: rocks_55
+  - first:
+      213: -4153546838475504176
+    second: rocks_56
+  - first:
+      213: -5272198350338227539
+    second: rocks_57
+  - first:
+      213: -8430637046282403835
+    second: rocks_58
+  - first:
+      213: -8796796224746582080
+    second: rocks_59
+  - first:
+      213: -3082323446634481704
+    second: rocks_60
+  - first:
+      213: -6315857802126797068
+    second: rocks_61
+  - first:
+      213: -5617000590063423123
+    second: rocks_62
+  - first:
+      213: 6024865505948158047
+    second: rocks_63
+  - first:
+      213: 8288815299628655623
+    second: rocks_64
+  - first:
+      213: -8486215131447816955
+    second: rocks_65
+  - first:
+      213: -5893286306343886340
+    second: rocks_66
+  - first:
+      213: -786874469264604463
+    second: rocks_67
+  - first:
+      213: 1190040731662469670
+    second: rocks_68
+  - first:
+      213: -2066624043618421050
+    second: rocks_69
+  - first:
+      213: 8143444999790410231
+    second: rocks_70
+  - first:
+      213: -1085437826213555435
+    second: rocks_71
+  - first:
+      213: 6296627615463352297
+    second: rocks_72
+  - first:
+      213: 7591222710408436614
+    second: rocks_73
+  - first:
+      213: 1361202802966727028
+    second: rocks_74
+  - first:
+      213: 8648278461734652959
+    second: rocks_75
+  - first:
+      213: -8404221117475295442
+    second: rocks_76
+  - first:
+      213: -8564033858359764504
+    second: rocks_77
+  - first:
+      213: 6759075401632296181
+    second: rocks_78
+  - first:
+      213: 8683240824948135279
+    second: rocks_79
+  - first:
+      213: -7590246251523226002
+    second: rocks_80
+  - first:
+      213: -9109054994703375138
+    second: rocks_81
+  - first:
+      213: 7260152000692246794
+    second: rocks_82
+  - first:
+      213: -6936707716284616175
+    second: rocks_83
+  - first:
+      213: 1750599962933742352
+    second: rocks_84
+  - first:
+      213: 5441035889237098145
+    second: rocks_85
+  - first:
+      213: 8040842996681464345
+    second: rocks_86
+  - first:
+      213: 5516428745517198012
+    second: rocks_87
+  - first:
+      213: -5854156874054904606
+    second: rocks_88
+  - first:
+      213: -5368789733021994147
+    second: rocks_89
+  - first:
+      213: 1349249781155742530
+    second: rocks_90
+  - first:
+      213: 104172109277819350
+    second: rocks_91
+  - first:
+      213: 8681791936744680526
+    second: rocks_92
+  - first:
+      213: 9101547445908429340
+    second: rocks_93
+  - first:
+      213: -7264547299376725365
+    second: rocks_94
+  - first:
+      213: 5230201052744281610
+    second: rocks_95
+  - first:
+      213: -4667430518563221358
+    second: rocks_96
+  - first:
+      213: 8314362929741956022
+    second: rocks_97
+  - first:
+      213: -7070445392892868081
+    second: rocks_98
+  - first:
+      213: 8114968063213676756
+    second: rocks_99
+  - first:
+      213: 3050335053703705641
+    second: rocks_100
+  - first:
+      213: -7950213868889209832
+    second: rocks_101
+  - first:
+      213: -2646915239816059535
+    second: rocks_102
+  - first:
+      213: -8051714826479262003
+    second: rocks_103
+  - first:
+      213: 4219120058482686779
+    second: rocks_104
+  - first:
+      213: -575557004607461942
+    second: rocks_105
+  - first:
+      213: -5786130472968320303
+    second: rocks_106
+  - first:
+      213: -8758316134039256479
+    second: rocks_107
+  - first:
+      213: -8379630703701866118
+    second: rocks_108
+  - first:
+      213: -5663494447390522877
+    second: rocks_109
+  - first:
+      213: 4015006885571962169
+    second: rocks_110
+  - first:
+      213: 1342310210776254110
+    second: rocks_111
+  - first:
+      213: -3432524676257944930
+    second: rocks_112
+  - first:
+      213: -7127664421484055977
+    second: rocks_113
+  - first:
+      213: -8672022706056657999
+    second: rocks_114
+  - first:
+      213: 7914362240758204506
+    second: rocks_115
+  - first:
+      213: 4531092709805233852
+    second: rocks_116
+  - first:
+      213: 4103922784892674671
+    second: rocks_117
+  - first:
+      213: -2614831172306436981
+    second: rocks_118
+  - first:
+      213: -8417933318129885186
+    second: rocks_119
+  - first:
+      213: -568545780045024017
+    second: rocks_120
+  - first:
+      213: 8785621201380675937
+    second: rocks_121
+  - first:
+      213: 1865897758002337137
+    second: rocks_122
+  - first:
+      213: 1117172920225732942
+    second: rocks_123
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rocks_0
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 175
+        width: 62
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de05b6d25f8c37ad0800000000000000
+      internalID: -2705597995764985619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_1
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 98
+        width: 21
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0534f536308787f60800000000000000
+      internalID: 8032301891362702160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_2
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 98
+        width: 23
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44032da9c092865e0800000000000000
+      internalID: -1916236507332333500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_3
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 107
+        width: 19
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b070f0bcb8b2d1d0800000000000000
+      internalID: -3327394054111465296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_4
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 129
+        width: 11
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4e15c84f6ac5db0800000000000000
+      internalID: -4801779533427383079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_5
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ca999ec226b84560800000000000000
+      internalID: 7298283456765205186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_6
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 203
+        width: 52
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35aab49f4614f450800000000000000
+      internalID: 6121542324556834107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_7
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 106
+        width: 116
+        height: 142
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1931125e98fe48260800000000000000
+      internalID: 7099062288176452497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_8
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 64
+        width: 44
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee6ed6948fa95c80800000000000000
+      internalID: -8333436651470688534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_9
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 65
+        width: 48
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37acdfc60f2550a80800000000000000
+      internalID: -8501297529017742733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_10
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 0
+        width: 43
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f6d6193e8ca30b0800000000000000
+      internalID: -5748061094662017199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks_11
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1
+        width: 51
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e64ee8f72cb2850800000000000000
+      internalID: 6353385552450186822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

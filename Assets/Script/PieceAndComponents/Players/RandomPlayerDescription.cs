@@ -8,6 +8,8 @@ public class RandomPlayerDescription : CharacterDescription
     {
         nameCharacter = "Random";
         baseAttack = "Attaque de base du personnage aléatoire";
+        baseAttackDescription = "???";
         specialAttack = "Attaque spéciale du personnage aléatoire";
+        specialAttackDescription = "???";
     }
 }

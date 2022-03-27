@@ -8,8 +8,10 @@ public class KyrusPlayerDescription : CharacterDescription
     void Start()
     {
         nameCharacter = "Kyrus";
-        baseAttack = "";
-        specialAttack = "";
+        baseAttack = "Vague de pics rocheux";
+        baseAttackDescription = "Attaque au corps à corps, Apparait dans une seule direction, Zone de 5 case en ligne, Dégâts très faible (1)";
+        specialAttack = "Mur de roche";
+        specialAttackDescription = "Attaque de soutien, Fait apparaitre des rochers, Bloque les joueurs, Indestructible, Dégâts moyen (4) au contact";
     }
 
     // Update is called once per frame

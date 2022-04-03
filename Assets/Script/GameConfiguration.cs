@@ -100,18 +100,18 @@ namespace Assets.Script.Configuration
             Player1_LeftKey = KeyCode.Q;
             Player1_RightKey = KeyCode.D;
             Player1_UpKey = KeyCode.Z;
-            Player1_BaseAttackKey = KeyCode.E;
-            Player1_SpecialAttackKey = KeyCode.R;
-            Player1_UseObjectKey = KeyCode.LeftShift;
+            Player1_BaseAttackKey = KeyCode.C;
+            Player1_SpecialAttackKey = KeyCode.V;
+            Player1_UseObjectKey = KeyCode.B;
 
 
-            Player2_DownKey = KeyCode.L;
-            Player2_LeftKey = KeyCode.K;
-            Player2_UpKey = KeyCode.O;
-            Player2_RightKey = KeyCode.M;
-            Player2_BaseAttackKey = KeyCode.P;
-            Player2_SpecialAttackKey = KeyCode.J;
-            Player2_UseObjectKey = KeyCode.N;
+            Player2_DownKey = KeyCode.DownArrow;
+            Player2_LeftKey = KeyCode.LeftArrow;
+            Player2_UpKey = KeyCode.UpArrow;
+            Player2_RightKey = KeyCode.RightArrow;
+            Player2_BaseAttackKey = KeyCode.Period;
+            Player2_SpecialAttackKey = KeyCode.Slash;
+            Player2_UseObjectKey = KeyCode.BackQuote;
 
             QuitKey = KeyCode.Escape;
 

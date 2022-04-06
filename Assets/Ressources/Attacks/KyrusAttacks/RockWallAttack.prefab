@@ -49,5 +49,5 @@ MonoBehaviour:
     type: 3}
   parent: {fileID: 0}
   Attack: {fileID: 8443226625859281162, guid: 669b45ae37efbfb4ba1a4b338c2cb8aa, type: 3}
-  SquareWidth: 5
+  SquareWidth: 7
   TimeToLive: 10

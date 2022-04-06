@@ -329,6 +329,8 @@ MonoBehaviour:
   needSaveConfig: 0
   musicVolume: 0
   soundVolume: 0
+  asNeedRefreshSliderVolumeUi: 0
+  asNeedRefreshSliderSoundEffectsUi: 0
 --- !u!4 &320924592
 Transform:
   m_ObjectHideFlags: 0

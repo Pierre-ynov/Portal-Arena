@@ -46,6 +46,7 @@ public class Player : Piece
     /// </summary>
     protected int dirY;
 
+    protected Vector2Int lookDir;
     /// <summary>
     /// Définit si le slot de l'objet est vide
     /// </summary>
@@ -55,7 +56,7 @@ public class Player : Piece
     /// <summary>
     /// Variable gérant l'animation controller
     /// </summary>
-    public Animator animator;
+    protected Animator animator;
 
     #region Player keys
     //Variables gérant les touches de deplacement
@@ -191,7 +192,7 @@ public class Player : Piece
 
         //Get a component reference to this object's Rigidbody2D
         rb2D = GetComponent<Rigidbody2D>();
-
+        animator = GetComponent<Animator>();
         Speed = 3.5f;
 
         health = new Bar(20);
@@ -200,7 +201,7 @@ public class Player : Piece
         countRevive = 2;
         dirX = 1;
         dirY = 0;
-
+        lookDir = Vector2Int.right;
         KeyConfiguration();
     }
 
@@ -263,17 +264,14 @@ public class Player : Piece
     {
         if (canAct)
         {
+            dirX = 0;
+            dirY = 0;
             //Permet de faire avancer le joueur
             if (UpKey != null && Input.GetKey(UpKey.Value))
             {
                 dirX = 0;
                 dirY = 1;
-                //animator.SetBool("GoUp", true);
-                Move(dirX, dirY);
-            }
-            else
-            {
-                //animator.SetBool("GoUp", false);
+                lookDir = Vector2Int.up;
             }
 
             //Permet de faire reculer le joueur
@@ -281,12 +279,7 @@ public class Player : Piece
             {
                 dirX = 0;
                 dirY = -1;
-                //animator.SetBool("GoDown", true);
-                Move(dirX, dirY);
-            }
-            else
-            {
-                //animator.SetBool("GoDown", false);
+                lookDir = Vector2Int.down;
             }
 
             // Permet de faire aller a gauche le joueur
@@ -294,12 +287,7 @@ public class Player : Piece
             {
                 dirX = -1;
                 dirY = 0;
-                //animator.SetBool("GoLeft", true);
-                Move(dirX, dirY);
-            }
-            else
-            {
-                //animator.SetBool("GoLeft", false);
+                lookDir = Vector2Int.left;
             }
 
             // Permet de faire aller a droite le joueur
@@ -307,13 +295,9 @@ public class Player : Piece
             {
                 dirX = 1;
                 dirY = 0;
-                //animator.SetBool("GoRight", true);
-                Move(dirX, dirY);
+                lookDir = Vector2Int.right;
             }
-            else
-            {
-                //animator.SetBool("GoRight", false);
-            }
+            Move(dirX, dirY);
 
             // Permet d'attaquer
             // JR 15/11/2020 Modification pour ajouter possibilité d'empécher les inputs clavier durant le préchargement partie
@@ -321,7 +305,7 @@ public class Player : Piece
             {
                 if (baseAttackSlot.isReady)
                 {
-                    baseAttackSlot.Action(dirX, dirY);
+                    baseAttackSlot.Action(lookDir.x, lookDir.y);
                     baseAttackSlot.GenerateCoolDown();
                 }
             }
@@ -331,7 +315,7 @@ public class Player : Piece
             {
                 if (specialAttackSlot.isReady)
                 {
-                    specialAttackSlot.Action(dirX, dirY);
+                    specialAttackSlot.Action(lookDir.x, lookDir.y);
                     specialAttackSlot.GenerateCoolDown();
                 }
             }

@@ -1,3 +1,4 @@
+using Assets.Script.audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ public class RockWallAttack : Capacite
     }
     public override void Action(int dirx, int diry)
     {
+        RockWallSoundManagerScript.soundInstance.PlaySound();
         createSquare();
     }
 

@@ -306,6 +306,8 @@ MonoBehaviour:
   nameCharacter: 
   baseAttack: 
   specialAttack: 
+  baseAttackDescription: 
+  specialAttackDescription: 
   iconeCharacter1: {fileID: 21300000, guid: 05b10fdf941325640a1b1760f5318147, type: 3}
   iconeCharacter2: {fileID: 21300000, guid: 05b10fdf941325640a1b1760f5318147, type: 3}
 --- !u!4 &235641071
@@ -486,6 +488,8 @@ MonoBehaviour:
   nameCharacter: 
   baseAttack: 
   specialAttack: 
+  baseAttackDescription: 
+  specialAttackDescription: 
   iconeCharacter1: {fileID: 21300000, guid: 25eaba346146bc64b8e72f171b519d11, type: 3}
   iconeCharacter2: {fileID: 21300000, guid: d16048cbd90d56c45a27cd27de9b161d, type: 3}
 --- !u!4 &508583316
@@ -534,6 +538,8 @@ MonoBehaviour:
   nameCharacter: 
   baseAttack: 
   specialAttack: 
+  baseAttackDescription: 
+  specialAttackDescription: 
   iconeCharacter1: {fileID: 21300000, guid: 65bbd388faf49454c9f6152e7010c1c1, type: 3}
   iconeCharacter2: {fileID: 21300000, guid: 6e815589380748a49a952983711f1581, type: 3}
 --- !u!4 &606782994
@@ -582,8 +588,10 @@ MonoBehaviour:
   nameCharacter: 
   baseAttack: 
   specialAttack: 
-  iconeCharacter1: {fileID: 21300000, guid: f3d005f9b70634c46b1e73ad54fb8717, type: 3}
-  iconeCharacter2: {fileID: 21300000, guid: f3d005f9b70634c46b1e73ad54fb8717, type: 3}
+  baseAttackDescription: 
+  specialAttackDescription: 
+  iconeCharacter1: {fileID: 21300000, guid: e08e14971696c804e97860a0ad44c82a, type: 3}
+  iconeCharacter2: {fileID: 21300000, guid: e08e14971696c804e97860a0ad44c82a, type: 3}
 --- !u!4 &674579342
 Transform:
   m_ObjectHideFlags: 0
@@ -2549,6 +2557,8 @@ MonoBehaviour:
   nameCharacter: 
   baseAttack: 
   specialAttack: 
+  baseAttackDescription: 
+  specialAttackDescription: 
   iconeCharacter1: {fileID: 21300000, guid: c1777b3777ab7274fb98dc3711a1f6d4, type: 3}
   iconeCharacter2: {fileID: 21300000, guid: c1777b3777ab7274fb98dc3711a1f6d4, type: 3}
 --- !u!1 &1741851898

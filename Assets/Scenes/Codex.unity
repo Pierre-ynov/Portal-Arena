@@ -197,10 +197,10 @@ MonoBehaviour:
   m_Text: "<b><size=18>Informations sur Portal Arena</size></b>\r\n\r\n\n<b><size=14><color=#23DACB>[
     Univers ]</color></size></b>\r\n\nDans un monde futuriste, o\xF9 la galaxie a
     trouv\xE9 son nouvel \xE9v\xE9nement INTER-GALACTIQUE, o\xF9 des H\xE9ros/Prisonniers/Robots
-    d\xE9fectueux/Fous furieux, vont s'affronter ou s'allier, tout en progressant
-    au fur et \xE0 mesure. Ils vont devoir traverser plusieurs types de portails,
-    qui m\xE8nent vers plusieurs mondes, o\xF9 peuvent les accueillir des Boss. Les
-    personnages doivent se battre dans une ar\xE8ne, pour la gloire de leur esp\xE8ce\r.\n\r\n\n<b><size=14><color=#23DACB>[
+    d\xE9fectueux/Fous furieux vont s'affronter dans un combat acharn\xE9. Ils vont
+    devoir traverser un portail, qui m\xE8nent vers plusieurs mondes, o\xF9 peuvent
+    les accueillir un environnement hostile, ainsi que des invit\xE9s sp\xE9ciaux.
+    Les personnages doivent se battre dans une ar\xE8ne, pour la gloire de leur esp\xE8ce\r.\n\r\n\n<b><size=14><color=#23DACB>[
     Fonctionalit\xE9s ]</color></size></b>\r\n\n<b><size=12>Jouable en multijoueur</size></b>\r\nLe
     jeu est jouable en multijoueur local, permettant de jouer aux 2 mode de jeu <b><color=#C488FF>Versus</color></b>.\r\n\n<b><size=12>Mode
     de jeu Versus</size></b>\r\nLe mode <b><color=#C488FF>Versus</color></b> propose
@@ -216,8 +216,8 @@ MonoBehaviour:
     les joueurs.\r\n\r\n<b><size=12>Chronom\xE8tre de phase de jeu</size></b>\r\nLe
     jeu va \xEAtre rythm\xE9 par des cycles de 15 \xE0 45 secondes, contenant une
     phase du jeu :\r\n > Phase <b><color=#C488FF>Apparition d'objets</color></b>
-    : Divers objets vont appara\xEEtre sur le terrain pour aider les joueurs.\r\n
-    > Phase <b><color=#C488FF>Ev\xE9nement</color></b> : D\xE9clenche un \xE9v\xE9nement
+    : Divers objets vont appara\xEEtre sur le terrain pour aider les joueurs.\r\n>
+    Phase <b><color=#C488FF>Ev\xE9nement</color></b> : D\xE9clenche un \xE9v\xE9nement
     al\xE9atoire avec l'apparition de quelques objets.\r\n > Phase <b><color=#C488FF>Affrontement</color></b>:
     Laisse place \xE0 l'affrontement entre les joueurs.\r\n\r\n<b><size=12>Apparition
     d'objets</size></b>\r\nDurant certaines phases, des objets vont appara\xEEtre

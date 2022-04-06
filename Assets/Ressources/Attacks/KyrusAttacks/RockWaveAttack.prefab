@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isReady: 1
-  timeCooldown: 1
+  timeCooldown: 5
   imgAttack: {fileID: -1916236507332333500, guid: d75a996dd43001c4ca08140ad1538333,
     type: 3}
   parent: {fileID: 0}

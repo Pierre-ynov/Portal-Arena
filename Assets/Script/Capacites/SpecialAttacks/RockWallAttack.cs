@@ -65,6 +65,7 @@ public class RockWallAttack : Capacite
     {
         GameObject gameObject = Instantiate(Attack, position, Quaternion.identity);
         gameObject.transform.SetParent(transform);
+        gameObject.GetComponent<RockWall>().parent = parent;
         Destroy(gameObject, TimeToLive);
     }
 }

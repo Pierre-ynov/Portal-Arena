@@ -1,3 +1,4 @@
+using Assets.Script.audio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,6 +34,7 @@ public class RockWaveAttack : Capacite
     }
     public override void Action(int dirx, int diry)
     {
+        RockWaveSoundManagerScript.soundInstance.PlaySound();
         StartCoroutine(CreateRockWave(new Vector2(dirx, diry)));
     }
 

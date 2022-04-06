@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
-  Speed: 10
+  Speed: 12
   parent: {fileID: 0}
 --- !u!50 &892026131851816157
 Rigidbody2D:

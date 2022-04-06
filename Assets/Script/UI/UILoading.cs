@@ -108,6 +108,6 @@ public class UILoading : MonoBehaviour
 
     private void UpdateProgressBar()
     {
-        ProgressBarImage.fillAmount = (float)loadingScene.getTimeElapsedInSecond() / 10;
+        ProgressBarImage.fillAmount = (float)loadingScene.getTimeElapsedInSecond() / 20;
     }
 }

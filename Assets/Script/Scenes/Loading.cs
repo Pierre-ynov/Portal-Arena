@@ -18,7 +18,7 @@ namespace Assets.Script.Scenes
         }
         void Update()
         {
-            if (Input.anyKeyDown || getTimeElapsedInSecond()>= 10)
+            if (Input.anyKeyDown || getTimeElapsedInSecond()>= 20)
                 LoadGameScene();
         }
 

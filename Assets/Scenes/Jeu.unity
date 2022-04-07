@@ -9712,12 +9712,12 @@ MonoBehaviour:
   - {x: 23, y: 13, z: 0}
   - {x: 17, y: 1, z: 0}
   listPrefabPlayer1:
-  - {fileID: 2712287236134612094, guid: 4ef6f3f3fbf9166498bcf809b784ec75, type: 3}
+  - {fileID: 1623634902167382051, guid: a9f294c680b52914994421d05d4b3887, type: 3}
   - {fileID: 7618091715835311616, guid: abb1792dfb3bd4a4da3dcf390df2c116, type: 3}
   - {fileID: 8923657565467157115, guid: 9bbbf6bf890197a47b0c7024116502f1, type: 3}
   - {fileID: 567435031466432175, guid: 786000e58bb27c945a78f336cc021f0c, type: 3}
   listPrefabPlayer2:
-  - {fileID: 6706125799882838801, guid: 8da0efbd9d0dc35408729fdf8b1ebf70, type: 3}
+  - {fileID: 5777483917924860238, guid: 701dcd6e199a36b479dd5ddd11813da3, type: 3}
   - {fileID: 5410052283316092143, guid: a3dcfe4a8195c8f4c9c254300cb70633, type: 3}
   - {fileID: 7796847475521005470, guid: e18c9c55548ea754295e4486cac311e4, type: 3}
   - {fileID: 3795650142497082673, guid: 22e7e3038dc57ef48ac3bae83e059f16, type: 3}
@@ -14718,7 +14718,7 @@ PrefabInstance:
     - target: {fileID: 3726486055389721489, guid: d3266d09c4d74d44e8c7325e1e4915e8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -463.49997
+      value: -463.5
       objectReference: {fileID: 0}
     - target: {fileID: 3816927478023534044, guid: d3266d09c4d74d44e8c7325e1e4915e8,
         type: 3}

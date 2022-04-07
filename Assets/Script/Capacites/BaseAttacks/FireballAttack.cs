@@ -34,7 +34,7 @@ namespace Assets.Script.Capacites.BaseAttacks
             fireball.transform.position = new Vector3(position.x + dirx * 1.1f, position.y + diry * 1.1f, position.z);
             fireball.dirY = diry;
             fireball.dirX = dirx;
-            fireball.Speed = 5;
+            fireball.Speed = 7f;
             fireball.LoadSprite();
         }
     }

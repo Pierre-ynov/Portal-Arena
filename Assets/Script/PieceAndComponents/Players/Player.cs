@@ -193,8 +193,8 @@ public class Player : Piece
         //Get a component reference to this object's Rigidbody2D
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        Speed = 3.5f;
 
+        Speed = 4f;
         health = new Bar(20);
         armor = new Bar(20);
         armor.ModifyLoad(-20);

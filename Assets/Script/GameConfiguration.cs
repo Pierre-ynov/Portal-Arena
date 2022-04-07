@@ -109,9 +109,9 @@ namespace Assets.Script.Configuration
             Player2_LeftKey = KeyCode.LeftArrow;
             Player2_UpKey = KeyCode.UpArrow;
             Player2_RightKey = KeyCode.RightArrow;
-            Player2_BaseAttackKey = KeyCode.Period;
+            Player2_BaseAttackKey = KeyCode.BackQuote;
             Player2_SpecialAttackKey = KeyCode.Slash;
-            Player2_UseObjectKey = KeyCode.BackQuote;
+            Player2_UseObjectKey = KeyCode.Period;
 
             QuitKey = KeyCode.Escape;
 

@@ -12,7 +12,7 @@ namespace Assets.Script.StatusEffects
         void Awake()
         {
             damage = (int)Damage.low;
-            maxDurationEffect = 5;
+            maxDurationEffect = 3;
             minDurationEffect = 3;
         }
 

@@ -173,7 +173,7 @@ MonoBehaviour:
   baseAttackSlot: {fileID: 0}
   specialAttackSlot: {fileID: 0}
   objectSlot: {fileID: 0}
-  profilePlayerImage: {fileID: 21300000, guid: f3d005f9b70634c46b1e73ad54fb8717, type: 3}
+  profilePlayerImage: {fileID: 21300000, guid: e08e14971696c804e97860a0ad44c82a, type: 3}
   animator: {fileID: 0}
   attackBasePrefab: {fileID: 998318581393316942, guid: 6fd9e9d04beaf0746bc74305a7a4f466,
     type: 3}

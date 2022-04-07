@@ -1,3 +1,4 @@
+using Assets.Script.audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ public class RockWallAttack : Capacite
     }
     public override void Action(int dirx, int diry)
     {
+        RockWallSoundManagerScript.soundInstance.PlaySound();
         createSquare();
     }
 
@@ -65,6 +67,7 @@ public class RockWallAttack : Capacite
     {
         GameObject gameObject = Instantiate(Attack, position, Quaternion.identity);
         gameObject.transform.SetParent(transform);
+        gameObject.GetComponent<RockWall>().parent = parent;
         Destroy(gameObject, TimeToLive);
     }
 }

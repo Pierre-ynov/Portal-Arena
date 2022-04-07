@@ -16,12 +16,6 @@ public abstract class Piece : MonoBehaviour
     public RaycastHit2D hit;
     protected float Speed;
 
-    #region SpriteMovements
-    public Sprite spritesMovementUp;
-    public Sprite spritesMovementRight;
-    public Sprite spritesMovementLeft;
-    public Sprite spritesMovementDown;
-    #endregion
     /// <summary>
     /// Deplace un pion
     /// </summary>
@@ -36,7 +30,7 @@ public abstract class Piece : MonoBehaviour
         // Calculate end position based on the direction parameters passed in when calling Move.
         Vector2 end = new Vector3(Speed * dirX * Time.deltaTime, Speed * dirY * Time.deltaTime);
 
-        UpdateSpriteMovementPiece(dirX, dirY);
+        //UpdateSpriteMovementPiece(dirX, dirY);
         transform.Translate(end);
     }
 
@@ -75,21 +69,6 @@ public abstract class Piece : MonoBehaviour
         else
             damage -= oldArmorLoad;
         return !health.ModifyLoad(-damage);
-    }
-
-    public void UpdateSpriteMovementPiece(int dirx, int diry)
-    {
-        Sprite sprite = spritesMovementUp;
-        if (dirx == 1)
-            sprite = spritesMovementRight;
-        else if (diry == -1)
-            sprite = spritesMovementDown;
-        else if (dirx == -1)
-            sprite = spritesMovementLeft;
-        if (sprite != GetComponent<SpriteRenderer>().sprite)
-        {
-            GetComponent<SpriteRenderer>().sprite = sprite;
-        }
     }
 
     public IEnumerator VisualizeHurt()

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3709592843704429483}
   - component: {fileID: 7382187403291710579}
   - component: {fileID: 3462547835979337170}
+  - component: {fileID: 262353040134299458}
   m_Layer: 8
   m_Name: KyrusBasePrefab
   m_TagString: Untagged
@@ -74,7 +75,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2, y: 2}
-    newSize: {x: 1.28, y: 1.28}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -128,7 +129,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -163,14 +164,10 @@ MonoBehaviour:
     m_Bits: 256
   boxCollider: {fileID: 0}
   rb2D: {fileID: 0}
-  spritesMovementUp: {fileID: 5923931031632857167, guid: aafc01f2e2a3b7f458eef14d8971d6c5,
-    type: 3}
-  spritesMovementRight: {fileID: -129631373597702015, guid: db07b66a01f950b4ca7972a04d4a677b,
-    type: 3}
-  spritesMovementLeft: {fileID: 643356993734094866, guid: dc74910d74680f845b17ea25b14b749f,
-    type: 3}
-  spritesMovementDown: {fileID: 3536117280794580212, guid: 82b5d551dc2e9f74b864705f78a883de,
-    type: 3}
+  spritesMovementUp: {fileID: 0}
+  spritesMovementRight: {fileID: 0}
+  spritesMovementLeft: {fileID: 0}
+  spritesMovementDown: {fileID: 0}
   player: {fileID: 2189523565232268081}
   countRevive: 2
   baseAttackSlot: {fileID: 0}
@@ -182,3 +179,22 @@ MonoBehaviour:
     type: 3}
   specialAttackPrefab: {fileID: 7118541116420205815, guid: 6cc1f98cdb1acad438e435466dde93f0,
     type: 3}
+--- !u!95 &262353040134299458
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2189523565232268081}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aee7d896bceec5a48b968abc10f4ba14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

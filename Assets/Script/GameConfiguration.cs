@@ -89,6 +89,7 @@ namespace Assets.Script.Configuration
 
         void Awake()
         {
+            Debug.Log(Application.systemLanguage);
             resetConfig();
             VerifyExistSaveDirectory();
             LoadConfig();
@@ -276,6 +277,139 @@ namespace Assets.Script.Configuration
                 Player2_UseObjectKey == keyCode)
                 return true;
             return false;
+        }
+
+        public string GetKeyCodeToString(KeyCode keyCode)
+        {
+            switch (keyCode)
+            {
+                case KeyCode.Alpha0:
+                    return "0";
+                case KeyCode.Alpha1:
+                    return "1";
+                case KeyCode.Alpha2:
+                    return "2";
+                case KeyCode.Alpha3:
+                    return "3";
+                case KeyCode.Alpha4:
+                    return "4";
+                case KeyCode.Alpha5:
+                    return "5";
+                case KeyCode.Alpha6:
+                    return "6";
+                case KeyCode.Alpha7:
+                    return "7";
+                case KeyCode.Alpha8:
+                    return "8";
+                case KeyCode.Alpha9:
+                    return "9";
+                case KeyCode.Ampersand:
+                    return "&";
+                case KeyCode.Asterisk:
+                    return "<";
+                case KeyCode.At:
+                    return "@";
+                case KeyCode.BackQuote:
+                    return "!";
+                case KeyCode.Caret:
+                    return "^";
+                case KeyCode.Colon:
+                    return ":";
+                case KeyCode.Comma:
+                    return ",";
+                case KeyCode.Dollar:
+                    return "$";
+                case KeyCode.DoubleQuote:
+                    return "\"";
+                case KeyCode.Equals:
+                    return "=";
+                case KeyCode.Escape:
+                    return "Echap";
+                case KeyCode.Exclaim:
+                    return "!";
+                case KeyCode.Greater:
+                    return ">";
+                case KeyCode.Hash:
+                    return "#";
+                case KeyCode.Keypad0:
+                    return "Numpad0";
+                case KeyCode.Keypad1:
+                    return "Numpad1";
+                case KeyCode.Keypad2:
+                    return "Numpad2";
+                case KeyCode.Keypad3:
+                    return "Numpad3";
+                case KeyCode.Keypad4:
+                    return "Numpad4";
+                case KeyCode.Keypad5:
+                    return "Numpad5";
+                case KeyCode.Keypad6:
+                    return "Numpad6";
+                case KeyCode.Keypad7:
+                    return "Numpad7";
+                case KeyCode.Keypad8:
+                    return "Numpad8";
+                case KeyCode.Keypad9:
+                    return "Numpad9";
+                case KeyCode.LeftArrow:
+                    return "←";
+                case KeyCode.LeftBracket:
+                    return "]";
+                case KeyCode.LeftCurlyBracket:
+                    return "{";
+                case KeyCode.LeftParen:
+                    return "(";
+                case KeyCode.Less:
+                    return "<";
+                case KeyCode.Minus:
+                    return "-";
+                case KeyCode.Period:
+                    return ".";
+                case KeyCode.Pipe:
+                    return "|";
+                case KeyCode.Plus:
+                    return "+";
+                case KeyCode.Question:
+                    return "?";
+                case KeyCode.Quote:
+                    return "'";
+                case KeyCode.Return:
+                    return "Entrée";
+                case KeyCode.RightArrow:
+                    return "→";
+                case KeyCode.RightBracket:
+                    return "^";
+                case KeyCode.RightCurlyBracket:
+                    return "}";
+                case KeyCode.RightParen:
+                    return ")";
+                case KeyCode.Semicolon:
+                    return "$";
+                case KeyCode.Tilde:
+                    return "~";
+                case KeyCode.Underscore:
+                    return "_";
+                case KeyCode.DownArrow:
+                    return "↓";
+                case KeyCode.UpArrow:
+                    return "↑";
+                case KeyCode.Slash:
+                    return "/";
+                case KeyCode.Backslash:
+                    return "*";
+                case KeyCode.CapsLock:
+                    return "Verr.Maj";
+                case KeyCode.LeftShift:
+                    return "Maj.Gauche";
+                case KeyCode.RightShift:
+                    return "Maj.Droite";
+                case KeyCode.RightControl:
+                    return "Ctrl.Droite";
+                case KeyCode.LeftControl:
+                    return "Ctrl.Gauche";
+                default:
+                    return keyCode.ToString();
+            }
         }
 
 

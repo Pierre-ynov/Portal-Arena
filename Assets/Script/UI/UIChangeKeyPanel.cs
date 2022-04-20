@@ -34,14 +34,14 @@ public class UIChangeKeyPanel : MonoBehaviour
                     {
                         if (!configuration.VerifyIfKeyCodeExist(keyCode))
                         {
-                            keyText.text = keyCode.ToString();
+                            keyText.text = configuration.GetKeyCodeToString(keyCode);
                             configuration.SetKeyCodePlayerAction(playerNameInSystem, actionNameInSystem, keyCode);
                             ShowOrHideChangeKeyPanel();
                             configuration.needSaveConfig = true;
                         }
                         else
                         {
-                            messageText.text = string.Format("La touche {0} est déjà utilisé.", keyCode);
+                            messageText.text = string.Format("La touche {0} est déjà utilisé.", configuration.GetKeyCodeToString(keyCode));
                         }
                     }
                     else
@@ -60,7 +60,7 @@ public class UIChangeKeyPanel : MonoBehaviour
         if (configuration == null)
             configuration = GameObject.FindWithTag("configuration").GetComponent<GameConfiguration>();
         KeyCode keyCode = configuration.GetKeyCodePlayerAction(playerNameInSystem, actionNameInSystem) ?? KeyCode.None;
-        keyText.text = keyCode.ToString();
+        keyText.text = configuration.GetKeyCodeToString(keyCode);
         messageText.text = "";
         changeKeyPanelText.text = string.Format("Saisissez une nouvelle touche \npour '{0}' du '{1}' :", actionNameText, playerNameText);
     }

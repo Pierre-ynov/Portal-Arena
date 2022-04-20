@@ -24,7 +24,7 @@ public class UIChangeKeyButton : MonoBehaviour
     void Update()
     {
        KeyCode k = configuration.GetKeyCodePlayerAction(playerNameInSystem, actionNameInSystem) ?? KeyCode.None;
-        keyText.text = k.ToString();
+        keyText.text = configuration.GetKeyCodeToString(k);
     }
 
     public void ExecuteChangeKey()

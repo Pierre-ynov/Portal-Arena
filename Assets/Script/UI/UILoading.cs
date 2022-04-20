@@ -70,22 +70,22 @@ public class UILoading : MonoBehaviour
     private void UpdateUI()
     {
         // Player 1 keys
-        UpKeyPlayer1.text = conf.Player1_UpKey.ToString();
-        DownKeyPlayer1.text = conf.Player1_DownKey.ToString();
-        LeftKeyPlayer1.text = conf.Player1_LeftKey.ToString();
-        RightKeyPlayer1.text = conf.Player1_RightKey.ToString();
-        AttackBaseKeyPlayer1.text = conf.Player1_BaseAttackKey.ToString();
-        SpecialAttackKeyPlayer1.text = conf.Player1_SpecialAttackKey.ToString();
-        UseObjectKeyPlayer1.text = conf.Player1_UseObjectKey.ToString();
+        UpKeyPlayer1.text = conf.GetKeyCodeToString(conf.Player1_UpKey);
+        DownKeyPlayer1.text = conf.GetKeyCodeToString(conf.Player1_DownKey);
+        LeftKeyPlayer1.text = conf.GetKeyCodeToString(conf.Player1_LeftKey);
+        RightKeyPlayer1.text = conf.GetKeyCodeToString(conf.Player1_RightKey);
+        AttackBaseKeyPlayer1.text = conf.GetKeyCodeToString(conf.Player1_BaseAttackKey);
+        SpecialAttackKeyPlayer1.text = conf.GetKeyCodeToString(conf.Player1_SpecialAttackKey);
+        UseObjectKeyPlayer1.text = conf.GetKeyCodeToString(conf.Player1_UseObjectKey);
 
         // Player 2 keys
-        UpKeyPlayer2.text = conf.Player2_UpKey.ToString();
-        DownKeyPlayer2.text = conf.Player2_DownKey.ToString();
-        LeftKeyPlayer2.text = conf.Player2_LeftKey.ToString();
-        RightKeyPlayer2.text = conf.Player2_RightKey.ToString();
-        AttackBaseKeyPlayer2.text = conf.Player2_BaseAttackKey.ToString();
-        SpecialAttackKeyPlayer2.text = conf.Player2_SpecialAttackKey.ToString();
-        UseObjectKeyPlayer2.text = conf.Player2_UseObjectKey.ToString();
+        UpKeyPlayer2.text = conf.GetKeyCodeToString(conf.Player2_UpKey);
+        DownKeyPlayer2.text = conf.GetKeyCodeToString(conf.Player2_DownKey);
+        LeftKeyPlayer2.text = conf.GetKeyCodeToString(conf.Player2_LeftKey);
+        RightKeyPlayer2.text = conf.GetKeyCodeToString(conf.Player2_RightKey);
+        AttackBaseKeyPlayer2.text = conf.GetKeyCodeToString(conf.Player2_BaseAttackKey);
+        SpecialAttackKeyPlayer2.text = conf.GetKeyCodeToString(conf.Player2_SpecialAttackKey);
+        UseObjectKeyPlayer2.text = conf.GetKeyCodeToString(conf.Player2_UseObjectKey);
 
         //Info Player 1
         Player1Name.text = String.Format("<b>Fiche</b> : {0}", select.player1.nameCharacter);
